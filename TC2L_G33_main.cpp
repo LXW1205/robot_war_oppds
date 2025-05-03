@@ -15,10 +15,75 @@
 // Member_4:
 // *********************************************************
 
-#include < iostream>
+#include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <sstream>
 #include <vector>
 #include <queue>
 using namespace std;
+
+// Ming Hein's part: Robot base class
+// Base Abstract Class
+class Robot
+{
+private:
+    string robotId;
+    string robotName;
+    string robotType;
+
+    int robotPositionX;
+    int robotPositionY;
+
+    int numberOfLives = 3; // Initial value
+    int numberOfKills = 0; // Initial value
+
+public:
+    // Parameterized Constructor(PC)
+    Robot(string id, int posX, int posY) { id = ""; posX = -1; posY = -1; } // Set the initial default value
+
+    // Destructor (virtual for polymorphism)
+    virtual ~Robot();
+
+    // Getter and Setter for RobotId
+    string getId() const { return robotId; }
+    void setId(string id) { robotId = id; }
+
+    // Getter and Setter for RobotName
+    string getName() const { return robotName; }
+    void setName(string name) { robotName = name; }
+
+    // Getter and Setter for RobotType
+    string getType() const { return robotType; }
+    void setType(string type) { robotType = type; }
+
+    // Getter and Setter for RobotPositionX
+    int getPosX() const { return robotPositionX; }
+    void setPosX(int posX) { robotPositionX = posX; }
+
+    // Getter and Setter for RobotPositionY
+    int getPosY() const { return robotPositionY; }
+    void setPosY(int posY) { robotPositionY = posY; }
+
+    // Getter and Setter for numberOfLives
+    int getLives() const { return numberOfLives; }
+    void setLives(int lives) { numberOfLives = lives; }
+
+    // Getter and Setter for numberOfKills
+    int getKills() const { return numberOfKills; }
+    void setKills(int kills) { numberOfKills = kills; }
+
+    // Pure Virtual Functions
+    virtual void setRobotLocation(int posX, int posY) = 0;
+};
+
+// Xiu Wei's part: Robot's actions...
+
+// Seng Kung's part: Generic Robot...
+
+int main()
+{
+
+
+    return 0;
+}
