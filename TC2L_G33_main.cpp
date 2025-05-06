@@ -79,6 +79,52 @@ public:
 
 // Xiu Wei's part: Robot's actions...
 
+class ThinkingRobot: virtual public Robot
+{
+protected :
+    // data member
+public:
+    virtual ~ThinkingRobot(){}
+
+// Pure virtual function for thinking
+virtual void actionThink (Battlefield* battlefield) = 0;
+};
+
+class SeeingRobot: virtual public Robot
+{
+protected:
+    //data member
+public:
+    ~SeeingRobot(){}
+
+// Pure virtual function for looking
+virtual void actionLook(Battlefield* battlefield) = 0;
+};
+
+class ShootingRobot: virtual public Robot
+{
+protected:
+    //data member
+public:
+    ~ShootingRobot(){}
+
+// Pure virtual function for shooting
+virtual void actionFire(Battlefield* battlefield) = 0;
+};
+
+class MovingRobot: virtual public Robot
+{
+protected:
+    //data member
+public:
+    ~MovingRobot(){}
+
+// Pure virtual function for moving
+virtual void actionMove(Battlefield* battlefield) = 0;
+};
+
+// Pure virtual
+
 class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 private:
@@ -137,7 +183,7 @@ int GenericRobot::robotAutoIncrementInt = 0;
 
 class Battlefield
 {
-private:    
+private:
     int BATTLEFIELD_NUM_OF_COLS_ = -1;
     int BATTLEFIELD_NUM_OF_ROWS_ = -1;
 
