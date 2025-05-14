@@ -385,7 +385,7 @@ void GenericRobot::actionMove (Battlefield* battlefield)
 
 int main()
 {
-    srand(242213244718); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
+    srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
     b.readInputFile("inputFile1.txt");
