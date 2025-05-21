@@ -74,6 +74,31 @@ public:
     int getKills() const { return numberOfKills; }
     void setKills(int kills) { numberOfKills = kills; }
 
+    void reduceLife(Battlefield* battlefield) {
+        if (getLives() > 0) {
+
+            setLives(getLives() - 1);
+            battlefield->removeRobot(this);
+            battlefield->queueForRespawn(this);
+
+            //cout << getId() << " queued for respawn (" << getLives() << " lives left)\n";
+        }
+
+        else {
+            battlefield->destroyRobot(this);
+
+            //cout << getId() << " permanently destroyed!\n";
+        }
+    }
+
+    void selfDestruct() {
+        reduceLife();
+    }
+
+    void incrementKills() {numberOfKills++;}
+
+    bool isAlive() const {return numberOfLives > 0;}
+
     // Pure Virtual Functions
     virtual void setRobotLocation(int posX, int posY) = 0;
     virtual void actions(Battlefield* battlefield) = 0;
@@ -130,7 +155,19 @@ class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRob
 {
 private:
     static int robotAutoIncrementInt_; // Static member for auto-incrementing ID
-    //data member
+
+    int shellsRemaining = 10;
+
+    //Detects directions the robot can move
+    bool canMove[9] = {false};
+
+    //Detects the presence of other robots
+    bool hasEnemy[8] = {false};
+
+    // direction arrays like Up, Up-Right, Right, Down-Right, Down, Down-Left, Left, Up-Left, Stand in place
+    const int dx[9] = { 0, 1, 1, 1, 0,-1,-1,-1, 0};
+    const int dy[9] = {-1,-1, 0, 1, 1, 1, 0,-1, 0};
+
 public:
     GenericRobot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
     {
@@ -165,16 +202,24 @@ public:
 
         if( randomInt % 2 == 0)
         {
+            cout << endl;
             actionThink (battlefield);
+            cout << endl;
             actionLook (battlefield);
+            cout << endl;
             actionFire (battlefield);
+            cout << endl;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
+            cout << endl;
             actionThink (battlefield);
+            cout << endl;
             actionLook (battlefield);
+            cout << endl;
             actionMove(battlefield);
+            cout << endl;
             actionFire (battlefield);
         }
     }
@@ -193,8 +238,8 @@ private:
     int numOfRobots = -1; // Number of robots
 
     vector<Robot*> robots;
-    queue<Robot*> destroyedRobots_;
-    queue<Robot*> waitingRobots__;
+    queue<Robot*> destroyedRobots;
+    queue<Robot*> waitingRobots;
 
     vector<vector<string>> battlefield; // 2D vector representing the battlefield
 public:
@@ -215,7 +260,9 @@ public:
     {
         return numOfRobots;
     }
-
+    vector<Robot*>& getRobots() {
+    return robots;
+}
     // Read input file to initialize battlefield and robots
     void readInputFile(string fileInputName)
     {
@@ -295,6 +342,23 @@ public:
         fileInput.close();
     }
 
+    // Write to output file as log file
+    /*void writeOutputFile(const std::string& fileOutputName)
+    {
+        ofstream fileOutput;
+        fileOutput.open(fileOutputName);
+
+        // Check the file is able to open
+        if (!fileOutput.is_open())
+        {
+            cerr << "Unable to open file" << endl;
+            exit(-1);
+        }
+
+        oldCoutBuf_ = std::cout.rdbuf();         // Save original cout buffer
+        std::cout.rdbuf(outFile_.rdbuf());       // Redirect cout to file
+    }*/
+
     // Place robots on the battlefield
     void placeRobots()
     {
@@ -363,24 +427,164 @@ public:
         }
         cout << "+" << endl;
     }
+
+    // Check if position is valid
+    bool isPositionValid(int x, int y) const {
+        return x >= 0 && x < BATTLEFIELD_NUM_OF_ROWS && y >= 0 && y < BATTLEFIELD_NUM_OF_COLS && battlefield[x][y].empty();
+    }
+
+    // Check if position is empty
+    bool isPositionEmpty(int x, int y) const {
+        return isPositionValid(x, y) &&
+               battlefield[x][y].empty();
+    }
+
+    // Get robot position
+    Robot* getRobotAt(int x, int y) const {
+        if (!isPositionValid(x, y)) return nullptr;
+
+        const string& id = battlefield[x][y];
+        for (Robot* robot : robots) {
+            if (robot->getId() == id) return robot;
+        }
+        return nullptr;
+    }
+
+    void queueForRespawn(Robot* robot) {
+    waitingRobots.push(robot);
+    }
+
+    // Remove Robot from it's position
+    void removeRobot(Robot* robot) {
+        if (isPositionValid(robot->getPosX(), robot->getPosY())) {
+            battlefield[robot->getPosX()][robot->getPosY()].clear();
+        }
+    }
+
+    void destroyRobot(Robot* robot) {
+        removeRobot(robot);
+
+        for (auto it = robots.begin(); it != robots.end(); ++it) {
+            if (*it == robot) {
+                destroyedRobots.push(*it);
+                robots.erase(it);
+                break;  // important: exit loop after erasing
+            }
+        }
+    }
+
 };
 
 void GenericRobot::actionThink (Battlefield* battlefield)
 {
     cout << "GenericRobot actionThink" << endl;
+
+    cout << getId() << " is thinking..." << endl;
 }
 void GenericRobot::actionLook (Battlefield* battlefield)
 {
-    cout<<"GenericRobot actionLook" << endl;
-}
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+    }
 
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+        }
+
+    cout<<"GenericRobot actionLook" << endl;
+
+    cout << getId() << " is looking around..." << endl;
+}
 void GenericRobot::actionFire (Battlefield* battlefield)
 {
     cout << "GenericRobot actionFire" << endl;
+
+    // Generate random direction to shoot at, make sure not to shoot itself
+    int shootAtX, shootAtY;
+
+    do {
+        shootAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shootAtY = (rand() % 3) - 1;
+    } while (shootAtX == 0 && shootAtY == 0);
+
+    int targetX = getPosX() + shootAtX;
+    int targetY = getPosY() + shootAtY;
+
+    if (battlefield->isPositionValid(targetX, targetY)) {
+
+        Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+        if (target != nullptr && target != this) {
+
+            GenericRobot* enemy = dynamic_cast<GenericRobot*>(target);
+
+            // a 30% chance of missing the shoot
+            if (enemy != nullptr && rand() % 100 < 70) {
+
+                // Enemy loses life
+                enemy->setLives(getLives() - 1);
+
+                // This robot gains kill
+                incrementKills();
+
+                cout << getId() << " fired at " << enemy->getId() << " (" << targetX << "," << targetY << ")" << endl;
+            }
+            else{
+                cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+            }
+        }
+        else {
+            cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+    }
+    else {
+        cout << getId() << " fired at a wall..." << endl;
+    }
+
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0){
+        selfDestruct();
+    }
 }
-void GenericRobot::actionMove (Battlefield* battlefield)
+void GenericRobot::actionMove(Battlefield* battlefield)
 {
-    cout<<"GenericRobot actionMove" << endl;
+    cout << "GenericRobot actionMove" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir = validMoves[rand() % validMoves.size()];
+
+        int newX = getPosX() + dx[dir];
+        int newY = getPosY() + dy[dir];
+
+        if (dir == 8) {
+            // Standing still
+            cout << getId() << " decides to stay in place." << endl;
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            cout << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+        }
+    }
+    else{
+        cout << getId() << " decides to stay in place." << endl;
+    }
 }
 
 int main()
@@ -392,6 +596,29 @@ int main()
     b.placeRobots();
     b.displayBattleField();
 
+    int turnNumber = 1;
+    vector<Robot*>& robots = b.getRobots();
+
+    // Loop through robots in cycles until totalTurns is reached
+    while (turnNumber <= b.getTotalTurns()) {
+        for (Robot* robot : robots) {
+            if (turnNumber > b.getTotalTurns()) break;
+
+            cout << "\nTurn " << turnNumber << ":" << endl;
+            cout << robot->getId() << " at (" << robot->getPosX() << ", " << robot->getPosY() << ") actions:" << endl;
+
+            robot->actions(&b);
+
+            cout << endl;
+
+            // Re-display battlefield after robot acts
+            b.placeRobots();             // Re-update positions on the grid
+            b.displayBattleField();      // Show updated battlefield
+
+            ++turnNumber;
+        }
+        cout << endl;
+    }
+
     return 0;
 }
-
