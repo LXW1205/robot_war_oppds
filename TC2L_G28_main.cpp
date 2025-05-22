@@ -74,16 +74,20 @@ public:
     int getKills() const { return numberOfKills; }
     void setKills(int kills) { numberOfKills = kills; }
 
+    // Reduce life when getting shoot or selfDestruct
     void reduceLife() {
         setLives(getLives() - 1);
     }
 
+    // selfDestruct when ran out of shells(ammo)
     void selfDestruct() {
         reduceLife();
     }
 
+    // Increase kills
     void incrementKills() {numberOfKills++;}
 
+    // Check if the robot still have lives
     bool isAlive() const {return numberOfLives > 0;}
 
     // Pure Virtual Functions
@@ -437,6 +441,7 @@ public:
         return nullptr;
     }
 
+    // queue the robots that died in the previous round
     void queueForRespawn(Robot* robot) {
     waitingRobots.push(robot);
     }
@@ -448,6 +453,7 @@ public:
         }
     }
 
+    // Permanently destroy robot because of no more lives
     void destroyRobot(Robot* robot) {
         removeRobot(robot);
 
@@ -460,6 +466,7 @@ public:
         }
     }
 
+    // respawn / let robots re-enter the bf
     void respawnRobots() {
         while (!waitingRobots.empty()) {
             Robot* robot = waitingRobots.front();
@@ -486,6 +493,7 @@ void GenericRobot::actionThink (Battlefield* battlefield) {
     cout << getId() << " is thinking..." << endl;
 }
 void GenericRobot::actionLook (Battlefield* battlefield) {
+
     // Check all 8 direction for enemies
     for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
         int lookX = getPosX() + dx[directionCheckEnemy];
@@ -525,7 +533,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
             if (rand() % 100 < 70) {
 
                 // Reduce target's lives
-                target->setLives(target->getLives() - 1);
+                target->reduceLife();
                 battlefield->removeRobot(target);
                 battlefield->queueForRespawn(target);
 
@@ -557,6 +565,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
 
     if (shellsRemaining <= 0) {
         cout << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
         battlefield->removeRobot(this);
         battlefield->queueForRespawn(this);
         // Use the robot's own selfDestruct method
