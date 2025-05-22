@@ -74,21 +74,8 @@ public:
     int getKills() const { return numberOfKills; }
     void setKills(int kills) { numberOfKills = kills; }
 
-    void reduceLife(Battlefield* battlefield) {
-        if (getLives() > 0) {
-
-            setLives(getLives() - 1);
-            battlefield->removeRobot(this);
-            battlefield->queueForRespawn(this);
-
-            //cout << getId() << " queued for respawn (" << getLives() << " lives left)\n";
-        }
-
-        else {
-            battlefield->destroyRobot(this);
-
-            //cout << getId() << " permanently destroyed!\n";
-        }
+    void reduceLife() {
+        setLives(getLives() - 1);
     }
 
     void selfDestruct() {
@@ -473,16 +460,32 @@ public:
         }
     }
 
+    void respawnRobots() {
+        while (!waitingRobots.empty()) {
+            Robot* robot = waitingRobots.front();
+            waitingRobots.pop();
+
+            // Find empty position
+            int newX, newY;
+            do {
+                newX = rand() % BATTLEFIELD_NUM_OF_ROWS;
+                newY = rand() % BATTLEFIELD_NUM_OF_COLS;
+            } while (!isPositionEmpty(newX, newY));
+
+            robot->setPosX(newX);
+            robot->setPosY(newY);
+            battlefield[newX][newY] = robot->getId();
+    }
+}
+
 };
 
-void GenericRobot::actionThink (Battlefield* battlefield)
-{
+void GenericRobot::actionThink (Battlefield* battlefield) {
     cout << "GenericRobot actionThink" << endl;
 
     cout << getId() << " is thinking..." << endl;
 }
-void GenericRobot::actionLook (Battlefield* battlefield)
-{
+void GenericRobot::actionLook (Battlefield* battlefield) {
     // Check all 8 direction for enemies
     for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
         int lookX = getPosX() + dx[directionCheckEnemy];
@@ -501,13 +504,11 @@ void GenericRobot::actionLook (Battlefield* battlefield)
 
     cout << getId() << " is looking around..." << endl;
 }
-void GenericRobot::actionFire (Battlefield* battlefield)
-{
+void GenericRobot::actionFire(Battlefield* battlefield) {
     cout << "GenericRobot actionFire" << endl;
 
-    // Generate random direction to shoot at, make sure not to shoot itself
+    // Generate random direction to shoot at (excluding current position)
     int shootAtX, shootAtY;
-
     do {
         shootAtX = (rand() % 3) - 1; // -1, 0, or 1
         shootAtY = (rand() % 3) - 1;
@@ -517,44 +518,52 @@ void GenericRobot::actionFire (Battlefield* battlefield)
     int targetY = getPosY() + shootAtY;
 
     if (battlefield->isPositionValid(targetX, targetY)) {
-
         Robot* target = battlefield->getRobotAt(targetX, targetY);
 
         if (target != nullptr && target != this) {
+            // 70% chance to hit
+            if (rand() % 100 < 70) {
 
-            GenericRobot* enemy = dynamic_cast<GenericRobot*>(target);
+                // Reduce target's lives
+                target->setLives(target->getLives() - 1);
+                battlefield->removeRobot(target);
+                battlefield->queueForRespawn(target);
 
-            // a 30% chance of missing the shoot
-            if (enemy != nullptr && rand() % 100 < 70) {
-
-                // Enemy loses life
-                enemy->setLives(getLives() - 1);
-
-                // This robot gains kill
                 incrementKills();
+                cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
 
-                cout << getId() << " fired at " << enemy->getId() << " (" << targetX << "," << targetY << ")" << endl;
+                // Check if target was destroyed
+                if (target->getLives() <= 0) {
+                    cout << target->getId() << " was destroyed!" << endl;
+                    battlefield->destroyRobot(target); // Battlefield handles destruction
+                }
             }
-            else{
-                cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+            else {
+                cout << getId() << " missed " << target->getId() << " at ("
+                     << targetX << "," << targetY << ")" << endl;
             }
         }
         else {
-            cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+            cout << getId() << " fired at empty space ("
+                 << targetX << "," << targetY << ")" << endl;
         }
     }
     else {
         cout << getId() << " fired at a wall..." << endl;
     }
 
+    // Handle ammo and self-destruction
     shellsRemaining--;
 
-    if (shellsRemaining <= 0){
-        selfDestruct();
+    if (shellsRemaining <= 0) {
+        cout << getId() << " is out of ammo and self-destructs!" << endl;
+        battlefield->removeRobot(this);
+        battlefield->queueForRespawn(this);
+        // Use the robot's own selfDestruct method
+
     }
 }
-void GenericRobot::actionMove(Battlefield* battlefield)
-{
+void GenericRobot::actionMove(Battlefield* battlefield) {
     cout << "GenericRobot actionMove" << endl;
 
     vector<int> validMoves;
@@ -599,8 +608,8 @@ int main()
     int turnNumber = 1;
     vector<Robot*>& robots = b.getRobots();
 
-    // Loop through robots in cycles until totalTurns is reached
-    while (turnNumber <= b.getTotalTurns()) {
+    // Loop through robots in cycles until totalTurns is reached or Last robot standing
+    while (turnNumber <= b.getTotalTurns() && robots.size() > 1) {
         for (Robot* robot : robots) {
             if (turnNumber > b.getTotalTurns()) break;
 
@@ -612,6 +621,7 @@ int main()
             cout << endl;
 
             // Re-display battlefield after robot acts
+            b.respawnRobots();
             b.placeRobots();             // Re-update positions on the grid
             b.displayBattleField();      // Show updated battlefield
 
