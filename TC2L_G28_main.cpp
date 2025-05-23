@@ -775,53 +775,50 @@ void GenericRobot::actionLook (Battlefield* battlefield) {
 void GenericRobot::actionFire(Battlefield* battlefield) {
     cout << "GenericRobot actionFire" << endl;
 
-    // Generate random direction to shoot at (excluding current position)
-    int shootAtX, shootAtY;
+    // Generate random direction to shot at (excluding current position)
+    int shotAtX, shotAtY;
+
     do {
-        shootAtX = (rand() % 3) - 1; // -1, 0, or 1
-        shootAtY = (rand() % 3) - 1;
-    } while (shootAtX == 0 && shootAtY == 0);
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(shotAtX, shotAtY));
 
-    int targetX = getPosX() + shootAtX;
-    int targetY = getPosY() + shootAtY;
 
-    if (battlefield->isPositionValid(targetX, targetY)) {
-        Robot* target = battlefield->getRobotAt(targetX, targetY);
+    int targetX = getPosX() + shotAtX;
+    int targetY = getPosY() + shotAtY;
 
-        if (target != nullptr && target != this) {
-            // 70% chance to hit
-            if (rand() % 100 < 70) {
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
 
-                // Reduce target's lives
-                target->reduceLife();
-                battlefield->removeRobot(target);
+    if (target != nullptr && target != this) {
 
-                // Check if target was destroyed
-                if (target->getLives() >= 1) {
-                    battlefield->queueForRespawn(target); // The target enter waiting robot queue
-                }
-                else {
-                    cout << target->getId() << " was destroyed!" << endl;
-                    battlefield->destroyRobot(target); // Battlefield handles destruction
-                }
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
 
-                incrementKills();
-                battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
-                cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
             }
             else {
-                cout << getId() << " missed " << target->getId() << " at ("
-                     << targetX << "," << targetY << ")" << endl;
+                cout << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
             }
+
+            incrementKills();
+            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
         }
         else {
-            cout << getId() << " fired at empty space ("
-                 << targetX << "," << targetY << ")" << endl;
+            cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            }
         }
-    }
-    else {
-        cout << getId() << " fired at a wall..." << endl;
-    }
+
+        else {
+            cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
 
     // Handle ammo and self-destruction
     shellsRemaining--;
@@ -838,7 +835,6 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
         else {
             cout << this->getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
-
         }
     }
 }
