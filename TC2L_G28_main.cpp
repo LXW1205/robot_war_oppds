@@ -807,7 +807,7 @@ void GenericRobot::actionLook (Battlefield* battlefield) {
         int moveX = getPosX() + dx[directionCheckMoves];
         int moveY = getPosY() + dy[directionCheckMoves];
         canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
-        }
+    }
 
     cout<<"GenericRobot actionLook" << endl;
 
@@ -832,20 +832,8 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
 
     if (target != nullptr && target != this) {
 
-<<<<<<< HEAD
-                // Check if target was destroyed
-                if (target->getLives() >= 1) {
-                    battlefield->queueForRespawn(target); // The target enter waiting robot queue
-                }
-                else {
-                    cout << target->getId() << " is out of lives! " << target->getId() << " was destroyed!" << endl;
-                    battlefield->destroyRobot(target); // Battlefield handles destruction
-                }
-=======
         // 70% chance to hit
         if (rand() % 100 < 70) {
->>>>>>> 6ece5447d5a468a80cd5a399051218422bbeecc6
-
             // Reduce target's lives
             target->reduceLife();
             battlefield->removeRobot(target);
@@ -855,7 +843,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
                 battlefield->queueForRespawn(target); // The target enter waiting robot queue
             }
             else {
-                cout << target->getId() << " was destroyed!" << endl;
+                cout << target->getId() << " is out of lives! " << target->getId() << " was destroyed!" << endl;
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
