@@ -258,6 +258,7 @@ private:
     int currentTurn = 0;           // Current turn number
 
     int numOfRobots = -1; // Number of robots
+    int currentRobotIndex = 0;
 
     vector<Robot*> robots;
     queue<Robot*> destroyedRobots;
@@ -478,7 +479,6 @@ public:
     }
 
     // Get robot position
-
     Robot* getRobotAt(int x, int y) const {
         if (!isPositionValid(x, y)) return nullptr;
 
@@ -493,6 +493,7 @@ public:
     void queueForRespawn(Robot* robot) {
         robot->setEntryTurn(currentTurn);
         waitingRobots.push(robot);
+        cout << robot->getId() << " is enter the queue waiting robot..." << endl;
     }
 
     // Remove Robot from it's position
@@ -506,6 +507,7 @@ public:
             if (*it == robot) {
                 destroyedRobots.push(*it);
                 robot->getIsDestroyed() == true;
+                cout << robot->getId() << " is enter the queue destroyed robot..." << endl;
                 break;  // important: exit loop after erasing
             }
         }
@@ -529,6 +531,8 @@ public:
                 robot->setPosX(newX);
                 robot->setPosY(newY);
                 battlefield[newY][newX] = robot->getId();
+                cout << robot->getId() << " is re-enter the battlefield at the position ("
+                     << robot->getPosX() << ", " << robot->getPosY() << ")" << endl;
 
                 robot->setEntryTurn(-1); // Mark as no longer queued
                 robot->setIsDestroyed(false);
@@ -537,6 +541,43 @@ public:
             {
                 break;
             }
+        }
+    }
+
+    // Control the turn of the Simulation
+    void turnBased()
+    {
+        // Loop through robots in cycles until totalTurns is reached or Last robot standing
+        while (currentTurn < totalTurns && robots.size() > 1) {
+            currentTurn++;
+            cout << "\nTurn " << currentTurn << ":" << endl;
+
+            respawnRobots();
+            placeRobots();
+
+            // To select next active robot
+            Robot* currentRobot = nullptr;
+            for (int i = 0; i < robots.size(); ++i) {
+                Robot* player = robots[(currentRobotIndex + i) % robots.size()]; // [%robots.size()] => If the robot's index reached the robots's size, it wraps it back to 0
+                // To ensure the robot is still inside the battlefield and no longer inside the waiting queue
+                if (player->isAlive() && player->getEntryTurn() == -1) {
+                    currentRobot = player;
+                    currentRobotIndex = (currentRobotIndex + i + 1) % robots.size(); // increment of currentRobotIndex
+                break;
+                }
+            }
+
+            if (currentRobot) {
+                cout << currentRobot->getId() << " at (" << currentRobot->getPosX() << ", " << currentRobot->getPosY() << ") actions:" << endl;
+                currentRobot->actions(this);
+            }
+            cout << endl;
+
+            // Re-display battlefield after robot acts
+            placeRobots();             // Re-update positions on the grid
+            displayBattleField();      // Show updated battlefield
+
+            cout << endl;
         }
     }
 
@@ -801,7 +842,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
                     battlefield->queueForRespawn(target); // The target enter waiting robot queue
                 }
                 else {
-                    cout << target->getId() << " was destroyed!" << endl;
+                    cout << target->getId() << " is out of lives! " << target->getId() << " was destroyed!" << endl;
                     battlefield->destroyRobot(target); // Battlefield handles destruction
                 }
 
@@ -836,9 +877,8 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
             battlefield->queueForRespawn(this);
         }
         else {
-            cout << this->getId() << " was destroyed!" << endl;
+            cout << getId() << " is out of lives! " << getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
-
         }
     }
 }
@@ -883,43 +923,7 @@ int main()
     b.readInputFile("inputFile1.txt");
     b.placeRobots();
     b.displayBattleField();
-
-    vector<Robot*>& robots = b.getRobots();
-    int currentRobotIndex = 0;
-
-    // Loop through robots in cycles until totalTurns is reached or Last robot standing
-    while (b.getCurrentTurn() < b.getTotalTurns() && robots.size() > 1) {
-        b.setCurrentTurn(b.getCurrentTurn() + 1);
-        cout << "\nTurn " << b.getCurrentTurn() << ":" << endl;
-
-        b.respawnRobots();
-        b.placeRobots();
-
-        // To select next active robot
-        Robot* currentRobot = nullptr;
-        for (int i = 0; i < robots.size(); ++i) {
-            Robot* player = robots[(currentRobotIndex + i) % robots.size()]; // [%robots.size()] => If the robot's index reached the robots's size, it wraps it back to 0
-            // To ensure the robot is still inside the battlefield and no longer inside the waiting queue
-            if (player->isAlive() && player->getEntryTurn() == -1) {
-                currentRobot = player;
-                currentRobotIndex = (currentRobotIndex + i + 1) % robots.size(); // increment of currentRobotIndex
-                break;
-            }
-        }
-
-        if (currentRobot) {
-            cout << currentRobot->getId() << " at (" << currentRobot->getPosX() << ", " << currentRobot->getPosY() << ") actions:" << endl;
-            currentRobot->actions(&b);
-        }
-        cout << endl;
-
-        // Re-display battlefield after robot acts
-        b.placeRobots();             // Re-update positions on the grid
-        b.displayBattleField();      // Show updated battlefield
-
-
-        cout << endl;
-    }
+    b.turnBased();
 
     b.getTotalTurns();
     return 0;
