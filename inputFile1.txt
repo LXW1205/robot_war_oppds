@@ -1,9 +1,9 @@
-M by N: 40 50
-turns: 300
+M by N: 10 12
+turns: 50
 robots: 5
 
 GenericRobot GR01_Kidd 3 6
-GenericRobot GR02_Jet 12 1
-GenericRobot GR03_Alpha 35 20
-GenericRobot GR04_Beta 20 37
+GenericRobot GR02_Jet 9 1
+GenericRobot GR03_Alpha 5 4
+GenericRobot GR04_Beta 0 8
 GenericRobot GR05_Star random random

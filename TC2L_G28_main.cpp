@@ -38,6 +38,7 @@ protected:
 
     int numberOfLives = 3; // Initial value
     int numberOfKills = 0; // Initial value
+    int queueEntryTurn = -1; // All the robots not in the queue at the beginning
 
 public:
     // Parameterized Constructor(PC)
@@ -73,6 +74,10 @@ public:
     // Getter and Setter for numberOfKills
     int getKills() const { return numberOfKills; }
     void setKills(int kills) { numberOfKills = kills; }
+
+    // Getter and Setter for queueEntryTurn
+    int getEntryTurn() const { return queueEntryTurn; }
+    void setEntryTurn(int entry) { queueEntryTurn = entry; }
 
     // Reduce life when getting shoot or selfDestruct
     void reduceLife() {
@@ -247,13 +252,24 @@ public:
     {
         return totalTurns;
     }
+    int getCurrentTurn()
+    {
+        return currentTurn;
+    }
     int getNumOfRobots ()
     {
         return numOfRobots;
     }
     vector<Robot*>& getRobots() {
-    return robots;
-}
+        return robots;
+    }
+
+    // Setter Function
+    void setCurrentTurn(int turn)
+    {
+        currentTurn = turn;
+    }
+
     // Read input file to initialize battlefield and robots
     void readInputFile(string fileInputName)
     {
@@ -304,7 +320,7 @@ public:
                 string type, idName, posX, posY;
                 int x, y;
 
-                robotInfoStream >> type >> idName >> posY >> posX;
+                robotInfoStream >> type >> idName >> posX >> posY;
 
                 // Get the id of the robot
                 string id = idName.substr(0, idName.find("_"));
@@ -363,9 +379,9 @@ public:
         // To place the robot position
         for (int i = 0; i < robots.size(); ++i)
         {
-            if (robots[i]->getPosX() < battlefield.size() && robots[i]->getPosY() < battlefield[0].size())
+            if (robots[i]->getPosY() < battlefield.size() && robots[i]->getPosX() < battlefield[0].size())
             {
-                battlefield[robots[i]->getPosX()][robots[i]->getPosY()] = robots[i]->getId();
+                battlefield[robots[i]->getPosY()][robots[i]->getPosX()] = robots[i]->getId();
             }
             else
             {
@@ -421,20 +437,20 @@ public:
 
     // Check if position is valid
     bool isPositionValid(int x, int y) const {
-        return x >= 0 && x < BATTLEFIELD_NUM_OF_ROWS && y >= 0 && y < BATTLEFIELD_NUM_OF_COLS && battlefield[x][y].empty();
+        return x >= 0 && x < BATTLEFIELD_NUM_OF_COLS && y >= 0 && y < BATTLEFIELD_NUM_OF_ROWS && battlefield[y][x].empty();
     }
 
     // Check if position is empty
     bool isPositionEmpty(int x, int y) const {
         return isPositionValid(x, y) &&
-               battlefield[x][y].empty();
+               battlefield[y][x].empty();
     }
 
     // Get robot position
     Robot* getRobotAt(int x, int y) const {
         if (!isPositionValid(x, y)) return nullptr;
 
-        const string& id = battlefield[x][y];
+        const string& id = battlefield[y][x];
         for (Robot* robot : robots) {
             if (robot->getId() == id) return robot;
         }
@@ -443,13 +459,15 @@ public:
 
     // queue the robots that died in the previous round
     void queueForRespawn(Robot* robot) {
-    waitingRobots.push(robot);
+        robot->setEntryTurn(currentTurn);
+        waitingRobots.push(robot);
+        removeRobot(robot);
     }
 
     // Remove Robot from it's position
     void removeRobot(Robot* robot) {
-        if (isPositionValid(robot->getPosX(), robot->getPosY())) {
-            battlefield[robot->getPosX()][robot->getPosY()].clear();
+        if (robot->getPosX() >= 0 && robot->getPosY() >= 0) {
+            battlefield[robot->getPosY()][robot->getPosX()].clear();
         }
     }
 
@@ -470,21 +488,30 @@ public:
     void respawnRobots() {
         while (!waitingRobots.empty()) {
             Robot* robot = waitingRobots.front();
-            waitingRobots.pop();
 
-            // Find empty position
-            int newX, newY;
-            do {
-                newX = rand() % BATTLEFIELD_NUM_OF_ROWS;
-                newY = rand() % BATTLEFIELD_NUM_OF_COLS;
-            } while (!isPositionEmpty(newX, newY));
+            if (currentTurn - robot->getEntryTurn() >= 2)
+            {
+                waitingRobots.pop();
 
-            robot->setPosX(newX);
-            robot->setPosY(newY);
-            battlefield[newX][newY] = robot->getId();
+                // Find empty position
+                int newX, newY;
+                do {
+                    newX = rand() % BATTLEFIELD_NUM_OF_COLS;
+                    newY = rand() % BATTLEFIELD_NUM_OF_ROWS;
+                } while (!isPositionEmpty(newX, newY));
+
+                robot->setPosX(newX);
+                robot->setPosY(newY);
+                battlefield[newY][newX] = robot->getId();
+
+                robot->setEntryTurn(-1); // Mark as no longer queued
+            }
+            else
+            {
+                break;
+            }
+        }
     }
-}
-
 };
 
 void GenericRobot::actionThink (Battlefield* battlefield) {
@@ -535,16 +562,18 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
                 // Reduce target's lives
                 target->reduceLife();
                 battlefield->removeRobot(target);
-                battlefield->queueForRespawn(target);
-
-                incrementKills();
-                cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
 
                 // Check if target was destroyed
-                if (target->getLives() <= 0) {
+                if (target->getLives() >= 1) {
+                    battlefield->queueForRespawn(target); // The target enter waiting robot queue
+                }
+                else {
                     cout << target->getId() << " was destroyed!" << endl;
                     battlefield->destroyRobot(target); // Battlefield handles destruction
                 }
+
+                incrementKills();
+                cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             }
             else {
                 cout << getId() << " missed " << target->getId() << " at ("
@@ -567,9 +596,13 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
         cout << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
-        battlefield->queueForRespawn(this);
-        // Use the robot's own selfDestruct method
-
+        if (this->getLives() >= 1) {
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            cout << this->getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
     }
 }
 void GenericRobot::actionMove(Battlefield* battlefield) {
@@ -614,28 +647,39 @@ int main()
     b.placeRobots();
     b.displayBattleField();
 
-    int turnNumber = 1;
     vector<Robot*>& robots = b.getRobots();
+    int currentRobotIndex = 0;
 
     // Loop through robots in cycles until totalTurns is reached or Last robot standing
-    while (turnNumber <= b.getTotalTurns() && robots.size() > 1) {
-        for (Robot* robot : robots) {
-            if (turnNumber > b.getTotalTurns()) break;
+    while (b.getCurrentTurn() < b.getTotalTurns() && robots.size() > 1) {
+        b.setCurrentTurn(b.getCurrentTurn() + 1);
+        cout << "\nTurn " << b.getCurrentTurn() << ":" << endl;
 
-            cout << "\nTurn " << turnNumber << ":" << endl;
-            cout << robot->getId() << " at (" << robot->getPosX() << ", " << robot->getPosY() << ") actions:" << endl;
+        b.respawnRobots();
+        b.placeRobots();
 
-            robot->actions(&b);
-
-            cout << endl;
-
-            // Re-display battlefield after robot acts
-            b.respawnRobots();
-            b.placeRobots();             // Re-update positions on the grid
-            b.displayBattleField();      // Show updated battlefield
-
-            ++turnNumber;
+        // To select next active robot
+        Robot* currentRobot = nullptr;
+        for (int i = 0; i < robots.size(); ++i) {
+            Robot* player = robots[(currentRobotIndex + i) % robots.size()]; // [%robots.size()] => If the robot's index reached the robots's size, it wraps it back to 0
+            // To ensure the robot is still inside the battlefield and no longer inside the waiting queue
+            if (player->isAlive() && player->getEntryTurn() == -1) {
+                currentRobot = player;
+                currentRobotIndex = (currentRobotIndex + i + 1) % robots.size(); // increment of currentRobotIndex
+                break;
+            }
         }
+
+        if (currentRobot) {
+            cout << currentRobot->getId() << " at (" << currentRobot->getPosX() << ", " << currentRobot->getPosY() << ") actions:" << endl;
+            currentRobot->actions(&b);
+        }
+        cout << endl;
+
+        // Re-display battlefield after robot acts
+        //b.placeRobots();             // Re-update positions on the grid
+        b.displayBattleField();      // Show updated battlefield
+
         cout << endl;
     }
 
