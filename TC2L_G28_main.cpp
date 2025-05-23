@@ -40,6 +40,7 @@ protected:
     int numberOfKills = 0; // Initial value
     int queueEntryTurn = -1; // All the robots not in the queue at the beginning
 
+    bool isDestroyed = false;
 public:
     // Parameterized Constructor(PC)
     Robot(string id, int posX, int posY) : robotId(id), robotPositionX(posX), robotPositionY(posY) {}
@@ -79,10 +80,13 @@ public:
     int getEntryTurn() const { return queueEntryTurn; }
     void setEntryTurn(int entry) { queueEntryTurn = entry; }
 
+    //// Getter and Setter for isDestroyed
+    bool getIsDestroyed() const {return isDestroyed;}
+    void setIsDestroyed( bool destroyed) {isDestroyed = destroyed;}
+
     // Reduce life when getting shoot or selfDestruct
-    void reduceLife() {
-        setLives(getLives() - 1);
-    }
+    void reduceLife() {setLives(getLives() - 1);}
+
 
     // selfDestruct when ran out of shells(ammo)
     void selfDestruct() {
@@ -379,14 +383,19 @@ public:
         // To place the robot position
         for (int i = 0; i < robots.size(); ++i)
         {
-            if (robots[i]->getPosY() < battlefield.size() && robots[i]->getPosX() < battlefield[0].size())
+            //check if the robot is still alive
+            if (robots[i]->getIsDestroyed() == false )
             {
-                battlefield[robots[i]->getPosY()][robots[i]->getPosX()] = robots[i]->getId();
-            }
-            else
-            {
-                cerr << "Error message: Invalid location for the robot" << robots[i]->getId() << endl;
-                exit(1);
+                // check position
+                if (robots[i]->getPosY() < battlefield.size() && robots[i]->getPosX() < battlefield[0].size())
+                {
+                    battlefield[robots[i]->getPosY()][robots[i]->getPosX()] = robots[i]->getId();
+                }
+                else
+                {
+                    cerr << "Error message: Invalid location for the robot" << robots[i]->getId() << endl;
+                    exit(1);
+                }
             }
         }
     }
@@ -447,6 +456,7 @@ public:
     }
 
     // Get robot position
+
     Robot* getRobotAt(int x, int y) const {
         if (!isPositionValid(x, y)) return nullptr;
 
@@ -466,9 +476,8 @@ public:
 
     // Remove Robot from it's position
     void removeRobot(Robot* robot) {
-        if (robot->getPosX() >= 0 && robot->getPosY() >= 0) {
-            battlefield[robot->getPosY()][robot->getPosX()].clear();
-        }
+        robot->setIsDestroyed(true);
+
     }
 
     // Permanently destroy robot because of no more lives
@@ -478,12 +487,11 @@ public:
         for (auto it = robots.begin(); it != robots.end(); ++it) {
             if (*it == robot) {
                 destroyedRobots.push(*it);
-                robots.erase(it);
+                robot->getIsDestroyed() == true;
                 break;  // important: exit loop after erasing
             }
         }
     }
-
     // respawn / let robots re-enter the bf
     void respawnRobots() {
         while (!waitingRobots.empty()) {
@@ -505,6 +513,7 @@ public:
                 battlefield[newY][newX] = robot->getId();
 
                 robot->setEntryTurn(-1); // Mark as no longer queued
+                robot->setIsDestroyed(false);
             }
             else
             {
@@ -596,12 +605,15 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
         cout << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
+
         if (this->getLives() >= 1) {
+
             battlefield->queueForRespawn(this);
         }
         else {
             cout << this->getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+
         }
     }
 }
@@ -677,11 +689,13 @@ int main()
         cout << endl;
 
         // Re-display battlefield after robot acts
-        //b.placeRobots();             // Re-update positions on the grid
+        b.placeRobots();             // Re-update positions on the grid
         b.displayBattleField();      // Show updated battlefield
+
 
         cout << endl;
     }
 
+    b.getTotalTurns();
     return 0;
 }
