@@ -41,6 +41,12 @@ protected:
     int queueEntryTurn = -1; // All the robots not in the queue at the beginning
 
     bool isDestroyed = false;
+
+    bool upgradedMoving = 0;
+    bool upgradedShooting = 0;
+    bool upgradedSeeing = 0;
+
+    int numUpgrade = 0;
 public:
     // Parameterized Constructor(PC)
     Robot(string id, int posX, int posY) : robotId(id), robotPositionX(posX), robotPositionY(posY) {}
@@ -80,9 +86,25 @@ public:
     int getEntryTurn() const { return queueEntryTurn; }
     void setEntryTurn(int entry) { queueEntryTurn = entry; }
 
-    //// Getter and Setter for isDestroyed
+    //Getter and Setter for isDestroyed
     bool getIsDestroyed() const {return isDestroyed;}
     void setIsDestroyed( bool destroyed) {isDestroyed = destroyed;}
+
+    //Getter and Setter for upgradedMoving
+    bool getUpgradedMoving () const {return upgradedMoving;}
+    void setUpgradedMoving (bool moving) {upgradedMoving=moving;}
+
+    //Getter and Setter for upgradedShooting
+    bool getUpgradedShooting () const {return upgradedShooting;}
+    void setUpgradedShooting (bool shooting) {upgradedShooting=shooting;}
+
+    //Getter and Setter for upgradedSeeing
+    bool getUpgradedSeeing () const {return upgradedSeeing;}
+    void setUpgradedSeeing (bool seeing) {upgradedSeeing=seeing;}
+
+    //Getter and Setter for numUpgrade
+    int getNumUpgrade() const {return numUpgrade;}
+    void setNumUpgrade (int numUp) {numUpgrade=numUp;}
 
     // Reduce life when getting shoot or selfDestruct
     void reduceLife() {setLives(getLives() - 1);}
@@ -471,14 +493,10 @@ public:
     void queueForRespawn(Robot* robot) {
         robot->setEntryTurn(currentTurn);
         waitingRobots.push(robot);
-        removeRobot(robot);
     }
 
     // Remove Robot from it's position
-    void removeRobot(Robot* robot) {
-        robot->setIsDestroyed(true);
-
-    }
+    void removeRobot(Robot* robot) {robot->setIsDestroyed(true);}
 
     // Permanently destroy robot because of no more lives
     void destroyRobot(Robot* robot) {
@@ -521,6 +539,212 @@ public:
             }
         }
     }
+
+    // Upgrade robot after the robot get kills
+    void upgrade(string upgradeType, Robot* robot)
+    {
+        Robot* temp = nullptr;
+        Robot* newRobot = nullptr;
+
+        // Get the id Number of the robot
+        string id = robot->getId();
+        id = id.substr(2,2);
+
+        // Get the current position of the robot
+        int x = robot->getPosX();
+        int y = robot->getPosY();
+
+        // Moving Robot
+        if (upgradeType == "HideBot")
+        {
+            id = "HB" + id;
+            //newRobot = new HideBot(id, x ,y);
+        }
+        else if (upgradeType == "JumpBot")
+        {
+            id = "JB" + id;
+            //newRobot = new JumpBot(id, x ,y);
+        }
+        else if (upgradeType == "NewMoveBot")
+        {
+            id = "MB" + id; // x
+            //newRobot = new NewMoveBot(id, x ,y);
+        }
+
+        // Shooting robot
+        else if (upgradeType == "LongShotBot")
+        {
+             id = "LB" + id;
+            //newRobot = new LongShotBot(id, x ,y);
+        }
+        else if (upgradeType == "SemiAutoBot")
+        {
+            id = "SA" + id;
+            //newRobot = new SemiAutoBot(id, x ,y);
+        }
+        else if (upgradeType == "ThirthyShotBot")
+        {
+            id = "TS" + id;
+            //newRobot = new ThirthyShotBot(id, x ,y);
+        }
+        else if (upgradeType == "NewShootBot")
+        {
+            id = "SB" + id; // x
+            //newRobot = new NewShootBot(id, x ,y);
+        }
+
+        // Seeing robot
+        else if (upgradeType == "ScoutBot")
+        {
+            id = "SB" + id;
+            //newRobot = new ScoutBot(id, x ,y);
+        }
+        else if (upgradeType == "TrackBot")
+        {
+            id = "TB" + id;
+            //newRobot = new TrackBot(id, x ,y);
+        }
+        else if (upgradeType == "NewSeeBot")
+        {
+            id = "NSB" + id; // x
+            //newRobot = new NewSeeBot(id, x ,y);
+        }
+
+        newRobot->setName(robot->getName());
+        newRobot->setType(upgradeType);
+
+        cout << robot->getName() << "upgrade from " << robot->getType() << " " <<robot->getId() << " to " << upgradeType << " " << id <<endl;
+
+        for (int i = 0; i < robots.size(); ++i)
+        {
+            if (robots[i]->getId()==robot->getId())
+            {
+                temp = robots[i];
+                robots[i] = newRobot;
+                newRobot = temp;
+                break;
+            }
+        }
+
+        // Remove the old robot
+        delete newRobot;
+        delete temp;
+    }
+
+
+    void upgradeMovingRobot (Robot* robot)
+    {
+        robot->setUpgradedMoving(1);
+        string upgradeType;
+        int randomNumber = rand() % 3;
+
+        if (rand() == 0)
+            upgradeType = "HideBot";
+        else if (rand() == 1)
+            upgradeType = "JumpBot";
+        else if (rand() == 2)
+            upgradeType = "NewMoveBot";
+
+        upgrade(upgradeType, robot);
+    }
+
+    void upgradeShootingRobot (Robot* robot)
+    {
+        robot->setUpgradedShooting(1);
+        string upgradeType;
+        int randomNumber = rand() % 4;
+
+        if (rand() == 0)
+            upgradeType = "LongShotBot";
+        else if (rand() == 1)
+            upgradeType = "SemiAutoBot";
+        else if (rand() == 2)
+            upgradeType = "ThirthyShotBot";
+        else if (rand() == 3)
+            upgradeType = "NewShootBot";
+
+        upgrade(upgradeType, robot);
+    }
+
+    void upgradeSeeingRobot (Robot* robot)
+    {
+        robot->setUpgradedSeeing(1);
+        string upgradeType;
+        int randomNumber = rand() % 3;
+
+        if (rand() == 0)
+            upgradeType = "ScoutBot";
+        else if (rand() == 1)
+            upgradeType = "TrackBot";
+        else if (rand() == 2)
+            upgradeType = "NewSeeBot";
+
+        upgrade(upgradeType, robot);
+    }
+
+
+    void decideUpgradeType (Robot* robot)
+    {
+        int randomNumber = 0;
+        robot->setNumUpgrade(robot->getNumUpgrade()+1);
+
+        // first upgrade
+        if (robot->getNumUpgrade() == 1)
+        {
+            randomNumber = rand() % 3;
+
+            if (randomNumber == 0)
+                upgradeMovingRobot(robot);
+            else if (randomNumber == 1)
+                upgradeShootingRobot(robot);
+            else if (randomNumber == 2)
+                upgradeSeeingRobot(robot);
+        }
+
+        // second upgrade
+        else if (robot->getNumUpgrade() == 2)
+        {
+            randomNumber = rand() % 2;
+
+            if (!robot->getUpgradedMoving()&& !robot->getUpgradedShooting())
+            {
+                if (randomNumber == 0)
+                    upgradeMovingRobot(robot);
+                else if (randomNumber == 1)
+                    upgradeShootingRobot(robot);
+            }
+            else if (!robot->getUpgradedMoving() && !robot->getUpgradedSeeing())
+            {
+                if (randomNumber == 0)
+                    upgradeMovingRobot(robot);
+                else if (randomNumber == 1)
+                    upgradeSeeingRobot(robot);
+            }
+            else if (!robot->getUpgradedShooting()&& !robot->getUpgradedSeeing())
+            {
+                if (randomNumber == 0)
+                    upgradeShootingRobot(robot);
+                else if (randomNumber == 1)
+                    upgradeSeeingRobot(robot);
+            }
+        }
+
+        // third upgrade
+        else if (robot->getNumUpgrade() == 3)
+        {
+            if (!robot->getUpgradedMoving())
+                upgradeMovingRobot(robot);
+            else if (!robot->getUpgradedSeeing())
+                upgradeSeeingRobot(robot);
+            else if (!robot->getUpgradedShooting())
+                upgradeShootingRobot(robot);
+        }
+        else
+        {
+            cout << "Robot " << robot->getId() << " cannot ugrade anymore!" << endl;
+        }
+    }
+
 };
 
 void GenericRobot::actionThink (Battlefield* battlefield) {
@@ -582,6 +806,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
                 }
 
                 incrementKills();
+                battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
                 cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             }
             else {
