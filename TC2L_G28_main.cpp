@@ -121,6 +121,13 @@ public:
     // Check if the robot still have lives
     bool isAlive() const {return numberOfLives > 0;}
 
+    // Overloading the << operator for Robot class
+    friend ostream& operator<<(ostream &COUT, const Robot& r)
+    {
+        COUT << r.robotId << " at (" << r.robotPositionX << ", " << r.robotPositionY << ") actions:" << endl;
+        return COUT;
+    }
+
     // Pure Virtual Functions
     virtual void setRobotLocation(int posX, int posY) = 0;
     virtual void actions(Battlefield* battlefield) = 0;
@@ -568,7 +575,7 @@ public:
             }
 
             if (currentRobot) {
-                cout << currentRobot->getId() << " at (" << currentRobot->getPosX() << ", " << currentRobot->getPosY() << ") actions:" << endl;
+                cout << *currentRobot;
                 currentRobot->actions(this);
             }
             cout << endl;
