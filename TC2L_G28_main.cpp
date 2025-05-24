@@ -121,10 +121,17 @@ public:
     // Check if the robot still have lives
     bool isAlive() const {return numberOfLives > 0;}
 
+    // To reset the bullet shells
+    virtual void resetShells() {}
+
     // Overloading the << operator for Robot class
     friend ostream& operator<<(ostream &COUT, const Robot& r)
     {
-        COUT << r.robotId << " at (" << r.robotPositionX << ", " << r.robotPositionY << ") actions:" << endl;
+        COUT << r.robotType << " " << r.robotId << ", " << r.robotName << " turns" << endl
+        << r.robotId << "'s lives remaining: " << r.numberOfLives << endl
+        << r.robotId << "'s kills: " << r.numberOfKills << endl
+        << r.robotId << "'s no.of Upgrades: " << r.numUpgrade << endl << endl
+        << r.robotId << " at (" << r.robotPositionX << ", " << r.robotPositionY << ") actions:" << endl;
         return COUT;
     }
 
@@ -214,6 +221,9 @@ public:
 
     virtual ~GenericRobot() {}
 
+    // Function override
+    void resetShells() override { shellsRemaining = 10; }
+
     virtual void setRobotLocation(int x, int y)
     {
         robotPositionX = x;
@@ -227,7 +237,7 @@ public:
 
     virtual void actions (Battlefield* battlefield)
     {
-        int randomInt = 0;
+        int randomInt = rand();
 
         if( randomInt % 2 == 0)
         {
@@ -274,23 +284,23 @@ private:
     vector<vector<string>> battlefield; // 2D vector representing the battlefield
 public:
     // Getter functions
-    int getBATTLEFIELD_NUM_OF_COLS()
+    int getBATTLEFIELD_NUM_OF_COLS() const
     {
         return BATTLEFIELD_NUM_OF_COLS;
     }
-    int getBATTLEFIELD_NUM_OF_ROWS ()
+    int getBATTLEFIELD_NUM_OF_ROWS () const
     {
         return BATTLEFIELD_NUM_OF_ROWS;
     }
-    int getTotalTurns()
+    int getTotalTurns() const
     {
         return totalTurns;
     }
-    int getCurrentTurn()
+    int getCurrentTurn() const
     {
         return currentTurn;
     }
-    int getNumOfRobots ()
+    int getNumOfRobots () const
     {
         return numOfRobots;
     }
@@ -476,7 +486,7 @@ public:
 
     // Check if position is valid
     bool isPositionValid(int x, int y) const {
-        return x >= 0 && x < BATTLEFIELD_NUM_OF_COLS && y >= 0 && y < BATTLEFIELD_NUM_OF_ROWS && battlefield[y][x].empty();
+        return x >= 0 && x < BATTLEFIELD_NUM_OF_COLS && y >= 0 && y < BATTLEFIELD_NUM_OF_ROWS;
     }
 
     // Check if position is empty
@@ -511,17 +521,17 @@ public:
 
     // Permanently destroy robot because of no more lives
     void destroyRobot(Robot* robot) {
-        removeRobot(robot);
+        //removeRobot(robot);
 
         for (auto it = robots.begin(); it != robots.end(); ++it) {
             if (*it == robot) {
                 destroyedRobots.push(*it);
                 robot->getIsDestroyed() == true;
-                cout << robot->getId() << ", " << robots[0]->getName() << " is out of lives!!" << endl;
                 cout << robot->getId() << " is enter the queue destroyed robot..." << endl;
                 break;  // important: exit loop after erasing
             }
         }
+        numOfRobots--;
     }
     // respawn / let robots re-enter the bf
     void respawnRobots() {
@@ -542,6 +552,7 @@ public:
                 robot->setPosX(newX);
                 robot->setPosY(newY);
                 battlefield[newY][newX] = robot->getId();
+                robot->resetShells();
                 cout << robot->getId() << " is re-enter the battlefield at the position ("
                      << robot->getPosX() << ", " << robot->getPosY() << ")" << endl;
 
@@ -592,10 +603,12 @@ public:
         }
 
         // Game over simulation check
-        if (robots.size() == 1) // If there is one robot left inside the battlefield
+        if (robots.size() == 1 && numOfRobots == 1) // If there is one robot left inside the battlefield
             cout << robots[0]->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
         else {
-            cout << "--GAME OVER-- Maximum turns(" << totalTurns << ") reached!!" << endl;
+            cout << "--GAME OVER-- Maximum turns(" << totalTurns << ") reached!!" << endl
+            << "Robots remaining: " << numOfRobots << endl;
+
         }
     }
 
@@ -812,12 +825,19 @@ void GenericRobot::actionThink (Battlefield* battlefield) {
     cout << getId() << " is thinking..." << endl;
 }
 void GenericRobot::actionLook (Battlefield* battlefield) {
+    cout<<"GenericRobot actionLook" << endl;
+
+    cout << getId() << " is looking around..." << endl;
 
     // Check all 8 direction for enemies
     for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
         int lookX = getPosX() + dx[directionCheckEnemy];
         int lookY = getPosY() + dy[directionCheckEnemy];
         hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+        if (hasEnemy[directionCheckEnemy] == true)
+            cout << getId() << " saw " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
     }
 
     // Check all 9 movement options
@@ -826,10 +846,6 @@ void GenericRobot::actionLook (Battlefield* battlefield) {
         int moveY = getPosY() + dy[directionCheckMoves];
         canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
     }
-
-    cout<<"GenericRobot actionLook" << endl;
-
-    cout << getId() << " is looking around..." << endl;
 }
 void GenericRobot::actionFire(Battlefield* battlefield) {
     cout << "GenericRobot actionFire" << endl;
@@ -852,6 +868,10 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
 
         // 70% chance to hit
         if (rand() % 100 < 70) {
+            // If hit the robot target
+            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
             // Reduce target's lives
             target->reduceLife();
             battlefield->removeRobot(target);
@@ -861,13 +881,11 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
                 battlefield->queueForRespawn(target); // The target enter waiting robot queue
             }
             else {
-                cout << target->getId() << " is out of lives! " << target->getId() << " was destroyed!" << endl;
+                cout << target->getId() << " was destroyed!" << endl;
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            incrementKills();
             battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
-            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
         }
         else {
             cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
@@ -891,7 +909,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
             battlefield->queueForRespawn(this);
         }
         else {
-            cout << getId() << " is out of lives! " << getId() << " was destroyed!" << endl;
+            cout << getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
     }
