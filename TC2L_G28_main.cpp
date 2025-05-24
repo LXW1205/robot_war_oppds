@@ -135,6 +135,12 @@ public:
         return COUT;
     }
 
+    // Overloading the == operator for Robot class
+    bool operator==(const Robot& other) const
+    {
+        return this->robotId == other.robotId;
+    }
+
     // Pure Virtual Functions
     virtual void setRobotLocation(int posX, int posY) = 0;
     virtual void actions(Battlefield* battlefield) = 0;
@@ -389,6 +395,24 @@ public:
                 robots.push_back(robotGenericRobot); // Update the robots's vector
             }
         }
+
+
+        // check to avoid same robot exist
+        for (int i=0;i<robots.size()-1;i++)
+        {
+            if (robots[i]==robots[i+1])
+            {
+                cout << robots[i]->getId() << " and " << robots[i+1]->getId() << " are the same!" << endl;
+            }
+            /*
+            else if (!(robots[i]==robots[i+1]))
+            {
+                cout << robots[i]->getId() << " and " << robots[i+1]->getId() << " are not the same!" << endl;
+            }
+            */
+        }
+
+
         //cout << robots.size() << endl;
         fileInput.close();
     }
@@ -885,7 +909,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+            // battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
         }
         else {
             cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
