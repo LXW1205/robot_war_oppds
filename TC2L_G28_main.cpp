@@ -504,7 +504,10 @@ public:
     }
 
     // Remove Robot from it's position
-    void removeRobot(Robot* robot) {robot->setIsDestroyed(true);}
+    void removeRobot(Robot* robot) {
+        robot->setIsDestroyed(true);
+        cout << robot->getId() << " has " << robot->getLives() << " lives remaining" << endl;
+    }
 
     // Permanently destroy robot because of no more lives
     void destroyRobot(Robot* robot) {
@@ -514,6 +517,7 @@ public:
             if (*it == robot) {
                 destroyedRobots.push(*it);
                 robot->getIsDestroyed() == true;
+                cout << robot->getId() << ", " << robots[0]->getName() << " is out of lives!!" << endl;
                 cout << robot->getId() << " is enter the queue destroyed robot..." << endl;
                 break;  // important: exit loop after erasing
             }
@@ -559,8 +563,8 @@ public:
             currentTurn++;
             cout << "\nTurn " << currentTurn << ":" << endl;
 
-            respawnRobots();
-            placeRobots();
+            respawnRobots(); // Respawn the robot from waiting queue
+            placeRobots(); // Update the respawn robot's in battlefield
 
             // To select next active robot
             Robot* currentRobot = nullptr;
@@ -585,6 +589,13 @@ public:
             displayBattleField();      // Show updated battlefield
 
             cout << endl;
+        }
+
+        // Game over simulation check
+        if (robots.size() == 1) // If there is one robot left inside the battlefield
+            cout << robots[0]->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+        else {
+            cout << "--GAME OVER-- Maximum turns(" << totalTurns << ") reached!!" << endl;
         }
     }
 
@@ -824,16 +835,16 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
     cout << "GenericRobot actionFire" << endl;
 
     // Generate random direction to shot at (excluding current position)
-    int shotAtX, shotAtY;
+    int targetX, targetY, shotAtX, shotAtY;
 
     do {
         shotAtX = (rand() % 3) - 1; // -1, 0, or 1
         shotAtY = (rand() % 3) - 1;
-    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(shotAtX, shotAtY));
 
-
-    int targetX = getPosX() + shotAtX;
-    int targetY = getPosY() + shotAtY;
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
 
     Robot* target = battlefield->getRobotAt(targetX, targetY);
 
@@ -897,10 +908,14 @@ void GenericRobot::actionMove(Battlefield* battlefield) {
 
     if (!validMoves.empty()) {
         // Randomly select one of the valid directions
-        int dir = validMoves[rand() % validMoves.size()];
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
 
-        int newX = getPosX() + dx[dir];
-        int newY = getPosY() + dy[dir];
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
 
         if (dir == 8) {
             // Standing still
