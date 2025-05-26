@@ -140,6 +140,7 @@ public:
     {
         COUT << r.robotType << " " << r.robotId << ", " << r.robotName << " turns" << endl
         << r.robotId << "'s lives remaining: " << r.numberOfLives << endl
+        << r.robotId << "'s shells left: " << r.getShells() << endl
         << r.robotId << "'s kills: " << r.numberOfKills << endl
         << r.robotId << "'s no.of Upgrades: " << r.numUpgrade << endl << endl
         << r.robotId << " at (" << r.robotPositionX << ", " << r.robotPositionY << ") actions:" << endl;
@@ -153,6 +154,7 @@ public:
     }
 
     // Pure Virtual Functions
+    virtual int getShells() const = 0;
     virtual void setRobotLocation(int posX, int posY) = 0;
     virtual void actions(Battlefield* battlefield) = 0;
 };
@@ -231,6 +233,8 @@ public:
 
     virtual ~GenericRobot() {}
 
+    int getShells() const override { return this->shellsRemaining; }
+
     // Function override
     void resetShells() override { shellsRemaining = 10; }
 
@@ -270,6 +274,144 @@ public:
     }
 };
 int GenericRobot::robotAutoIncrementInt_ = 0;
+
+class ScoutBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+private:
+    int scoutLimit = 3;
+
+public:
+    ScoutBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual ~ScoutBot() {}
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    // Function override
+    void resetShells() override { shellsRemaining = 10; }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actionLook(Battlefield* battlefield);
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink(battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire(battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink(battlefield);
+            cout << endl;
+            actionLook(battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire(battlefield);
+        }
+    }
+};
+
+class TrackBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+private:
+    int trackerNumber = 3;
+
+    vector<Robot*> trackTargets;
+
+public:
+    TrackBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual ~TrackBot()
+    {
+            trackTargets.clear();
+    }
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    // Function override
+    void resetShells() override { shellsRemaining = 10; }
+
+    void trackTargetPosition() const
+    {
+        for (Robot* target : trackTargets)
+        {
+            if (target->getIsDestroyed() == false)
+                cout << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
+        }
+    }
+
+    bool checkTrackTargeted(Robot* robot)
+    {
+        for (Robot* targeted : trackTargets)
+        {
+            if (targeted == robot)
+                return true;
+        }
+        return false;
+    }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actionLook(Battlefield* battlefield);
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink(battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire(battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink(battlefield);
+            cout << endl;
+            actionLook(battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire(battlefield);
+        }
+    }
+};
 
 class Battlefield
 {
@@ -693,12 +835,12 @@ public:
         else if (upgradeType == "ScoutBot")
         {
             id = "SB" + id;
-            //newRobot = new ScoutBot(id, x ,y);
+            newRobot = new ScoutBot(id, x ,y);
         }
         else if (upgradeType == "TrackBot")
         {
             id = "TB" + id;
-            //newRobot = new TrackBot(id, x ,y);
+            newRobot = new TrackBot(id, x ,y);
         }
         else if (upgradeType == "NewSeeBot")
         {
@@ -709,22 +851,26 @@ public:
         newRobot->setName(robot->getName());
         newRobot->setType(upgradeType);
 
-        cout << robot->getName() << "upgrade from " << robot->getType() << " " <<robot->getId() << " to " << upgradeType << " " << id <<endl;
+        cout << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
 
         for (int i = 0; i < robots.size(); ++i)
         {
             if (robots[i]->getId()==robot->getId())
-            {
+            {   /* Some bugs here...
                 temp = robots[i];
                 robots[i] = newRobot;
                 newRobot = temp;
+                break; */
+
+                delete robots[i];
+                robots[i] = newRobot;
                 break;
             }
         }
 
         // Remove the old robot
-        delete newRobot;
-        delete temp;
+        //delete newRobot;
+        //delete temp;
     }
 
 
@@ -734,11 +880,11 @@ public:
         string upgradeType;
         int randomNumber = rand() % 3;
 
-        if (rand() == 0)
+        if (randomNumber == 0)
             upgradeType = "HideBot";
-        else if (rand() == 1)
+        else if (randomNumber == 1)
             upgradeType = "JumpBot";
-        else if (rand() == 2)
+        else if (randomNumber == 2)
             upgradeType = "NewMoveBot";
 
         upgrade(upgradeType, robot);
@@ -750,13 +896,13 @@ public:
         string upgradeType;
         int randomNumber = rand() % 4;
 
-        if (rand() == 0)
+        if (randomNumber == 0)
             upgradeType = "LongShotBot";
-        else if (rand() == 1)
+        else if (randomNumber == 1)
             upgradeType = "SemiAutoBot";
-        else if (rand() == 2)
+        else if (randomNumber == 2)
             upgradeType = "ThirthyShotBot";
-        else if (rand() == 3)
+        else if (randomNumber == 3)
             upgradeType = "NewShootBot";
 
         upgrade(upgradeType, robot);
@@ -766,13 +912,13 @@ public:
     {
         robot->setUpgradedSeeing(1);
         string upgradeType;
-        int randomNumber = rand() % 3;
+        int randomNumber = rand() % 2; // Switch to % 2 to view the output
 
-        if (rand() == 0)
+        if (randomNumber == 0)
             upgradeType = "ScoutBot";
-        else if (rand() == 1)
+        else if (randomNumber == 1)
             upgradeType = "TrackBot";
-        else if (rand() == 2)
+        else if (randomNumber == 2)
             upgradeType = "NewSeeBot";
 
         upgrade(upgradeType, robot);
@@ -787,14 +933,14 @@ public:
         // first upgrade
         if (robot->getNumUpgrade() == 1)
         {
-            randomNumber = rand() % 3;
+            randomNumber = rand() % 1; // Switch to % 1 to view the output
 
             if (randomNumber == 0)
-                upgradeMovingRobot(robot);
+                upgradeSeeingRobot(robot); // Switch with upgradeSeeingRobot(robot) to view the output
             else if (randomNumber == 1)
                 upgradeShootingRobot(robot);
             else if (randomNumber == 2)
-                upgradeSeeingRobot(robot);
+                upgradeMovingRobot(robot);
         }
 
         // second upgrade
@@ -837,19 +983,19 @@ public:
         }
         else
         {
-            cout << "Robot " << robot->getId() << " cannot ugrade anymore!" << endl;
+            cout << "Robot " << robot->getId() << " cannot upgrade anymore!" << endl;
         }
     }
 
 };
 
 void ThinkingRobot::actionThink (Battlefield* battlefield) {
-    cout << "GenericRobot actionThink" << endl;
+    cout << getType() << " actionThink" << endl;
 
     cout << getId() << " is thinking..." << endl;
 }
 void SeeingRobot::actionLook (Battlefield* battlefield) {
-    cout<<"GenericRobot actionLook" << endl;
+    cout<< getType() << " actionLook" << endl;
 
     cout << getId() << " is looking around..." << endl;
 
@@ -871,8 +1017,94 @@ void SeeingRobot::actionLook (Battlefield* battlefield) {
         canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
     }
 }
+void ScoutBot::actionLook (Battlefield* battlefield)
+{
+    if (scoutLimit > 0)
+    {
+        int randomNumber = rand();
+
+        if (randomNumber % 2 == 0)
+        {
+            cout << getType() << " actionLook" << endl;
+            cout << getId() << " is scouting the entire battlefield..." << endl;
+
+            for (int i = 0; i < battlefield->getBATTLEFIELD_NUM_OF_ROWS(); i++)
+            {
+                for (int j = 0; j < battlefield->getBATTLEFIELD_NUM_OF_COLS(); j++)
+                {
+                    if (battlefield->isPositionEmpty(j, i) || (j == getPosX() && i == getPosY())) // Skip the empty position and self position
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Robot* enemy = battlefield->getRobotAt(j, i);
+                        cout << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
+                    }
+                }
+            }
+            scoutLimit--;
+            cout << getId() << " has " << scoutLimit << " scouts remaining" << endl;
+        }
+        else
+            SeeingRobot::actionLook(battlefield);
+    }
+    else
+    {
+        cout << getId() << " has no scout left!!" << endl;
+        SeeingRobot::actionLook(battlefield);
+    }
+}
+void TrackBot::actionLook (Battlefield* battlefield)
+{
+    SeeingRobot::actionLook(battlefield);
+
+    if (trackerNumber > 0)
+    {
+        int randomNumber = rand();
+
+        if (randomNumber % 2 == 0)
+        {
+            cout << getId() << " is finding the target to plant a tracker..." << endl;
+
+            vector<Robot*> validTargets;
+            vector <Robot*>& robots = battlefield->getRobots();
+            for (Robot* robot : robots)
+            {
+                // To ensure the trackBot will not track on its own or the robot has been destroyed or at the same targeted robot
+                if (robot != this && !robot->getIsDestroyed() && !checkTrackTargeted(robot))
+                    validTargets.push_back(robot);
+            }
+
+            Robot* target = nullptr;
+            if (!validTargets.empty())
+            {
+                int index = rand() % validTargets.size(); // Target the random valid robot
+                target = validTargets[index];
+
+                trackTargets.push_back(target);
+                cout << getId() << " has planted a tracker on " << target->getId() << endl;
+
+                trackerNumber--;
+                trackTargetPosition();
+                cout << getId() << " has " << trackerNumber << " trackers remaining" << endl;
+            }
+        }
+        else
+        {
+            if (trackerNumber < 3)
+                trackTargetPosition();
+        }
+    }
+    else
+    {
+        cout << getId() << " has no tracker left!!" << endl;
+
+        trackTargetPosition();
+    }
+}
 void ShootingRobot::actionFire(Battlefield* battlefield) {
-    cout << "GenericRobot actionFire" << endl;
+    cout << getType() << " actionFire" << endl;
 
     // Generate random direction to shot at (excluding current position)
     int targetX, targetY, shotAtX, shotAtY;
@@ -909,7 +1141,7 @@ void ShootingRobot::actionFire(Battlefield* battlefield) {
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            // battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
         }
         else {
             cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
@@ -939,7 +1171,7 @@ void ShootingRobot::actionFire(Battlefield* battlefield) {
     }
 }
 void MovingRobot::actionMove(Battlefield* battlefield) {
-    cout << "GenericRobot actionMove" << endl;
+    cout << getType() << " actionMove" << endl;
 
     vector<int> validMoves;
 
