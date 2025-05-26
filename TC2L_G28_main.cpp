@@ -46,7 +46,18 @@ protected:
     bool upgradedShooting = 0;
     bool upgradedSeeing = 0;
 
+    //Detects directions the robot can move
+    bool canMove[9] = {false};
+
+    //Detects the presence of other robots
+    bool hasEnemy[8] = {false};
+
+    // direction arrays like Up, Up-Right, Right, Down-Right, Down, Down-Left, Left, Up-Left, Stand in place
+    const int dx[9] = { 0, 1, 1, 1, 0,-1,-1,-1, 0};
+    const int dy[9] = {-1,-1, 0, 1, 1, 1, 0,-1, 0};
+
     int numUpgrade = 0;
+
 public:
     // Parameterized Constructor(PC)
     Robot(string id, int posX, int posY) : robotId(id), robotPositionX(posX), robotPositionY(posY) {}
@@ -154,41 +165,46 @@ protected :
 public:
     virtual ~ThinkingRobot(){}
 
-    // Pure virtual function for thinking
-    virtual void actionThink (Battlefield* battlefield) = 0;
+    // Virtual function for thinking
+    virtual void actionThink (Battlefield* battlefield);
 };
 
 class SeeingRobot: virtual public Robot
 {
 protected:
     //data member
+
 public:
     ~SeeingRobot(){}
 
-    // Pure virtual function for looking
-    virtual void actionLook(Battlefield* battlefield) = 0;
+    // Virtual function for looking
+    virtual void actionLook(Battlefield* battlefield);
 };
 
 class ShootingRobot: virtual public Robot
 {
 protected:
     //data member
+
+    int shellsRemaining = 10;
+
 public:
     ~ShootingRobot(){}
 
-    // Pure virtual function for shooting
-    virtual void actionFire(Battlefield* battlefield) = 0;
+    // Virtual function for shooting
+    virtual void actionFire(Battlefield* battlefield);
 };
 
 class MovingRobot: virtual public Robot
 {
 protected:
     //data member
+
 public:
     ~MovingRobot(){}
 
-    // Pure virtual function for moving
-    virtual void actionMove(Battlefield* battlefield) = 0;
+    // Virtual function for moving
+    virtual void actionMove(Battlefield* battlefield);
 };
 
 // Pure virtual
@@ -197,18 +213,6 @@ class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRob
 {
 private:
     static int robotAutoIncrementInt_; // Static member for auto-incrementing ID
-
-    int shellsRemaining = 10;
-
-    //Detects directions the robot can move
-    bool canMove[9] = {false};
-
-    //Detects the presence of other robots
-    bool hasEnemy[8] = {false};
-
-    // direction arrays like Up, Up-Right, Right, Down-Right, Down, Down-Left, Left, Up-Left, Stand in place
-    const int dx[9] = { 0, 1, 1, 1, 0,-1,-1,-1, 0};
-    const int dy[9] = {-1,-1, 0, 1, 1, 1, 0,-1, 0};
 
 public:
     GenericRobot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
@@ -236,10 +240,6 @@ public:
         robotPositionY = y;
     }
 
-    virtual void actionThink (Battlefield* battlefield);
-    virtual void actionLook (Battlefield* battlefield);
-    virtual void actionFire (Battlefield* battlefield);
-    virtual void actionMove (Battlefield* battlefield);
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -843,12 +843,12 @@ public:
 
 };
 
-void GenericRobot::actionThink (Battlefield* battlefield) {
+void ThinkingRobot::actionThink (Battlefield* battlefield) {
     cout << "GenericRobot actionThink" << endl;
 
     cout << getId() << " is thinking..." << endl;
 }
-void GenericRobot::actionLook (Battlefield* battlefield) {
+void SeeingRobot::actionLook (Battlefield* battlefield) {
     cout<<"GenericRobot actionLook" << endl;
 
     cout << getId() << " is looking around..." << endl;
@@ -871,7 +871,7 @@ void GenericRobot::actionLook (Battlefield* battlefield) {
         canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
     }
 }
-void GenericRobot::actionFire(Battlefield* battlefield) {
+void ShootingRobot::actionFire(Battlefield* battlefield) {
     cout << "GenericRobot actionFire" << endl;
 
     // Generate random direction to shot at (excluding current position)
@@ -938,7 +938,7 @@ void GenericRobot::actionFire(Battlefield* battlefield) {
         }
     }
 }
-void GenericRobot::actionMove(Battlefield* battlefield) {
+void MovingRobot::actionMove(Battlefield* battlefield) {
     cout << "GenericRobot actionMove" << endl;
 
     vector<int> validMoves;
