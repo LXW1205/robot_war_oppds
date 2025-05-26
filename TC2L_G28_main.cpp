@@ -912,7 +912,7 @@ public:
     {
         robot->setUpgradedSeeing(1);
         string upgradeType;
-        int randomNumber = rand() % 2; // Switch to % 2 to view the output
+        int randomNumber = rand() % 3; // Switch to % 2 to view the output
 
         if (randomNumber == 0)
             upgradeType = "ScoutBot";
@@ -933,14 +933,14 @@ public:
         // first upgrade
         if (robot->getNumUpgrade() == 1)
         {
-            randomNumber = rand() % 1; // Switch to % 1 to view the output
+            randomNumber = rand() % 3; // Switch to % 1 to view the output
 
             if (randomNumber == 0)
-                upgradeSeeingRobot(robot); // Switch with upgradeSeeingRobot(robot) to view the output
+                upgradeMovingRobot(robot); // Switch with upgradeSeeingRobot(robot) to view the output
             else if (randomNumber == 1)
                 upgradeShootingRobot(robot);
             else if (randomNumber == 2)
-                upgradeMovingRobot(robot);
+                upgradeSeeingRobot(robot);
         }
 
         // second upgrade
