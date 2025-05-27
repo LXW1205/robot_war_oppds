@@ -413,6 +413,223 @@ public:
     }
 };
 
+class LongShotBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+public:
+    LongShotBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual ~LongShotBot() {}
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    // Function override
+    void resetShells() override { shellsRemaining = 10; }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actionFire(Battlefield* battlefield) override;
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire (battlefield);
+        }
+    }
+
+};
+
+class SemiAutoBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+public:
+    SemiAutoBot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual ~SemiAutoBot() {}
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    // Function override
+    void resetShells() override { shellsRemaining = 10; }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actionFire(Battlefield* battlefield) override;
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire (battlefield);
+        }
+    }
+};
+
+class ThirthyShotBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+public:
+    ThirthyShotBot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+        shellsRemaining = 30;
+    }
+
+    virtual ~ThirthyShotBot() {}
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    // Function override
+    void resetShells() override { shellsRemaining = 30; }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire (battlefield);
+        }
+    }
+};
+
+class BomberBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+public:
+    BomberBot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+        shellsRemaining = 5;
+    }
+
+    virtual ~BomberBot() {}
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    // Function override
+    void resetShells() override { shellsRemaining = 5; }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actionFire(Battlefield* battlefield) override;
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink (battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire (battlefield);
+        }
+    }
+};
+
 class Battlefield
 {
 private:
@@ -813,22 +1030,22 @@ public:
         else if (upgradeType == "LongShotBot")
         {
              id = "LB" + id;
-            //newRobot = new LongShotBot(id, x ,y);
+            newRobot = new LongShotBot(id, x ,y);
         }
         else if (upgradeType == "SemiAutoBot")
         {
             id = "SA" + id;
-            //newRobot = new SemiAutoBot(id, x ,y);
+            newRobot = new SemiAutoBot(id, x ,y);
         }
         else if (upgradeType == "ThirthyShotBot")
         {
             id = "TS" + id;
-            //newRobot = new ThirthyShotBot(id, x ,y);
+            newRobot = new ThirthyShotBot(id, x ,y);
         }
-        else if (upgradeType == "NewShootBot")
+        else if (upgradeType == "BomberBot")
         {
             id = "SB" + id; // x
-            //newRobot = new NewShootBot(id, x ,y);
+            newRobot = new BomberBot(id, x ,y);
         }
 
         // Seeing robot
@@ -855,22 +1072,29 @@ public:
 
         for (int i = 0; i < robots.size(); ++i)
         {
-            if (robots[i]->getId()==robot->getId())
-            {   /* Some bugs here...
-                temp = robots[i];
-                robots[i] = newRobot;
-                newRobot = temp;
-                break; */
+            if (robots[i]==robot)
+            {
+                int tempNumUpgrades = robots[i]->getNumUpgrade();
+                int tempKills = robots[i]->getKills();
+                int tempLives = robots[i]->getLives();
+
+                bool tempSeeing = robots[i]->getUpgradedSeeing();
+                bool tempShooting = robots[i]->getUpgradedShooting();
+                bool tempMoving = robots[i]->getUpgradedMoving();
 
                 delete robots[i];
                 robots[i] = newRobot;
+
+                //Copy info from old robot
+                robots[i]->setNumUpgrade(tempNumUpgrades);
+                robots[i]->setKills(tempKills);
+                robots[i]->setLives(tempLives);
+                robots[i]->setUpgradedSeeing(tempSeeing);
+                robots[i]->setUpgradedShooting(tempShooting);
+                robots[i]->setUpgradedMoving(tempMoving);
                 break;
             }
         }
-
-        // Remove the old robot
-        //delete newRobot;
-        //delete temp;
     }
 
 
@@ -1204,6 +1428,324 @@ void MovingRobot::actionMove(Battlefield* battlefield) {
     }
     else{
         cout << getId() << " decides to stay in place." << endl;
+    }
+}
+
+/*
+The robot can fire up to three unit distance away from its location.
+It means the robot can fire(x, y) where x + y <= 3
+*/
+void LongShotBot::actionFire(Battlefield* battlefield) {
+    cout << "LongShotBot actionFire" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 7) - 3; // -3, -2, -1, 0, 1, 2, 3
+        shotAtY = (rand() % 7) - 3;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this)
+    {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70)
+        {
+            // If hit the robot target
+            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1)
+            {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else
+            {
+                cout << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+        }
+        else
+        {
+            cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+        }
+    }
+
+    else
+    {
+        cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+    }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        cout << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            cout << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+}
+
+/*
+Each shell the robot fires is now considered as three consecutive
+shots into one location and each shot has a 70% probability to hit and destroy
+another robot.
+*/
+
+void SemiAutoBot::actionFire(Battlefield* battlefield) {
+    cout << "SemiAutoBot actionFire" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this)
+    {
+
+        int randomNum=0;
+        bool missedShot = true;
+
+        //Each shell considered as three consecutive shots into one location
+        for (int i=0;i<3;i++)
+        {
+            randomNum = rand()%100;
+            if(randomNum<70)
+            {
+                missedShot == false;
+                break;
+            }
+        }
+
+        // 70% chance to hit
+        if (!missedShot)
+        {
+            // If hit the robot target
+            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1)
+            {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else
+            {
+                cout << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+        }
+        else
+        {
+            cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+        }
+    }
+
+    else
+    {
+        cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+    }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        cout << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            cout << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+}
+
+void BomberBot::actionFire(Battlefield* battlefield) {
+    cout << "BomberBot actionFire" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int centerX, centerY, shotAtX, shotAtY;
+    bool posNotValid = false;
+    vector<int>bombLocationX;
+    vector<int>bombLocationY;
+
+    do {
+        shotAtX = (rand() % 11) - 5; // -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5
+        shotAtY = (rand() % 11) - 5;
+
+        centerX = getPosX() + shotAtX;
+        centerY = getPosY() + shotAtY;
+
+        // check if position not valid
+        if (!battlefield->isPositionValid(centerX, centerY))
+            posNotValid = true;
+        else
+        {
+            for (int x=0;x<3;x++)
+            {
+                x = x - 1; // x =-1, 0, 1
+                for (int y=0;y<3;y++)
+                {
+                    y = y - 1; // y =-1, 0, 1
+                    if (shotAtX == x && shotAtY == y)
+                    {
+                        posNotValid = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // If position valid, check if it is inside battlefield
+        if (!posNotValid)
+        {
+            for (int x=0;x<3;x++)
+            {
+                x = x - 1; // x =-1, 0, 1
+                for (int y=0;y<3;y++)
+                {
+                    y = y - 1; // y =-1, 0, 1
+                    if (battlefield->isPositionValid(centerX+x, centerY+y))
+                    {
+                        bombLocationX.push_back(centerX+x);
+                        bombLocationY.push_back(centerY+y);
+                    }
+                }
+            }
+        }
+
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while (posNotValid);
+
+    Robot* target = nullptr;
+    int vecSize;
+    bool foundTarget = false;
+    vector<Robot*> targets;
+
+    if (bombLocationX.size()==bombLocationY.size())
+    {
+        vecSize = bombLocationX.size();
+    }
+    else
+    {
+        cout << "BomberBot: Vector Location X and Location Y not the same size." << endl;
+    }
+
+    for (int i=0;i<vecSize;i++)
+    {
+        target = battlefield->getRobotAt(bombLocationX[i], bombLocationY[i]);
+        if (target != nullptr)
+        {
+            targets.push_back(target);
+            foundTarget = true;
+        }
+    }
+
+
+    if (foundTarget)
+    {
+        // 70% chance to hit
+        if (rand() % 100 < 70)
+        {
+            // If hit the robot target
+            cout << getId() << " hit " << target->getId() << " at (" << target->getPosX() << "," << target-> getPosY()<< ")" << endl;
+
+            for (int i=0;i<=targets.size();i++)
+            {
+                incrementKills(); // Number of kills + 1
+
+                // Reduce target's lives
+                targets[i]->reduceLife();
+                battlefield->removeRobot(targets[i]);
+
+                 // Check if target was destroyed
+                if (targets[i]->getLives() >= 1)
+                {
+                    battlefield->queueForRespawn(targets[i]); // The target enter waiting robot queue
+                }
+                else
+                {
+                    cout << targets[i]->getId() << " was destroyed!" << endl;
+                    battlefield->destroyRobot(targets[i]); // Battlefield handles destruction
+                }
+            }
+
+            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+        }
+        else
+        {
+            for (int i=0;i<=targets.size();i++)
+            {
+                cout << getId() << " missed " << targets[i]->getId() << " at (" << centerX << "," << centerY << ")" << endl;
+            }
+
+        }
+    }
+
+    else
+    {
+        cout << getId() << " fired at empty space " << endl;
+    }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        cout << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            cout << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
     }
 }
 
