@@ -2048,6 +2048,8 @@ void HideBot::actionMove(Battlefield* battlefield)
 
     if (hideSkill > 0)
     {
+
+
         //Check if any enemies nearby
         bool enemyNearby = false;
 
@@ -2069,9 +2071,14 @@ void HideBot::actionMove(Battlefield* battlefield)
 
             hideSkill--;
 
+            cout << getType() << " went into hiding." << endl;
+
+            return;
+
         }
         else
-        {
+        {   cout << getType() << " actionHide" << endl;
+
             cout << getId() << " failed to hide." << endl;
             return;
         }
