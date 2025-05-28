@@ -909,7 +909,7 @@ public:
         for (auto it = robots.begin(); it != robots.end(); ++it) {
             if (*it == robot) {
                 destroyedRobots.push(*it);
-                robot->getIsDestroyed() == true;
+                robot->setIsDestroyed(true);
                 cout << robot->getId() << " is enter the queue destroyed robot..." << endl;
                 break;  // important: exit loop after erasing
             }
@@ -1754,7 +1754,7 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.readInputFile("inputFile1.txt");
+    b.readInputFile("fileInput2a.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();
