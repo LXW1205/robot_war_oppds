@@ -184,6 +184,7 @@ public:
 
     // Virtual function for looking
     virtual void actionLook(Battlefield* battlefield);
+    virtual void addScanner() {};
 };
 
 class ShootingRobot: virtual public Robot
@@ -304,7 +305,7 @@ public:
         robotPositionY = y;
     }
 
-    virtual void actionLook(Battlefield* battlefield);
+    virtual void actionLook(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -385,7 +386,66 @@ public:
         robotPositionY = y;
     }
 
-    virtual void actionLook(Battlefield* battlefield);
+    virtual void actionLook(Battlefield* battlefield) override;
+
+    virtual void actions (Battlefield* battlefield)
+    {
+        int randomInt = rand();
+
+        if( randomInt % 2 == 0)
+        {
+            cout << endl;
+            actionThink(battlefield);
+            cout << endl;
+            actionLook (battlefield);
+            cout << endl;
+            actionFire(battlefield);
+            cout << endl;
+            actionMove(battlefield);
+        }
+        else if(randomInt % 2 == 1)
+        {
+            cout << endl;
+            actionThink(battlefield);
+            cout << endl;
+            actionLook(battlefield);
+            cout << endl;
+            actionMove(battlefield);
+            cout << endl;
+            actionFire(battlefield);
+        }
+    }
+};
+
+class ScanBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+{
+private:
+    int scannerLimit = 3;
+
+public:
+    ScanBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    {
+        robotId = id;
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual ~ScanBot() {}
+
+    int getShells() const override { return this->shellsRemaining; }
+
+    void addScanner() override { scannerLimit++; };
+
+    // Function override
+    void resetShells() override { shellsRemaining = 10; }
+
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
+    virtual void actionLook(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -664,10 +724,7 @@ public:
         robotPositionY = y;
     }
 
-    virtual void actionThink (Battlefield* battlefield);
-    virtual void actionLook (Battlefield* battlefield);
-    virtual void actionFire (Battlefield* battlefield);
-    virtual void actionMove (Battlefield* battlefield);
+    virtual void actionMove (Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -726,10 +783,7 @@ public:
         robotPositionY = y;
     }
 
-    virtual void actionThink (Battlefield* battlefield);
-    virtual void actionLook (Battlefield* battlefield);
-    virtual void actionFire (Battlefield* battlefield);
-    virtual void actionMove (Battlefield* battlefield);
+    virtual void actionMove (Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -787,10 +841,7 @@ public:
         robotPositionY = y;
     }
 
-    virtual void actionThink (Battlefield* battlefield);
-    virtual void actionLook (Battlefield* battlefield);
-    virtual void actionFire (Battlefield* battlefield);
-    virtual void actionMove (Battlefield* battlefield);
+    virtual void actionMove (Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -1204,17 +1255,17 @@ public:
         if (upgradeType == "HideBot")
         {
             id = "HB" + id;
-            //newRobot = new HideBot(id, x ,y);
+            newRobot = new HideBot(id, x ,y);
         }
         else if (upgradeType == "JumpBot")
         {
             id = "JB" + id;
-            //newRobot = new JumpBot(id, x ,y);
+            newRobot = new JumpBot(id, x ,y);
         }
         else if (upgradeType == "PortalBot")
         {
             id = "PB" + id; // x
-            //newRobot = new PortalBot(id, x ,y);
+            newRobot = new PortalBot(id, x ,y);
         }
 
         // Shooting robot
@@ -1235,7 +1286,7 @@ public:
         }
         else if (upgradeType == "BomberBot")
         {
-            id = "SB" + id; // x
+            id = "BB" + id; // x
             newRobot = new BomberBot(id, x ,y);
         }
 
@@ -1250,10 +1301,10 @@ public:
             id = "TB" + id;
             newRobot = new TrackBot(id, x ,y);
         }
-        else if (upgradeType == "NewSeeBot")
+        else if (upgradeType == "ScanBot")
         {
-            id = "NSB" + id; // x
-            //newRobot = new NewSeeBot(id, x ,y);
+            id = "SN" + id; // x
+            newRobot = new ScanBot(id, x ,y);
         }
 
         newRobot->setName(robot->getName());
@@ -1318,7 +1369,7 @@ public:
         else if (randomNumber == 2)
             upgradeType = "ThirthyShotBot";
         else if (randomNumber == 3)
-            upgradeType = "NewShootBot";
+            upgradeType = "BomberBot";
 
         upgrade(upgradeType, robot);
     }
@@ -1334,7 +1385,7 @@ public:
         else if (randomNumber == 1)
             upgradeType = "TrackBot";
         else if (randomNumber == 2)
-            upgradeType = "NewSeeBot";
+            upgradeType = "ScanBot";
 
         upgrade(upgradeType, robot);
     }
@@ -1426,7 +1477,10 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
 
         hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
         if (hasEnemy[directionCheckEnemy] == true)
+        {
             cout << getId() << " saw " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+            addScanner();
+        }
     }
 
     // Check all 9 movement options
@@ -1611,21 +1665,55 @@ void TrackBot::actionLook (Battlefield* battlefield)
                 cout << getId() << " has planted a tracker on " << target->getId() << endl;
 
                 trackerNumber--;
-                trackTargetPosition();
                 cout << getId() << " has " << trackerNumber << " trackers remaining" << endl;
             }
         }
-        else
+    }
+    else
+        cout << getId() << " has no tracker left!!" << endl;
+
+    trackTargetPosition();
+}
+
+void ScanBot::actionLook (Battlefield* battlefield)
+{
+    SeeingRobot::actionLook(battlefield);
+
+    if (scannerLimit > 0)
+    {
+        int randomNumber = rand();
+
+        if (randomNumber % 2 == 0)
         {
-            if (trackerNumber < 3)
-                trackTargetPosition();
+            cout << getId() << " is finding a position to scan..." << endl;
+
+            int scanX, scanY;
+            // Check all 8 direction for enemies
+            for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+                int lookX = getPosX() + dx[directionCheckEnemy];
+                int lookY = getPosY() + dy[directionCheckEnemy];
+
+                do {
+                    scanX = rand() % battlefield->getBATTLEFIELD_NUM_OF_COLS();
+                    scanY = rand() % battlefield->getBATTLEFIELD_NUM_OF_ROWS();
+                } while ((scanX == lookX && scanY == lookY) || (scanX == getPosX() && scanY == getPosY()));
+            }
+
+            if (!battlefield->isPositionEmpty(scanX, scanY))
+            {
+                Robot* scanTarget = battlefield->getRobotAt(scanX, scanY);
+                cout << getId() << " scanned " << scanTarget->getId() << " at (" << scanX << ", " << scanY << ")" << endl;
+            }
+            else
+                cout << getId() << " scanned at empty position (" << scanX << ", " << scanY << ")" << endl;
+
+            scannerLimit--;
+            cout << getId() << " has " << scannerLimit << " scans remaining" << endl;
         }
     }
     else
     {
-        cout << getId() << " has no tracker left!!" << endl;
-
-        trackTargetPosition();
+        cout << getId() << " has no scanner left!!" << endl;
     }
 }
 
@@ -2163,7 +2251,7 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.readInputFile("fileInput2a.txt");
+    b.readInputFile("fileInput1.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();
