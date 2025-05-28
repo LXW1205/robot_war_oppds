@@ -63,7 +63,7 @@ public:
     Robot(string id, int posX, int posY) : robotId(id), robotPositionX(posX), robotPositionY(posY) {}
 
     // Destructor (virtual for polymorphism)
-    virtual ~Robot();
+    virtual ~Robot() {};
 
     // Getter and Setter for RobotId
     string getId() const { return robotId; }
@@ -123,11 +123,8 @@ public:
     // Reduce life when getting shoot or selfDestruct
     void reduceLife() {setLives(getLives() - 1);}
 
-
     // selfDestruct when ran out of shells(ammo)
-    void selfDestruct() {
-        reduceLife();
-    }
+    void selfDestruct() { reduceLife(); }
 
     // Increase kills
     void incrementKills() {numberOfKills++;}
@@ -141,7 +138,7 @@ public:
     // Overloading the << operator for Robot class
     friend ostream& operator<<(ostream &COUT, const Robot& r)
     {
-        COUT << r.robotType << " " << r.robotId << ", " << r.robotName << " turns" << endl
+        COUT << r.robotType << " " << r.robotId << "_" << r.robotName << " turns" << endl
         << r.robotId << "'s lives remaining: " << r.numberOfLives << endl
         << r.robotId << "'s shells left: " << r.getShells() << endl
         << r.robotId << "'s kills: " << r.numberOfKills << endl
@@ -161,7 +158,6 @@ public:
     virtual void setRobotLocation(int posX, int posY) = 0;
     virtual void actions(Battlefield* battlefield) = 0;
 };
-inline Robot::~Robot() {}
 
 class ThinkingRobot: virtual public Robot
 {
@@ -184,7 +180,6 @@ public:
 
     // Virtual function for looking
     virtual void actionLook(Battlefield* battlefield);
-    virtual void addScanner() {};
 };
 
 class ShootingRobot: virtual public Robot
@@ -247,7 +242,6 @@ public:
         robotPositionX = x;
         robotPositionY = y;
     }
-
 
     virtual void actions (Battlefield* battlefield)
     {
@@ -353,7 +347,7 @@ public:
 
     virtual ~TrackBot()
     {
-            trackTargets.clear();
+        trackTargets.clear();
     }
 
     int getShells() const override { return this->shellsRemaining; }
@@ -365,8 +359,8 @@ public:
     {
         for (Robot* target : trackTargets)
         {
-            if (target->getIsDestroyed() == false)
-                cout << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
+            if (target->isAlive())
+                cout << "=> " << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
         }
     }
 
@@ -417,27 +411,37 @@ public:
     }
 };
 
-class ScanBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+class DroneBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 private:
-    int scannerLimit = 3;
+    int droneNumber = 3;
+
+    vector<pair<int, int>> placedDronePositions;
 
 public:
-    ScanBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    DroneBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
     {
         robotId = id;
         robotPositionX = x;
         robotPositionY = y;
     }
 
-    virtual ~ScanBot() {}
+    virtual ~DroneBot() {}
 
     int getShells() const override { return this->shellsRemaining; }
 
-    void addScanner() override { scannerLimit++; };
-
     // Function override
     void resetShells() override { shellsRemaining = 10; }
+
+    bool checkDronePosition(int x, int y, const vector<pair<int, int>>& placedDronePositions)
+    {
+        for (const auto& position : placedDronePositions)
+        {
+            if (position.first == x && position.second == y)
+                return true;
+        }
+        return false;
+    }
 
     virtual void setRobotLocation(int x, int y)
     {
@@ -528,7 +532,6 @@ public:
             actionFire (battlefield);
         }
     }
-
 };
 
 class SemiAutoBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
@@ -951,7 +954,6 @@ public:
                 istringstream turnStream(line);
                 string ignore;
                 turnStream >> ignore >> totalTurns;
-                //cout << totalTurns << endl;
             }
             else if (line.find("robots:") != string::npos)
             {
@@ -959,7 +961,6 @@ public:
                 istringstream robotStream(line);
                 string ignore;
                 robotStream >> ignore >> numOfRobots;
-                //cout << numOfRobots << endl;
             }
             else if (line.empty())
                 // If line is empty, skip the line
@@ -977,7 +978,6 @@ public:
                 string id = idName.substr(0, idName.find("_"));
                 // Get the name of the robot
                 string name = idName.substr(idName.find("_") + 1);
-                //cout << id << " and " << name << endl;
 
                 if (posX == "random")
                     x = rand() % BATTLEFIELD_NUM_OF_COLS; // Randomize the column position
@@ -996,7 +996,6 @@ public:
                 robots.push_back(robotGenericRobot); // Update the robots's vector
             }
         }
-
 
         // check to avoid same robot exist
         for (int i=0;i<robots.size()-1;i++)
@@ -1194,8 +1193,10 @@ public:
     // Control the turn of the Simulation
     void turnBased()
     {
+        Robot* currentRobot = nullptr;
+        int temp=0;
         // Loop through robots in cycles until totalTurns is reached or Last robot standing
-        while (currentTurn < totalTurns && robots.size() > 1) {
+        while (currentTurn < totalTurns && numOfRobots > 1) {
             currentTurn++;
             cout << "\nTurn " << currentTurn << ":" << endl;
 
@@ -1228,12 +1229,22 @@ public:
         }
 
         // Game over simulation check
-        if (robots.size() == 1 && numOfRobots == 1) // If there is one robot left inside the battlefield
-            cout << robots[0]->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
-        else {
+        if (numOfRobots == 1) // If there is one robot left inside the battlefield
+        {
+            for(int i = 0; i < robots.size(); ++i)
+            {
+                if(robots[i]->isAlive())
+                {
+                    cout << "--SIMULATION END-- in turn " << currentTurn << endl
+                    << robots[i]->getId() << "_" << robots[i]->getName() << " WINS the match!!" << endl;
+                    break;
+                }
+            }
+        }
+        else
+        {
             cout << "--GAME OVER-- Maximum turns(" << totalTurns << ") reached!!" << endl
             << "Robots remaining: " << numOfRobots << endl;
-
         }
     }
 
@@ -1251,6 +1262,7 @@ public:
         int x = robot->getPosX();
         int y = robot->getPosY();
 
+        upgradeType = "SemiAutoBot";
         // Moving Robot
         if (upgradeType == "HideBot")
         {
@@ -1301,10 +1313,10 @@ public:
             id = "TB" + id;
             newRobot = new TrackBot(id, x ,y);
         }
-        else if (upgradeType == "ScanBot")
+        else if (upgradeType == "DroneBot")
         {
             id = "SN" + id; // x
-            newRobot = new ScanBot(id, x ,y);
+            newRobot = new DroneBot(id, x ,y);
         }
 
         newRobot->setName(robot->getName());
@@ -1378,14 +1390,14 @@ public:
     {
         robot->setUpgradedSeeing(1);
         string upgradeType;
-        int randomNumber = rand() % 3; // Switch to % 2 to view the output
+        int randomNumber = rand() % 3;
 
         if (randomNumber == 0)
             upgradeType = "ScoutBot";
         else if (randomNumber == 1)
             upgradeType = "TrackBot";
         else if (randomNumber == 2)
-            upgradeType = "ScanBot";
+            upgradeType = "DroneBot";
 
         upgrade(upgradeType, robot);
     }
@@ -1399,10 +1411,10 @@ public:
         // first upgrade
         if (robot->getNumUpgrade() == 1)
         {
-            randomNumber = rand() % 3; // Switch to % 1 to view the output
+            randomNumber = rand() % 3;
 
             if (randomNumber == 0)
-                upgradeMovingRobot(robot); // Switch with upgradeSeeingRobot(robot) to view the output
+                upgradeMovingRobot(robot);
             else if (randomNumber == 1)
                 upgradeShootingRobot(robot);
             else if (randomNumber == 2)
@@ -1477,10 +1489,7 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
 
         hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
         if (hasEnemy[directionCheckEnemy] == true)
-        {
-            cout << getId() << " saw " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
-            addScanner();
-        }
+            cout << "=> " << getId() << " saw " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
     }
 
     // Check all 9 movement options
@@ -1618,7 +1627,7 @@ void ScoutBot::actionLook (Battlefield* battlefield)
                     else
                     {
                         Robot* enemy = battlefield->getRobotAt(j, i);
-                        cout << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
+                        cout << "=> " << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
                     }
                 }
             }
@@ -1675,45 +1684,52 @@ void TrackBot::actionLook (Battlefield* battlefield)
     trackTargetPosition();
 }
 
-void ScanBot::actionLook (Battlefield* battlefield)
+void DroneBot::actionLook (Battlefield* battlefield)
 {
     SeeingRobot::actionLook(battlefield);
 
-    if (scannerLimit > 0)
+    int droneLookX, droneLookY;
+    if (droneNumber > 0)
     {
         int randomNumber = rand();
 
         if (randomNumber % 2 == 0)
         {
-            cout << getId() << " is finding a position to scan..." << endl;
+            cout << getId() << " is finding a position to place a drone..." << endl;
 
-            int scanX, scanY;
-            // Check all 8 direction for enemies
-            for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
-                int lookX = getPosX() + dx[directionCheckEnemy];
-                int lookY = getPosY() + dy[directionCheckEnemy];
+            int droneX, droneY;
+            do {
+                droneX = rand() % battlefield->getBATTLEFIELD_NUM_OF_COLS();
+                droneY = rand() % battlefield->getBATTLEFIELD_NUM_OF_ROWS();
+              // To ensure the drone will not be place at the same position
+            } while (checkDronePosition(droneX, droneY, placedDronePositions));
+            placedDronePositions.push_back({droneX, droneY});
+            cout << getId() << " placed the drone at (" << droneX << ", " << droneY << ")" << endl;
 
-                do {
-                    scanX = rand() % battlefield->getBATTLEFIELD_NUM_OF_COLS();
-                    scanY = rand() % battlefield->getBATTLEFIELD_NUM_OF_ROWS();
-                } while ((scanX == lookX && scanY == lookY) || (scanX == getPosX() && scanY == getPosY()));
-            }
-
-            if (!battlefield->isPositionEmpty(scanX, scanY))
-            {
-                Robot* scanTarget = battlefield->getRobotAt(scanX, scanY);
-                cout << getId() << " scanned " << scanTarget->getId() << " at (" << scanX << ", " << scanY << ")" << endl;
-            }
-            else
-                cout << getId() << " scanned at empty position (" << scanX << ", " << scanY << ")" << endl;
-
-            scannerLimit--;
-            cout << getId() << " has " << scannerLimit << " scans remaining" << endl;
+            droneNumber--;
+            cout << getId() << " has " << droneNumber << " drones remaining" << endl;
         }
     }
     else
     {
-        cout << getId() << " has no scanner left!!" << endl;
+        cout << getId() << " has no drone left!!" << endl;
+    }
+
+    for (const auto& position : placedDronePositions)
+    {
+        cout << getId() << "'s drone is scanning at (" << position.first << ", " << position.second << ")..." << endl;
+        for (int directionCheckEnemy = 0; directionCheckEnemy < 9; directionCheckEnemy++)
+        {
+            droneLookX = position.first + dx[directionCheckEnemy];
+            droneLookY = position.second + dy[directionCheckEnemy];
+
+            if (battlefield->isPositionValid(droneLookX, droneLookY) && battlefield->getRobotAt(droneLookX, droneLookY) != nullptr)
+            {
+                Robot* droneTarget = battlefield->getRobotAt(droneLookX, droneLookY);
+                if (droneTarget != this)
+                    cout << "=> " << getId() << " spotted " << droneTarget->getId() << " at (" << droneLookX << ", " << droneLookY << ") by drone" << endl;
+            }
+        }
     }
 }
 
