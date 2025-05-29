@@ -21,6 +21,7 @@
 #include <sstream>
 #include <vector>
 #include <queue>
+#include <cmath>
 using namespace std;
 
 class Battlefield;
@@ -2010,157 +2011,103 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
     }
 }
 
+/*
+Instead of shooting, the robot will throw a bomb and hit all targets in 3x3 area.
+It has 5 bombs only and it can fire up to 2 distance, it means that the bomb will centered on (x,y)
+where x+y<=2.
+But it can't throw the bomb around itself, since it get will damaged from it.
+*/
 void BomberBot::actionFire(Battlefield* battlefield)
 {
     cout << "BomberBot actionFire" << endl;
-    battlefield->writeToOutput() << "BomberBot actionFire" << endl;
 
-    // Generate random direction to shot at (excluding current position)
     int centerX, centerY, shotAtX, shotAtY;
-    bool posNotValid = false;
-    vector<int>bombLocationX;
-    vector<int>bombLocationY;
+    vector<int> bombLocationX, bombLocationY;
+
+    bool posNotValid;
 
     do {
-        shotAtX = (rand() % 11) - 5; // -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5
-        shotAtY = (rand() % 11) - 5;
+        posNotValid = false;
+
+        shotAtX = (rand() % 5) - 2; // Range: -2 to 2
+        shotAtY = (rand() % 5) - 2;
 
         centerX = getPosX() + shotAtX;
         centerY = getPosY() + shotAtY;
 
-        // check if position not valid
-        if (!battlefield->isPositionValid(centerX, centerY))
-            posNotValid = true;
-        else
+        // Avoid firing at or near self
+        if ((abs(shotAtX) <= 1 && abs(shotAtY) <= 1)||(!battlefield->isPositionValid(centerX, centerY)))
         {
-            for (int x=0;x<3;x++)
-            {
-                x = x - 1; // x =-1, 0, 1
-                for (int y=0;y<3;y++)
-                {
-                    y = y - 1; // y =-1, 0, 1
-                    if (shotAtX == x && shotAtY == y)
-                    {
-                        posNotValid = true;
-                        break;
-                    }
-                }
-            }
+            posNotValid = true;
         }
 
-        // If position valid, check if it is inside battlefield
+        // If valid, mark 3x3 bomb impact zone
         if (!posNotValid)
         {
-            for (int x=0;x<3;x++)
-            {
-                x = x - 1; // x =-1, 0, 1
-                for (int y=0;y<3;y++)
-                {
-                    y = y - 1; // y =-1, 0, 1
-                    if (battlefield->isPositionValid(centerX+x, centerY+y))
-                    {
-                        bombLocationX.push_back(centerX+x);
-                        bombLocationY.push_back(centerY+y);
+            for (int x = -1; x <= 1; x++) {
+                for (int y = -1; y <= 1; y++) {
+                    if (battlefield->isPositionValid(centerX + x, centerY + y)) {
+                        bombLocationX.push_back(centerX + x);
+                        bombLocationY.push_back(centerY + y);
                     }
                 }
             }
         }
 
-    // To ensure that the robot will not fire at its own position and outside the battlefield
     } while (posNotValid);
 
-    Robot* target = nullptr;
-    int vecSize;
-    bool foundTarget = false;
     vector<Robot*> targets;
 
-    if (bombLocationX.size()==bombLocationY.size())
+    for (int i = 0; i < bombLocationX.size(); i++)
     {
-        vecSize = bombLocationX.size();
-    }
-    else
-    {
-        cout << "BomberBot: Vector Location X and Location Y not the same size." << endl;
-        battlefield->writeToOutput() << "BomberBot: Vector Location X and Location Y not the same size." << endl;
-    }
-
-    for (int i=0;i<vecSize;i++)
-    {
-        target = battlefield->getRobotAt(bombLocationX[i], bombLocationY[i]);
-        if (target != nullptr)
-        {
+        Robot* target = battlefield->getRobotAt(bombLocationX[i], bombLocationY[i]);
+        if (target != nullptr) {
             targets.push_back(target);
-            foundTarget = true;
         }
     }
 
+    if (!targets.empty()) {
+        if (rand() % 100 < 70) { // 70% hit chance
+            for (int i = 0; i < targets.size(); i++) {
+                Robot* target = targets[i];
+                cout << getId() << " hit " << target->getId()
+                     << " at (" << target->getPosX() << "," << target->getPosY() << ")" << endl;
 
-    if (foundTarget)
-    {
-        // 70% chance to hit
-        if (rand() % 100 < 70)
-        {
-            // If hit the robot target
-            cout << getId() << " hit " << target->getId() << " at (" << target->getPosX() << "," << target-> getPosY()<< ")" << endl;
-            battlefield->writeToOutput() << getId() << " hit " << target->getId() << " at (" << target->getPosX() << "," << target-> getPosY()<< ")" << endl;
+                incrementKills();
+                target->reduceLife();
+                battlefield->removeRobot(target);
 
-            for (int i=0;i<=targets.size();i++)
-            {
-                incrementKills(); // Number of kills + 1
-
-                // Reduce target's lives
-                targets[i]->reduceLife();
-                battlefield->removeRobot(targets[i]);
-
-                 // Check if target was destroyed
-                if (targets[i]->getLives() >= 1)
-                {
-                    battlefield->queueForRespawn(targets[i]); // The target enter waiting robot queue
-                }
-                else
-                {
-                    cout << targets[i]->getId() << " was destroyed!" << endl;
-                    battlefield->writeToOutput() << targets[i]->getId() << " was destroyed!" << endl;
-                    battlefield->destroyRobot(targets[i]); // Battlefield handles destruction
+                if (target->getLives() >= 1) {
+                    battlefield->queueForRespawn(target);
+                } else {
+                    cout << target->getId() << " was destroyed!" << endl;
+                    battlefield->destroyRobot(target);
                 }
             }
 
-            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
-        }
-        else
-        {
-            for (int i=0;i<=targets.size();i++)
-            {
-                cout << getId() << " missed " << targets[i]->getId() << " at (" << centerX << "," << centerY << ")" << endl;
-                battlefield->writeToOutput() << getId() << " missed " << targets[i]->getId() << " at (" << centerX << "," << centerY << ")" << endl;
+            battlefield->decideUpgradeType(this);
+        } else {
+            for (Robot* target : targets) {
+                cout << getId() << " missed " << target->getId()
+                     << " at (" << centerX << "," << centerY << ")" << endl;
             }
-
         }
-    }
-
-    else
-    {
+    } else {
         cout << getId() << " fired at empty space " << endl;
-        battlefield->writeToOutput() << getId() << " fired at empty space " << endl;
     }
 
-    // Handle ammo and self-destruction
+    // Ammo handling
     shellsRemaining--;
-
     if (shellsRemaining <= 0) {
         cout << getId() << " is out of ammo and self-destructs!" << endl;
-        battlefield->writeToOutput() << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
 
-        if (this->getLives() >= 1) {
-
+        if (getLives() >= 1) {
             battlefield->queueForRespawn(this);
-        }
-        else {
+        } else {
             cout << getId() << " was destroyed!" << endl;
-            battlefield->writeToOutput() << getId() << " was destroyed!" << endl;
-            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+            battlefield->destroyRobot(this);
         }
     }
 }
