@@ -1053,7 +1053,7 @@ public:
 
     // Overload for manipulators like endl
     Battlefield& operator<<(ostream& (*manip)(ostream&)) {
-        cout << manip;
+        manip(cout);
         if (fileOutput.is_open()) fileOutput << manip;
         return *this;
     }
@@ -1381,6 +1381,7 @@ public:
         newRobot->setType(upgradeType);
 
         cout << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
+        fileOutput << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
 
         for (int i = 0; i < robots.size(); ++i)
         {
@@ -1520,6 +1521,7 @@ public:
         else
         {
             cout << "Robot " << robot->getId() << " cannot upgrade anymore!" << endl;
+            fileOutput << "Robot " << robot->getId() << " cannot upgrade anymore!" << endl;
         }
     }
 
@@ -1527,19 +1529,14 @@ public:
 
 void ThinkingRobot::actionThink (Battlefield* battlefield)
 {
-    cout << getType() << " actionThink" << endl;
     *battlefield << getType() << " actionThink" << endl;
 
-    cout << getId() << " is thinking..." << endl;
     *battlefield << getId() << " is thinking..." << endl;
 }
 void SeeingRobot::actionLook (Battlefield* battlefield)
 {
-    cout<< getType() << " actionLook" << endl;
-
     *battlefield<< getType() << " actionLook" << endl;
 
-    cout << getId() << " is looking around..." << endl;
     *battlefield << getType() << " is looking around..." << endl;
 
     // Check all 8 direction for enemies
@@ -1553,7 +1550,6 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
         hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
         if (hasEnemy[directionCheckEnemy] == true)
         {
-            cout << getId() << " saw " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
             *battlefield << getId() << " saw " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
             addScanner();
         }
@@ -1568,7 +1564,6 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
 }
 void ShootingRobot::actionFire(Battlefield* battlefield)
 {
-    cout << getType() << " actionFire" << endl;
     *battlefield << getType() << " actionFire" << endl;
 
     // Generate random direction to shot at (excluding current position)
@@ -1590,7 +1585,6 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
         // 70% chance to hit
         if (rand() % 100 < 70) {
             // If hit the robot target
-            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             incrementKills(); // Number of kills + 1
 
@@ -1603,7 +1597,6 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
                 battlefield->queueForRespawn(target); // The target enter waiting robot queue
             }
             else {
-                cout << target->getId() << " was destroyed!" << endl;
                 *battlefield << target->getId() << " was destroyed!" << endl;
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
@@ -1611,14 +1604,12 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
             battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
         }
         else {
-            cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
 
             }
         }
 
         else {
-            cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
         }
 
@@ -1626,7 +1617,6 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
     shellsRemaining--;
 
     if (shellsRemaining <= 0) {
-        cout << getId() << " is out of ammo and self-destructs!" << endl;
         *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
@@ -1636,7 +1626,6 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
             battlefield->queueForRespawn(this);
         }
         else {
-            cout << getId() << " was destroyed!" << endl;
             *battlefield << getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
@@ -1644,7 +1633,6 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
 }
 void MovingRobot::actionMove(Battlefield* battlefield)
 {
-    cout << getType() << " actionMove" << endl;
     *battlefield << getType() << " actionMove" << endl;
 
     vector<int> validMoves;
@@ -1667,7 +1655,6 @@ void MovingRobot::actionMove(Battlefield* battlefield)
 
         if (dir == 8) {
             // Standing still
-            cout << getId() << " decides to stay in place." << endl;
             *battlefield << getId() << " decides to stay in place." << endl;
 
         }
@@ -1675,14 +1662,12 @@ void MovingRobot::actionMove(Battlefield* battlefield)
             // Move to new position
             setPosX(newX);
             setPosY(newY);
-            cout << getId() << " moves to (" << newX << "," << newY << ")" << endl;
             *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
 
 
         }
     }
     else{
-        cout << getId() << " decides to stay in place." << endl;
         *battlefield << getId() << " decides to stay in place." << endl;
     }
 }
@@ -1695,11 +1680,8 @@ void ScoutBot::actionLook (Battlefield* battlefield)
 
         if (randomNumber % 2 == 0)
         {
-            cout << getType() << " actionLook" << endl;
             *battlefield << getType() << " actionLook" << endl;
 
-
-            cout << getId() << " is scouting the entire battlefield..." << endl;
             *battlefield << getId() << " is scouting the entire battlefield..." << endl;
 
             for (int i = 0; i < battlefield->getBATTLEFIELD_NUM_OF_ROWS(); i++)
@@ -1713,14 +1695,12 @@ void ScoutBot::actionLook (Battlefield* battlefield)
                     else
                     {
                         Robot* enemy = battlefield->getRobotAt(j, i);
-                        cout << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
                         *battlefield << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
 
                     }
                 }
             }
             scoutLimit--;
-            cout << getId() << " has " << scoutLimit << " scouts remaining" << endl;
             *battlefield << getId() << " has " << scoutLimit << " scouts remaining" << endl;
         }
         else
@@ -1728,7 +1708,6 @@ void ScoutBot::actionLook (Battlefield* battlefield)
     }
     else
     {
-        cout << getId() << " has no scout left!!" << endl;
         *battlefield << getId() << " has no scout left!!" << endl;
         SeeingRobot::actionLook(battlefield);
     }
@@ -1743,7 +1722,6 @@ void TrackBot::actionLook (Battlefield* battlefield)
 
         if (randomNumber % 2 == 0)
         {
-            cout << getId() << " is finding the target to plant a tracker..." << endl;
             *battlefield << getId() << " is finding the target to plant a tracker..." << endl;
 
             vector<Robot*> validTargets;
@@ -1762,17 +1740,14 @@ void TrackBot::actionLook (Battlefield* battlefield)
                 target = validTargets[index];
 
                 trackTargets.push_back(target);
-                cout << getId() << " has planted a tracker on " << target->getId() << endl;
                 *battlefield << getId() << " has planted a tracker on " << target->getId() << endl;
 
                 trackerNumber--;
-                cout << getId() << " has " << trackerNumber << " trackers remaining" << endl;
                 *battlefield << getId() << " has " << trackerNumber << " trackers remaining" << endl;
             }
         }
     }
     else
-        cout << getId() << " has no tracker left!!" << endl;
         *battlefield << getId() << " has no tracker left!!" << endl;
 
     trackTargetPosition();
@@ -1788,7 +1763,6 @@ void ScanBot::actionLook (Battlefield* battlefield)
 
         if (randomNumber % 2 == 0)
         {
-            cout << getId() << " is finding a position to scan..." << endl;
             *battlefield << getId() << " is finding a position to scan..." << endl;
 
             int scanX, scanY;
@@ -1806,21 +1780,17 @@ void ScanBot::actionLook (Battlefield* battlefield)
             if (!battlefield->isPositionEmpty(scanX, scanY))
             {
                 Robot* scanTarget = battlefield->getRobotAt(scanX, scanY);
-                cout << getId() << " scanned " << scanTarget->getId() << " at (" << scanX << ", " << scanY << ")" << endl;
                 *battlefield << getId() << " scanned " << scanTarget->getId() << " at (" << scanX << ", " << scanY << ")" << endl;
             }
             else
-                cout << getId() << " scanned at empty position (" << scanX << ", " << scanY << ")" << endl;
                 *battlefield << getId() << " scanned at empty position (" << scanX << ", " << scanY << ")" << endl;
 
             scannerLimit--;
-            cout << getId() << " has " << scannerLimit << " scans remaining" << endl;
             *battlefield << getId() << " has " << scannerLimit << " scans remaining" << endl;
         }
     }
     else
     {
-        cout << getId() << " has no scanner left!!" << endl;
         *battlefield << getId() << " has no scanner left!!" << endl;
     }
 }
@@ -1831,7 +1801,6 @@ It means the robot can fire(x, y) where x + y <= 3
 */
 void LongShotBot::actionFire(Battlefield* battlefield)
 {
-    cout << "LongShotBot actionFire" << endl;
     *battlefield << "LongShotBot actionFire" << endl;
 
     // Generate random direction to shot at (excluding current position)
@@ -1855,7 +1824,6 @@ void LongShotBot::actionFire(Battlefield* battlefield)
         if (rand() % 100 < 70)
         {
             // If hit the robot target
-            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             incrementKills(); // Number of kills + 1
 
@@ -1870,7 +1838,6 @@ void LongShotBot::actionFire(Battlefield* battlefield)
             }
             else
             {
-                cout << target->getId() << " was destroyed!" << endl;
                 *battlefield << target->getId() << " was destroyed!" << endl;
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
@@ -1879,14 +1846,12 @@ void LongShotBot::actionFire(Battlefield* battlefield)
         }
         else
         {
-            cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
         }
     }
 
     else
     {
-        cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
         *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
     }
 
@@ -1894,7 +1859,6 @@ void LongShotBot::actionFire(Battlefield* battlefield)
     shellsRemaining--;
 
     if (shellsRemaining <= 0) {
-        cout << getId() << " is out of ammo and self-destructs!" << endl;
         *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
@@ -1904,7 +1868,6 @@ void LongShotBot::actionFire(Battlefield* battlefield)
             battlefield->queueForRespawn(this);
         }
         else {
-            cout << getId() << " was destroyed!" << endl;
             *battlefield << getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
@@ -1918,7 +1881,6 @@ another robot.
 */
 void SemiAutoBot::actionFire(Battlefield* battlefield)
 {
-    cout << "SemiAutoBot actionFire" << endl;
     *battlefield << "SemiAutoBot actionFire" << endl;
 
     // Generate random direction to shot at (excluding current position)
@@ -1956,7 +1918,6 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
         if (!missedShot)
         {
             // If hit the robot target
-            cout << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             incrementKills(); // Number of kills + 1
 
@@ -1971,7 +1932,6 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
             }
             else
             {
-                cout << target->getId() << " was destroyed!" << endl;
                 *battlefield << target->getId() << " was destroyed!" << endl;
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
@@ -1980,14 +1940,12 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
         }
         else
         {
-            cout << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
             *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
         }
     }
 
     else
     {
-        cout << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
         *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
     }
 
@@ -1995,7 +1953,6 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
     shellsRemaining--;
 
     if (shellsRemaining <= 0) {
-        cout << getId() << " is out of ammo and self-destructs!" << endl;
         *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
@@ -2005,7 +1962,6 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
             battlefield->queueForRespawn(this);
         }
         else {
-            cout << getId() << " was destroyed!" << endl;
             *battlefield << getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
@@ -2020,7 +1976,7 @@ But it can't throw the bomb around itself, since it get will damaged from it.
 */
 void BomberBot::actionFire(Battlefield* battlefield)
 {
-    cout << "BomberBot actionFire" << endl;
+    *battlefield << "BomberBot actionFire" << endl;
 
     int centerX, centerY, shotAtX, shotAtY;
     vector<int> bombLocationX, bombLocationY;
@@ -2071,7 +2027,7 @@ void BomberBot::actionFire(Battlefield* battlefield)
         if (rand() % 100 < 70) { // 70% hit chance
             for (int i = 0; i < targets.size(); i++) {
                 Robot* target = targets[i];
-                cout << getId() << " hit " << target->getId()
+                *battlefield << getId() << " hit " << target->getId()
                      << " at (" << target->getPosX() << "," << target->getPosY() << ")" << endl;
 
                 incrementKills();
@@ -2081,7 +2037,7 @@ void BomberBot::actionFire(Battlefield* battlefield)
                 if (target->getLives() >= 1) {
                     battlefield->queueForRespawn(target);
                 } else {
-                    cout << target->getId() << " was destroyed!" << endl;
+                    *battlefield << target->getId() << " was destroyed!" << endl;
                     battlefield->destroyRobot(target);
                 }
             }
@@ -2089,25 +2045,25 @@ void BomberBot::actionFire(Battlefield* battlefield)
             battlefield->decideUpgradeType(this);
         } else {
             for (Robot* target : targets) {
-                cout << getId() << " missed " << target->getId()
+                *battlefield << getId() << " missed " << target->getId()
                      << " at (" << centerX << "," << centerY << ")" << endl;
             }
         }
     } else {
-        cout << getId() << " fired at empty space " << endl;
+        *battlefield << getId() << " fired at empty space " << endl;
     }
 
     // Ammo handling
     shellsRemaining--;
     if (shellsRemaining <= 0) {
-        cout << getId() << " is out of ammo and self-destructs!" << endl;
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
         selfDestruct();
         battlefield->removeRobot(this);
 
         if (getLives() >= 1) {
             battlefield->queueForRespawn(this);
         } else {
-            cout << getId() << " was destroyed!" << endl;
+            *battlefield << getId() << " was destroyed!" << endl;
             battlefield->destroyRobot(this);
         }
     }
@@ -2119,7 +2075,6 @@ void HideBot::actionMove(Battlefield* battlefield)
     if (isHidden)
     {
         isHidden = false;
-        cout << getId() << " is now visible again." << endl;
         *battlefield << getId() << " is now visible again." << endl;
     }
 
@@ -2140,24 +2095,20 @@ void HideBot::actionMove(Battlefield* battlefield)
         //If enemy nearby, 70% to activate skill, else 30% to activate skill
         if ((enemyNearby ? rand() % 100 < 70 : rand() % 100 < 30)) {
 
-            cout << getType() << " actionHide" << endl;
             *battlefield << getType() << " actionHide" << endl;
 
             isHidden = true;
 
             hideSkill--;
 
-            cout << getId() << " went into hiding." << endl;
             *battlefield << getId() << " went into hiding." << endl;
             return;
 
         }
         else
         {
-            cout << getType() << " actionHide" << endl;
             *battlefield << getType() << " actionHide" << endl;
 
-            cout << getId() << " failed to hide." << endl;
             *battlefield << getId() << " failed to hide." << endl;
 
             return;
@@ -2165,7 +2116,6 @@ void HideBot::actionMove(Battlefield* battlefield)
     }
 
     //If no more jumpSkill or chances fail, move normally
-    cout << getId() << " has no hides left!!" << endl;
     *battlefield << getId() << " has no hides left!!" << endl;
 
     MovingRobot::actionMove(battlefield);
@@ -2190,7 +2140,6 @@ void JumpBot::actionMove(Battlefield* battlefield)
 
         //If enemy nearby, 70% to activate skill, else 30% to activate skill
         if ((enemyNearby ? rand() % 100 < 70 : rand() % 100 < 30)) {
-            cout << getType() << " actionJump" << endl;
             *battlefield << getType() << " actionJump" << endl;
 
             int newX, newY;
@@ -2202,21 +2151,18 @@ void JumpBot::actionMove(Battlefield* battlefield)
             setPosX(newX);
             setPosY(newY);
 
-            cout << getId() << " jumps to (" << newX << "," << newY << ")" << endl;
             *battlefield << getId() << " jumps to (" << newX << "," << newY << ")" << endl;
             return;
         }
 
         else
         {
-            cout << getId() << " failed to jump and stays in place" << endl;
             *battlefield << getId() << " failed to jump and stays in place" << endl;
             return;
         }
     }
 
     //If no more jumpSkill or chances fail, move normally
-    cout << getId() << " has no jumps left!!" << endl;
     *battlefield << getId() << " has no jumps left!!" << endl;
 
     MovingRobot::actionMove(battlefield);
@@ -2243,7 +2189,6 @@ void PortalBot::actionMove(Battlefield* battlefield)
         //If enemy nearby, 70% to activate skill, else 30% to activate skill
         if ((enemyNearby ? rand() % 100 < 70 : rand() % 100 < 30))
         {
-            cout << getType() << " actionPortal" << endl;
             *battlefield << getType() << " actionPortal" << endl;
 
             //Target to portal and swap places with
@@ -2321,14 +2266,12 @@ void PortalBot::actionMove(Battlefield* battlefield)
             target->setPosX(myX);
             target->setPosY(myY);
 
-            cout << getId() << " portal and swaps with " << target->getId() << " to position (" << targetX << ", " << targetY << ")" << endl;
             *battlefield << getId() << " portal and swaps with " << target->getId() << " to position (" << targetX << ", " << targetY << ")" << endl;
             return;
 
         }
         else
         {
-            cout << getId() << " failed to portal and stays in place" << endl;
             *battlefield << getId() << " failed to portal and stays in place" << endl;
             return;
         }
@@ -2336,7 +2279,6 @@ void PortalBot::actionMove(Battlefield* battlefield)
     }
 
     //If no more portalSkill or chances fail, move normally
-    cout << getId() << " has no portals left!!" << endl;
     *battlefield << getId() << " has no portals left!!" << endl;
 
     MovingRobot::actionMove(battlefield);
@@ -2348,8 +2290,8 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.readInputFile("fileInput1.txt");
-    b.writeOutputFile("fileOutput1.txt");
+    b.readInputFile("fileInput2a.txt");
+    b.writeOutputFile("fileOutput2a.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();
