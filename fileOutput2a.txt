@@ -43,7 +43,7 @@ Display Battlefield
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 
 Turn 1:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 10
 GR01's kills: 0
@@ -105,7 +105,7 @@ Display Battlefield
 
 
 Turn 2:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 10
 GR02's kills: 0
@@ -167,7 +167,7 @@ Display Battlefield
 
 
 Turn 3:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 3
 GR03's shells left: 10
 GR03's kills: 0
@@ -229,7 +229,7 @@ Display Battlefield
 
 
 Turn 4:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 10
 GR04's kills: 0
@@ -291,7 +291,7 @@ Display Battlefield
 
 
 Turn 5:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 10
 GR05's kills: 0
@@ -302,7 +302,7 @@ GenericRobot actionThink
 GR05 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR05 saw GR03 at the position (15, 4)
+GR05 found GR03 at the position (15, 4)
 GenericRobot actionFire
 GR05 fired at empty space (13,3)
 GenericRobot actionMove
@@ -354,7 +354,7 @@ Display Battlefield
 
 
 Turn 6:
-GenericRobot GR06, IG-11 turns
+GenericRobot GR06_IG-11 turns
 GR06's lives remaining: 3
 GR06's shells left: 10
 GR06's kills: 0
@@ -416,7 +416,7 @@ Display Battlefield
 
 
 Turn 7:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 10
 GR07's kills: 0
@@ -478,7 +478,7 @@ Display Battlefield
 
 
 Turn 8:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 10
 GR08's kills: 0
@@ -540,7 +540,7 @@ Display Battlefield
 
 
 Turn 9:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 10
 GR09's kills: 0
@@ -551,7 +551,7 @@ GenericRobot actionThink
 GR09 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR09 saw GR02 at the position (8, 11)
+GR09 found GR02 at the position (8, 11)
 GenericRobot actionMove
 GR09 moves to (6,11)
 GenericRobot actionFire
@@ -603,7 +603,7 @@ Display Battlefield
 
 
 Turn 10:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 10
 GR10's kills: 0
@@ -665,7 +665,7 @@ Display Battlefield
 
 
 Turn 11:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 9
 GR01's kills: 0
@@ -727,7 +727,7 @@ Display Battlefield
 
 
 Turn 12:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 9
 GR02's kills: 0
@@ -789,7 +789,7 @@ Display Battlefield
 
 
 Turn 13:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 3
 GR03's shells left: 9
 GR03's kills: 0
@@ -800,7 +800,7 @@ GenericRobot actionThink
 GR03 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR03 saw GR05 at the position (14, 4)
+GR03 found GR05 at the position (14, 4)
 GenericRobot actionFire
 GR03 fired at empty space (16,5)
 GenericRobot actionMove
@@ -852,7 +852,7 @@ Display Battlefield
 
 
 Turn 14:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 9
 GR04's kills: 0
@@ -914,7 +914,7 @@ Display Battlefield
 
 
 Turn 15:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 9
 GR05's kills: 0
@@ -925,7 +925,7 @@ GenericRobot actionThink
 GR05 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR05 saw GR03 at the position (15, 5)
+GR05 found GR03 at the position (15, 5)
 GenericRobot actionMove
 GR05 moves to (13,5)
 GenericRobot actionFire
@@ -977,7 +977,7 @@ Display Battlefield
 
 
 Turn 16:
-GenericRobot GR06, IG-11 turns
+GenericRobot GR06_IG-11 turns
 GR06's lives remaining: 3
 GR06's shells left: 9
 GR06's kills: 0
@@ -1039,7 +1039,7 @@ Display Battlefield
 
 
 Turn 17:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 9
 GR07's kills: 0
@@ -1101,7 +1101,7 @@ Display Battlefield
 
 
 Turn 18:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 9
 GR08's kills: 0
@@ -1163,7 +1163,7 @@ Display Battlefield
 
 
 Turn 19:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 9
 GR09's kills: 0
@@ -1225,7 +1225,7 @@ Display Battlefield
 
 
 Turn 20:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 9
 GR10's kills: 0
@@ -1287,7 +1287,7 @@ Display Battlefield
 
 
 Turn 21:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 8
 GR01's kills: 0
@@ -1349,7 +1349,7 @@ Display Battlefield
 
 
 Turn 22:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 8
 GR02's kills: 0
@@ -1411,7 +1411,7 @@ Display Battlefield
 
 
 Turn 23:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 3
 GR03's shells left: 8
 GR03's kills: 0
@@ -1473,7 +1473,7 @@ Display Battlefield
 
 
 Turn 24:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 8
 GR04's kills: 0
@@ -1535,7 +1535,7 @@ Display Battlefield
 
 
 Turn 25:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 8
 GR05's kills: 0
@@ -1597,7 +1597,7 @@ Display Battlefield
 
 
 Turn 26:
-GenericRobot GR06, IG-11 turns
+GenericRobot GR06_IG-11 turns
 GR06's lives remaining: 3
 GR06's shells left: 8
 GR06's kills: 0
@@ -1659,7 +1659,7 @@ Display Battlefield
 
 
 Turn 27:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 8
 GR07's kills: 0
@@ -1721,7 +1721,7 @@ Display Battlefield
 
 
 Turn 28:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 8
 GR08's kills: 0
@@ -1783,7 +1783,7 @@ Display Battlefield
 
 
 Turn 29:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 8
 GR09's kills: 0
@@ -1845,7 +1845,7 @@ Display Battlefield
 
 
 Turn 30:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 8
 GR10's kills: 0
@@ -1907,7 +1907,7 @@ Display Battlefield
 
 
 Turn 31:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 7
 GR01's kills: 0
@@ -1969,7 +1969,7 @@ Display Battlefield
 
 
 Turn 32:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 7
 GR02's kills: 0
@@ -2031,7 +2031,7 @@ Display Battlefield
 
 
 Turn 33:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 3
 GR03's shells left: 7
 GR03's kills: 0
@@ -2093,7 +2093,7 @@ Display Battlefield
 
 
 Turn 34:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 7
 GR04's kills: 0
@@ -2155,7 +2155,7 @@ Display Battlefield
 
 
 Turn 35:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 7
 GR05's kills: 0
@@ -2217,7 +2217,7 @@ Display Battlefield
 
 
 Turn 36:
-GenericRobot GR06, IG-11 turns
+GenericRobot GR06_IG-11 turns
 GR06's lives remaining: 3
 GR06's shells left: 7
 GR06's kills: 0
@@ -2282,7 +2282,7 @@ Display Battlefield
 
 
 Turn 37:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 7
 GR07's kills: 0
@@ -2345,7 +2345,7 @@ Display Battlefield
 
 Turn 38:
 GR03 is re-enter the battlefield at the position (16, 14)
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 7
 GR08's kills: 0
@@ -2407,7 +2407,7 @@ Display Battlefield
 
 
 Turn 39:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 7
 GR09's kills: 0
@@ -2469,7 +2469,7 @@ Display Battlefield
 
 
 Turn 40:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 7
 GR10's kills: 0
@@ -2531,7 +2531,7 @@ Display Battlefield
 
 
 Turn 41:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 6
 GR01's kills: 0
@@ -2593,7 +2593,7 @@ Display Battlefield
 
 
 Turn 42:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 6
 GR02's kills: 0
@@ -2655,7 +2655,7 @@ Display Battlefield
 
 
 Turn 43:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 10
 GR03's kills: 0
@@ -2717,7 +2717,7 @@ Display Battlefield
 
 
 Turn 44:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 6
 GR04's kills: 0
@@ -2779,7 +2779,7 @@ Display Battlefield
 
 
 Turn 45:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 6
 GR05's kills: 0
@@ -2841,7 +2841,7 @@ Display Battlefield
 
 
 Turn 46:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 10
 TB06's kills: 1
@@ -2903,7 +2903,7 @@ Display Battlefield
 
 
 Turn 47:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 6
 GR07's kills: 0
@@ -2965,7 +2965,7 @@ Display Battlefield
 
 
 Turn 48:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 6
 GR08's kills: 0
@@ -3027,7 +3027,7 @@ Display Battlefield
 
 
 Turn 49:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 6
 GR09's kills: 0
@@ -3089,7 +3089,7 @@ Display Battlefield
 
 
 Turn 50:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 6
 GR10's kills: 0
@@ -3151,7 +3151,7 @@ Display Battlefield
 
 
 Turn 51:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 5
 GR01's kills: 0
@@ -3213,7 +3213,7 @@ Display Battlefield
 
 
 Turn 52:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 5
 GR02's kills: 0
@@ -3275,7 +3275,7 @@ Display Battlefield
 
 
 Turn 53:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 9
 GR03's kills: 0
@@ -3337,7 +3337,7 @@ Display Battlefield
 
 
 Turn 54:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 5
 GR04's kills: 0
@@ -3399,7 +3399,7 @@ Display Battlefield
 
 
 Turn 55:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 5
 GR05's kills: 0
@@ -3461,7 +3461,7 @@ Display Battlefield
 
 
 Turn 56:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 9
 TB06's kills: 1
@@ -3475,6 +3475,7 @@ TrackBot is looking around...
 TB06 is finding the target to plant a tracker...
 TB06 has planted a tracker on GR01
 TB06 has 2 trackers remaining
+TB06 tracked GR01 at (2, 13)
 TrackBot actionMove
 TB06 moves to (17,4)
 TrackBot actionFire
@@ -3526,7 +3527,7 @@ Display Battlefield
 
 
 Turn 57:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 5
 GR07's kills: 0
@@ -3588,7 +3589,7 @@ Display Battlefield
 
 
 Turn 58:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 5
 GR08's kills: 0
@@ -3650,7 +3651,7 @@ Display Battlefield
 
 
 Turn 59:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 5
 GR09's kills: 0
@@ -3712,7 +3713,7 @@ Display Battlefield
 
 
 Turn 60:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 5
 GR10's kills: 0
@@ -3774,7 +3775,7 @@ Display Battlefield
 
 
 Turn 61:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 4
 GR01's kills: 0
@@ -3836,7 +3837,7 @@ Display Battlefield
 
 
 Turn 62:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 4
 GR02's kills: 0
@@ -3898,7 +3899,7 @@ Display Battlefield
 
 
 Turn 63:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 8
 GR03's kills: 0
@@ -3960,7 +3961,7 @@ Display Battlefield
 
 
 Turn 64:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 4
 GR04's kills: 0
@@ -4022,7 +4023,7 @@ Display Battlefield
 
 
 Turn 65:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 4
 GR05's kills: 0
@@ -4084,7 +4085,7 @@ Display Battlefield
 
 
 Turn 66:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 8
 TB06's kills: 1
@@ -4095,6 +4096,7 @@ TrackBot actionThink
 TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
+TB06 tracked GR01 at (1, 13)
 TrackBot actionMove
 TB06 moves to (16,3)
 TrackBot actionFire
@@ -4146,7 +4148,7 @@ Display Battlefield
 
 
 Turn 67:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 4
 GR07's kills: 0
@@ -4208,7 +4210,7 @@ Display Battlefield
 
 
 Turn 68:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 4
 GR08's kills: 0
@@ -4270,7 +4272,7 @@ Display Battlefield
 
 
 Turn 69:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 4
 GR09's kills: 0
@@ -4332,7 +4334,7 @@ Display Battlefield
 
 
 Turn 70:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 4
 GR10's kills: 0
@@ -4394,7 +4396,7 @@ Display Battlefield
 
 
 Turn 71:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 3
 GR01's kills: 0
@@ -4456,7 +4458,7 @@ Display Battlefield
 
 
 Turn 72:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 3
 GR02's kills: 0
@@ -4518,7 +4520,7 @@ Display Battlefield
 
 
 Turn 73:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 7
 GR03's kills: 0
@@ -4580,7 +4582,7 @@ Display Battlefield
 
 
 Turn 74:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 3
 GR04's kills: 0
@@ -4642,7 +4644,7 @@ Display Battlefield
 
 
 Turn 75:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 3
 GR05's kills: 0
@@ -4704,7 +4706,7 @@ Display Battlefield
 
 
 Turn 76:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 7
 TB06's kills: 1
@@ -4718,6 +4720,8 @@ TrackBot is looking around...
 TB06 is finding the target to plant a tracker...
 TB06 has planted a tracker on GR04
 TB06 has 1 trackers remaining
+TB06 tracked GR01 at (2, 14)
+TB06 tracked GR04 at (1, 5)
 TrackBot actionFire
 TB06 fired at empty space (16,2)
 TrackBot actionMove
@@ -4769,7 +4773,7 @@ Display Battlefield
 
 
 Turn 77:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 3
 GR07's kills: 0
@@ -4831,7 +4835,7 @@ Display Battlefield
 
 
 Turn 78:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 3
 GR08's kills: 0
@@ -4893,7 +4897,7 @@ Display Battlefield
 
 
 Turn 79:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 3
 GR09's kills: 0
@@ -4955,7 +4959,7 @@ Display Battlefield
 
 
 Turn 80:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 3
 GR10's kills: 0
@@ -5017,7 +5021,7 @@ Display Battlefield
 
 
 Turn 81:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 2
 GR01's kills: 0
@@ -5079,7 +5083,7 @@ Display Battlefield
 
 
 Turn 82:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 2
 GR02's kills: 0
@@ -5141,7 +5145,7 @@ Display Battlefield
 
 
 Turn 83:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 6
 GR03's kills: 0
@@ -5203,7 +5207,7 @@ Display Battlefield
 
 
 Turn 84:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 2
 GR04's kills: 0
@@ -5265,7 +5269,7 @@ Display Battlefield
 
 
 Turn 85:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 2
 GR05's kills: 0
@@ -5327,7 +5331,7 @@ Display Battlefield
 
 
 Turn 86:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 6
 TB06's kills: 1
@@ -5341,6 +5345,9 @@ TrackBot is looking around...
 TB06 is finding the target to plant a tracker...
 TB06 has planted a tracker on GR09
 TB06 has 0 trackers remaining
+TB06 tracked GR01 at (2, 15)
+TB06 tracked GR04 at (1, 6)
+TB06 tracked GR09 at (6, 10)
 TrackBot actionMove
 TB06 moves to (16,1)
 TrackBot actionFire
@@ -5392,7 +5399,7 @@ Display Battlefield
 
 
 Turn 87:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 2
 GR07's kills: 0
@@ -5454,7 +5461,7 @@ Display Battlefield
 
 
 Turn 88:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 2
 GR08's kills: 0
@@ -5516,7 +5523,7 @@ Display Battlefield
 
 
 Turn 89:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 2
 GR09's kills: 0
@@ -5578,7 +5585,7 @@ Display Battlefield
 
 
 Turn 90:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 2
 GR10's kills: 0
@@ -5640,7 +5647,7 @@ Display Battlefield
 
 
 Turn 91:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 3
 GR01's shells left: 1
 GR01's kills: 0
@@ -5705,7 +5712,7 @@ Display Battlefield
 
 
 Turn 92:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 3
 GR02's shells left: 1
 GR02's kills: 0
@@ -5771,7 +5778,7 @@ Display Battlefield
 
 Turn 93:
 GR01 is re-enter the battlefield at the position (10, 17)
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 5
 GR03's kills: 0
@@ -5834,7 +5841,7 @@ Display Battlefield
 
 Turn 94:
 GR02 is re-enter the battlefield at the position (11, 2)
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 3
 GR04's shells left: 1
 GR04's kills: 0
@@ -5899,7 +5906,7 @@ Display Battlefield
 
 
 Turn 95:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 3
 GR05's shells left: 1
 GR05's kills: 0
@@ -5965,7 +5972,7 @@ Display Battlefield
 
 Turn 96:
 GR04 is re-enter the battlefield at the position (2, 18)
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 5
 TB06's kills: 1
@@ -5977,6 +5984,9 @@ TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
 TB06 has no tracker left!!
+TB06 tracked GR01 at (10, 17)
+TB06 tracked GR04 at (2, 18)
+TB06 tracked GR09 at (5, 9)
 TrackBot actionFire
 TB06 fired at empty space (17,2)
 TrackBot actionMove
@@ -6029,7 +6039,7 @@ Display Battlefield
 
 Turn 97:
 GR05 is re-enter the battlefield at the position (5, 17)
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 3
 GR07's shells left: 1
 GR07's kills: 0
@@ -6094,7 +6104,7 @@ Display Battlefield
 
 
 Turn 98:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 3
 GR08's shells left: 1
 GR08's kills: 0
@@ -6105,7 +6115,7 @@ GenericRobot actionThink
 GR08 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR08 saw GR09 at the position (5, 9)
+GR08 found GR09 at the position (5, 9)
 GenericRobot actionFire
 GR08 fired at empty space (4,7)
 GR08 is out of ammo and self-destructs!
@@ -6161,7 +6171,7 @@ Display Battlefield
 
 Turn 99:
 GR07 is re-enter the battlefield at the position (6, 18)
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 3
 GR09's shells left: 1
 GR09's kills: 0
@@ -6227,7 +6237,7 @@ Display Battlefield
 
 Turn 100:
 GR08 is re-enter the battlefield at the position (10, 14)
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 3
 GR10's shells left: 1
 GR10's kills: 0
@@ -6238,7 +6248,7 @@ GenericRobot actionThink
 GR10 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR10 saw GR02 at the position (11, 2)
+GR10 found GR02 at the position (11, 2)
 GenericRobot actionFire
 GR10 fired at empty space (12,1)
 GR10 is out of ammo and self-destructs!
@@ -6294,7 +6304,7 @@ Display Battlefield
 
 Turn 101:
 GR09 is re-enter the battlefield at the position (18, 3)
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 10
 GR01's kills: 0
@@ -6357,7 +6367,7 @@ Display Battlefield
 
 Turn 102:
 GR10 is re-enter the battlefield at the position (13, 14)
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 10
 GR02's kills: 0
@@ -6419,7 +6429,7 @@ Display Battlefield
 
 
 Turn 103:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 4
 GR03's kills: 0
@@ -6481,7 +6491,7 @@ Display Battlefield
 
 
 Turn 104:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 10
 GR04's kills: 0
@@ -6543,7 +6553,7 @@ Display Battlefield
 
 
 Turn 105:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 10
 GR05's kills: 0
@@ -6554,7 +6564,7 @@ GenericRobot actionThink
 GR05 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR05 saw GR07 at the position (6, 18)
+GR05 found GR07 at the position (6, 18)
 GenericRobot actionFire
 GR05 fired at empty space (5,18)
 GenericRobot actionMove
@@ -6606,7 +6616,7 @@ Display Battlefield
 
 
 Turn 106:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 4
 TB06's kills: 1
@@ -6618,6 +6628,9 @@ TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
 TB06 has no tracker left!!
+TB06 tracked GR01 at (11, 18)
+TB06 tracked GR04 at (1, 17)
+TB06 tracked GR09 at (18, 3)
 TrackBot actionMove
 TB06 moves to (16,1)
 TrackBot actionFire
@@ -6669,7 +6682,7 @@ Display Battlefield
 
 
 Turn 107:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 2
 GR07's shells left: 10
 GR07's kills: 0
@@ -6680,7 +6693,7 @@ GenericRobot actionThink
 GR07 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR07 saw GR05 at the position (6, 17)
+GR07 found GR05 at the position (6, 17)
 GenericRobot actionMove
 GR07 moves to (7,19)
 GenericRobot actionFire
@@ -6732,7 +6745,7 @@ Display Battlefield
 
 
 Turn 108:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 2
 GR08's shells left: 10
 GR08's kills: 0
@@ -6794,7 +6807,7 @@ Display Battlefield
 
 
 Turn 109:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 2
 GR09's shells left: 10
 GR09's kills: 0
@@ -6856,7 +6869,7 @@ Display Battlefield
 
 
 Turn 110:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 10
 GR10's kills: 0
@@ -6918,7 +6931,7 @@ Display Battlefield
 
 
 Turn 111:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 9
 GR01's kills: 0
@@ -6980,7 +6993,7 @@ Display Battlefield
 
 
 Turn 112:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 9
 GR02's kills: 0
@@ -7042,7 +7055,7 @@ Display Battlefield
 
 
 Turn 113:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 3
 GR03's kills: 0
@@ -7104,7 +7117,7 @@ Display Battlefield
 
 
 Turn 114:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 9
 GR04's kills: 0
@@ -7166,7 +7179,7 @@ Display Battlefield
 
 
 Turn 115:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 9
 GR05's kills: 0
@@ -7228,7 +7241,7 @@ Display Battlefield
 
 
 Turn 116:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 3
 TB06's shells left: 3
 TB06's kills: 1
@@ -7240,6 +7253,9 @@ TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
 TB06 has no tracker left!!
+TB06 tracked GR01 at (12, 19)
+TB06 tracked GR04 at (0, 16)
+TB06 tracked GR09 at (18, 2)
 TrackBot actionFire
 TB06 fired at empty space (15,1)
 TrackBot actionMove
@@ -7291,7 +7307,7 @@ Display Battlefield
 
 
 Turn 117:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 2
 GR07's shells left: 9
 GR07's kills: 0
@@ -7353,7 +7369,7 @@ Display Battlefield
 
 
 Turn 118:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 2
 GR08's shells left: 9
 GR08's kills: 0
@@ -7415,7 +7431,7 @@ Display Battlefield
 
 
 Turn 119:
-GenericRobot GR09, K-2S0 turns
+GenericRobot GR09_K-2S0 turns
 GR09's lives remaining: 2
 GR09's shells left: 9
 GR09's kills: 0
@@ -7426,7 +7442,7 @@ GenericRobot actionThink
 GR09 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR09 saw TB06 at the position (17, 2)
+GR09 found TB06 at the position (17, 2)
 GenericRobot actionFire
 GR09 hit TB06 at (17,2)
 TB06 has 2 lives remaining
@@ -7481,7 +7497,7 @@ Display Battlefield
 
 
 Turn 120:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 9
 GR10's kills: 0
@@ -7544,7 +7560,7 @@ Display Battlefield
 
 Turn 121:
 TB06 is re-enter the battlefield at the position (5, 13)
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 8
 GR01's kills: 0
@@ -7606,7 +7622,7 @@ Display Battlefield
 
 
 Turn 122:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 8
 GR02's kills: 0
@@ -7668,7 +7684,7 @@ Display Battlefield
 
 
 Turn 123:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 2
 GR03's kills: 0
@@ -7730,7 +7746,7 @@ Display Battlefield
 
 
 Turn 124:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 8
 GR04's kills: 0
@@ -7792,7 +7808,7 @@ Display Battlefield
 
 
 Turn 125:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 8
 GR05's kills: 0
@@ -7854,7 +7870,7 @@ Display Battlefield
 
 
 Turn 126:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 2
 TB06's shells left: 10
 TB06's kills: 1
@@ -7866,6 +7882,9 @@ TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
 TB06 has no tracker left!!
+TB06 tracked GR01 at (13, 19)
+TB06 tracked GR04 at (0, 15)
+TB06 tracked GR09 at (19, 2)
 TrackBot actionMove
 TB06 moves to (6,13)
 TrackBot actionFire
@@ -7917,7 +7936,7 @@ Display Battlefield
 
 
 Turn 127:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 2
 GR07's shells left: 8
 GR07's kills: 0
@@ -7979,7 +7998,7 @@ Display Battlefield
 
 
 Turn 128:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 2
 GR08's shells left: 8
 GR08's kills: 0
@@ -8041,7 +8060,7 @@ Display Battlefield
 
 
 Turn 129:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 10
 HB09's kills: 1
@@ -8103,7 +8122,7 @@ Display Battlefield
 
 
 Turn 130:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 8
 GR10's kills: 0
@@ -8165,7 +8184,7 @@ Display Battlefield
 
 
 Turn 131:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 7
 GR01's kills: 0
@@ -8227,7 +8246,7 @@ Display Battlefield
 
 
 Turn 132:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 7
 GR02's kills: 0
@@ -8289,7 +8308,7 @@ Display Battlefield
 
 
 Turn 133:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 2
 GR03's shells left: 1
 GR03's kills: 0
@@ -8354,7 +8373,7 @@ Display Battlefield
 
 
 Turn 134:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 7
 GR04's kills: 0
@@ -8417,7 +8436,7 @@ Display Battlefield
 
 Turn 135:
 GR03 is re-enter the battlefield at the position (2, 18)
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 7
 GR05's kills: 0
@@ -8428,7 +8447,7 @@ GenericRobot actionThink
 GR05 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR05 saw GR07 at the position (7, 18)
+GR05 found GR07 at the position (7, 18)
 GenericRobot actionFire
 GR05 fired at empty space (7,17)
 GenericRobot actionMove
@@ -8480,7 +8499,7 @@ Display Battlefield
 
 
 Turn 136:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 2
 TB06's shells left: 9
 TB06's kills: 1
@@ -8492,6 +8511,9 @@ TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
 TB06 has no tracker left!!
+TB06 tracked GR01 at (14, 19)
+TB06 tracked GR04 at (1, 15)
+TB06 tracked GR09 at (19, 2)
 TrackBot actionFire
 TB06 fired at empty space (7,12)
 TrackBot actionMove
@@ -8543,7 +8565,7 @@ Display Battlefield
 
 
 Turn 137:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 2
 GR07's shells left: 7
 GR07's kills: 0
@@ -8605,7 +8627,7 @@ Display Battlefield
 
 
 Turn 138:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 2
 GR08's shells left: 7
 GR08's kills: 0
@@ -8667,7 +8689,7 @@ Display Battlefield
 
 
 Turn 139:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 9
 HB09's kills: 1
@@ -8729,7 +8751,7 @@ Display Battlefield
 
 
 Turn 140:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 7
 GR10's kills: 0
@@ -8791,7 +8813,7 @@ Display Battlefield
 
 
 Turn 141:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 6
 GR01's kills: 0
@@ -8853,7 +8875,7 @@ Display Battlefield
 
 
 Turn 142:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 6
 GR02's kills: 0
@@ -8915,7 +8937,7 @@ Display Battlefield
 
 
 Turn 143:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 1
 GR03's shells left: 10
 GR03's kills: 0
@@ -8977,7 +8999,7 @@ Display Battlefield
 
 
 Turn 144:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 6
 GR04's kills: 0
@@ -9039,7 +9061,7 @@ Display Battlefield
 
 
 Turn 145:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 6
 GR05's kills: 0
@@ -9050,7 +9072,7 @@ GenericRobot actionThink
 GR05 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR05 saw GR07 at the position (8, 18)
+GR05 found GR07 at the position (8, 18)
 GenericRobot actionMove
 GR05 moves to (9,16)
 GenericRobot actionFire
@@ -9102,7 +9124,7 @@ Display Battlefield
 
 
 Turn 146:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 2
 TB06's shells left: 8
 TB06's kills: 1
@@ -9113,8 +9135,11 @@ TrackBot actionThink
 TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
-TB06 saw GR08 at the position (7, 13)
+TB06 found GR08 at the position (7, 13)
 TB06 has no tracker left!!
+TB06 tracked GR01 at (13, 18)
+TB06 tracked GR04 at (0, 16)
+TB06 tracked GR09 at (19, 2)
 TrackBot actionMove
 TB06 moves to (5,15)
 TrackBot actionFire
@@ -9166,7 +9191,7 @@ Display Battlefield
 
 
 Turn 147:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 2
 GR07's shells left: 6
 GR07's kills: 0
@@ -9228,7 +9253,7 @@ Display Battlefield
 
 
 Turn 148:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 2
 GR08's shells left: 6
 GR08's kills: 0
@@ -9290,7 +9315,7 @@ Display Battlefield
 
 
 Turn 149:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 8
 HB09's kills: 1
@@ -9353,7 +9378,7 @@ Display Battlefield
 
 
 Turn 150:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 6
 GR10's kills: 0
@@ -9415,7 +9440,7 @@ Display Battlefield
 
 
 Turn 151:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 5
 GR01's kills: 0
@@ -9477,7 +9502,7 @@ Display Battlefield
 
 
 Turn 152:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 5
 GR02's kills: 0
@@ -9539,7 +9564,7 @@ Display Battlefield
 
 
 Turn 153:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 1
 GR03's shells left: 9
 GR03's kills: 0
@@ -9601,7 +9626,7 @@ Display Battlefield
 
 
 Turn 154:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 5
 GR04's kills: 0
@@ -9663,7 +9688,7 @@ Display Battlefield
 
 
 Turn 155:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 5
 GR05's kills: 0
@@ -9725,7 +9750,7 @@ Display Battlefield
 
 
 Turn 156:
-TrackBot TB06, IG-11 turns
+TrackBot TB06_IG-11 turns
 TB06's lives remaining: 2
 TB06's shells left: 7
 TB06's kills: 1
@@ -9737,6 +9762,9 @@ TB06 is thinking...
 TrackBot actionLook
 TrackBot is looking around...
 TB06 has no tracker left!!
+TB06 tracked GR01 at (13, 17)
+TB06 tracked GR04 at (1, 17)
+TB06 tracked GR09 at (19, 2)
 TrackBot actionMove
 TB06 moves to (6,16)
 TrackBot actionFire
@@ -9791,7 +9819,7 @@ Display Battlefield
 
 
 Turn 157:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 2
 GR08's shells left: 5
 GR08's kills: 0
@@ -9854,7 +9882,7 @@ Display Battlefield
 
 Turn 158:
 GR07 is re-enter the battlefield at the position (3, 2)
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 7
 HB09's kills: 1
@@ -9916,7 +9944,7 @@ Display Battlefield
 
 
 Turn 159:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 5
 GR10's kills: 0
@@ -9978,7 +10006,7 @@ Display Battlefield
 
 
 Turn 160:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 4
 GR01's kills: 0
@@ -10040,7 +10068,7 @@ Display Battlefield
 
 
 Turn 161:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 4
 GR02's kills: 0
@@ -10102,7 +10130,7 @@ Display Battlefield
 
 
 Turn 162:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 1
 GR03's shells left: 8
 GR03's kills: 0
@@ -10113,7 +10141,7 @@ GenericRobot actionThink
 GR03 is thinking...
 GenericRobot actionLook
 GenericRobot is looking around...
-GR03 saw GR04 at the position (1, 17)
+GR03 found GR04 at the position (1, 17)
 GenericRobot actionFire
 GR03 fired at empty space (3,18)
 GenericRobot actionMove
@@ -10165,7 +10193,7 @@ Display Battlefield
 
 
 Turn 163:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 4
 GR04's kills: 0
@@ -10227,7 +10255,7 @@ Display Battlefield
 
 
 Turn 164:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 4
 GR05's kills: 0
@@ -10289,7 +10317,7 @@ Display Battlefield
 
 
 Turn 165:
-BomberBot BB06, IG-11 turns
+BomberBot BB06_IG-11 turns
 BB06's lives remaining: 2
 BB06's shells left: 5
 BB06's kills: 2
@@ -10354,7 +10382,7 @@ Display Battlefield
 
 
 Turn 166:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 1
 GR07's shells left: 10
 GR07's kills: 0
@@ -10417,7 +10445,7 @@ Display Battlefield
 
 Turn 167:
 GR08 is re-enter the battlefield at the position (5, 13)
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 1
 GR08's shells left: 10
 GR08's kills: 0
@@ -10479,7 +10507,7 @@ Display Battlefield
 
 
 Turn 168:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 6
 HB09's kills: 1
@@ -10541,7 +10569,7 @@ Display Battlefield
 
 
 Turn 169:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 4
 GR10's kills: 0
@@ -10603,7 +10631,7 @@ Display Battlefield
 
 
 Turn 170:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 3
 GR01's kills: 0
@@ -10665,7 +10693,7 @@ Display Battlefield
 
 
 Turn 171:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 3
 GR02's kills: 0
@@ -10727,7 +10755,7 @@ Display Battlefield
 
 
 Turn 172:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 1
 GR03's shells left: 7
 GR03's kills: 0
@@ -10789,7 +10817,7 @@ Display Battlefield
 
 
 Turn 173:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 3
 GR04's kills: 0
@@ -10851,7 +10879,7 @@ Display Battlefield
 
 
 Turn 174:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 3
 GR05's kills: 0
@@ -10913,7 +10941,7 @@ Display Battlefield
 
 
 Turn 175:
-JumpBot JB06, IG-11 turns
+JumpBot JB06_IG-11 turns
 JB06's lives remaining: 2
 JB06's shells left: 10
 JB06's kills: 3
@@ -10975,7 +11003,7 @@ Display Battlefield
 
 
 Turn 176:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 1
 GR07's shells left: 9
 GR07's kills: 0
@@ -11037,7 +11065,7 @@ Display Battlefield
 
 
 Turn 177:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 1
 GR08's shells left: 9
 GR08's kills: 0
@@ -11099,7 +11127,7 @@ Display Battlefield
 
 
 Turn 178:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 5
 HB09's kills: 1
@@ -11161,7 +11189,7 @@ Display Battlefield
 
 
 Turn 179:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 3
 GR10's kills: 0
@@ -11223,7 +11251,7 @@ Display Battlefield
 
 
 Turn 180:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 2
 GR01's kills: 0
@@ -11285,7 +11313,7 @@ Display Battlefield
 
 
 Turn 181:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 2
 GR02's kills: 0
@@ -11347,7 +11375,7 @@ Display Battlefield
 
 
 Turn 182:
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 1
 GR03's shells left: 6
 GR03's kills: 0
@@ -11409,7 +11437,7 @@ Display Battlefield
 
 
 Turn 183:
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 2
 GR04's kills: 0
@@ -11471,7 +11499,7 @@ Display Battlefield
 
 
 Turn 184:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 2
 GR05's kills: 0
@@ -11533,7 +11561,7 @@ Display Battlefield
 
 
 Turn 185:
-JumpBot JB06, IG-11 turns
+JumpBot JB06_IG-11 turns
 JB06's lives remaining: 2
 JB06's shells left: 9
 JB06's kills: 3
@@ -11594,7 +11622,7 @@ Display Battlefield
 
 
 Turn 186:
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 1
 GR07's shells left: 8
 GR07's kills: 0
@@ -11656,7 +11684,7 @@ Display Battlefield
 
 
 Turn 187:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 1
 GR08's shells left: 8
 GR08's kills: 0
@@ -11718,7 +11746,7 @@ Display Battlefield
 
 
 Turn 188:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 4
 HB09's kills: 1
@@ -11780,7 +11808,7 @@ Display Battlefield
 
 
 Turn 189:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 2
 GR10's kills: 0
@@ -11842,7 +11870,7 @@ Display Battlefield
 
 
 Turn 190:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 2
 GR01's shells left: 1
 GR01's kills: 0
@@ -11907,7 +11935,7 @@ Display Battlefield
 
 
 Turn 191:
-GenericRobot GR02, R2-D2 turns
+GenericRobot GR02_R2-D2 turns
 GR02's lives remaining: 2
 GR02's shells left: 1
 GR02's kills: 0
@@ -11973,7 +12001,7 @@ Display Battlefield
 
 Turn 192:
 GR01 is re-enter the battlefield at the position (5, 4)
-GenericRobot GR03, R5-D4 turns
+GenericRobot GR03_R5-D4 turns
 GR03's lives remaining: 1
 GR03's shells left: 5
 GR03's kills: 0
@@ -12036,7 +12064,7 @@ Display Battlefield
 
 Turn 193:
 GR02 is re-enter the battlefield at the position (6, 16)
-GenericRobot GR04, AP-5 turns
+GenericRobot GR04_AP-5 turns
 GR04's lives remaining: 2
 GR04's shells left: 1
 GR04's kills: 0
@@ -12101,7 +12129,7 @@ Display Battlefield
 
 
 Turn 194:
-GenericRobot GR05, BD-1 turns
+GenericRobot GR05_BD-1 turns
 GR05's lives remaining: 2
 GR05's shells left: 1
 GR05's kills: 0
@@ -12167,7 +12195,7 @@ Display Battlefield
 
 Turn 195:
 GR04 is re-enter the battlefield at the position (0, 15)
-JumpBot JB06, IG-11 turns
+JumpBot JB06_IG-11 turns
 JB06's lives remaining: 2
 JB06's shells left: 8
 JB06's kills: 3
@@ -12229,7 +12257,7 @@ Display Battlefield
 
 Turn 196:
 GR05 is re-enter the battlefield at the position (4, 7)
-GenericRobot GR07, BB-8 turns
+GenericRobot GR07_BB-8 turns
 GR07's lives remaining: 1
 GR07's shells left: 7
 GR07's kills: 0
@@ -12291,7 +12319,7 @@ Display Battlefield
 
 
 Turn 197:
-GenericRobot GR08, BT-1 turns
+GenericRobot GR08_BT-1 turns
 GR08's lives remaining: 1
 GR08's shells left: 7
 GR08's kills: 0
@@ -12353,7 +12381,7 @@ Display Battlefield
 
 
 Turn 198:
-HideBot HB09, K-2S0 turns
+HideBot HB09_K-2S0 turns
 HB09's lives remaining: 2
 HB09's shells left: 3
 HB09's kills: 1
@@ -12415,7 +12443,7 @@ Display Battlefield
 
 
 Turn 199:
-GenericRobot GR10, D-0 turns
+GenericRobot GR10_D-0 turns
 GR10's lives remaining: 2
 GR10's shells left: 1
 GR10's kills: 0
@@ -12480,7 +12508,7 @@ Display Battlefield
 
 
 Turn 200:
-GenericRobot GR01, C-3PO turns
+GenericRobot GR01_C-3PO turns
 GR01's lives remaining: 1
 GR01's shells left: 10
 GR01's kills: 0
