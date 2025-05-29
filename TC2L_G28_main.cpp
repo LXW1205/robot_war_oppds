@@ -2112,14 +2112,14 @@ void HideBot::actionMove(Battlefield* battlefield)
             *battlefield << getType() << " actionHide" << endl;
 
             *battlefield << getId() << " failed to hide." << endl;
-
-            return;
         }
     }
+    else
+    {
+        *battlefield << getId() << " has no hides left!!" << endl;
+    }
 
-    //If no more jumpSkill or chances fail, move normally
-    *battlefield << getId() << " has no hides left!!" << endl;
-
+    //If no more jumpSkill or chances fail or failed to hide, move normally
     MovingRobot::actionMove(battlefield);
 }
 
@@ -2159,14 +2159,15 @@ void JumpBot::actionMove(Battlefield* battlefield)
 
         else
         {
-            *battlefield << getId() << " failed to jump and stays in place" << endl;
-            return;
+            *battlefield << getId() << " failed to jump and moves normally" << endl;
         }
     }
+    else
+    {
+        *battlefield << getId() << " has no jumps left!!" << endl;
+    }
 
-    //If no more jumpSkill or chances fail, move normally
-    *battlefield << getId() << " has no jumps left!!" << endl;
-
+    //If no more jumpSkill, chances fail, failed to jump move normally
     MovingRobot::actionMove(battlefield);
 }
 
@@ -2274,15 +2275,17 @@ void PortalBot::actionMove(Battlefield* battlefield)
         }
         else
         {
-            *battlefield << getId() << " failed to portal and stays in place" << endl;
+            *battlefield << getId() << " failed to portal and moves normally" << endl;
             return;
         }
 
     }
+    else
+    {
+        *battlefield << getId() << " has no portals left!!" << endl;
+    }
 
-    //If no more portalSkill or chances fail, move normally
-    *battlefield << getId() << " has no portals left!!" << endl;
-
+    //If no more portalSkill or chances fail or failed to portal, move normally
     MovingRobot::actionMove(battlefield);
 }
 
