@@ -2104,6 +2104,14 @@ void BomberBot::actionFire(Battlefield* battlefield)
     }
 }
 
+/*
+The robot has a skill to hide when actionMove.
+The hiding skill is based on chances and nearby enemies.
+If there are enemies nearby, the chances will be 70% to hide, otherwise it will be 30% to hide.
+If it fails to hide because it ran out of skills or chances fail, the robot will move normally.
+The robot will hide until it is it's turn again, and it can hide continuously.
+Once in hiding, the robot cannot be shot at or seen by enemies, also note that enemies cannot move to that space.
+*/
 void HideBot::actionMove(Battlefield* battlefield)
 {
     //If HideBot is in hiding, unhide it
@@ -2156,6 +2164,12 @@ void HideBot::actionMove(Battlefield* battlefield)
     MovingRobot::actionMove(battlefield);
 }
 
+/*
+The robot has a skill to jump when actionMove.
+The jump skill is based on chances and nearby enemies.
+If there are enemies nearby, the chances will be 70% to jump, otherwise it will be 30% to jump.
+The robot can jump continuously and to a random location on the battlefield, and cannot jump on occupied spaces.
+*/
 void JumpBot::actionMove(Battlefield* battlefield)
 {
 
@@ -2204,6 +2218,14 @@ void JumpBot::actionMove(Battlefield* battlefield)
     MovingRobot::actionMove(battlefield);
 }
 
+/*
+The robot has a skill to create a portal when actionMove.
+The portal skill is based on chances and nearby enemies.
+If there are enemies nearby, the chances will be 70% to portal, otherwise it will be 30% to portal.
+The portal the robot creates allows that robot to swap places with a random robot on the battlefield.
+If there are enemies nearby, the robot will prioritise other robots that are not nearby to portal to,
+if the nearby enemies are the only robots in the battlefield, then it will choose to portal to them.
+*/
 void PortalBot::actionMove(Battlefield* battlefield)
 {
 
@@ -2328,8 +2350,8 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.readInputFile("fileInput1.txt");
-    b.writeOutputFile("fileOutput1.txt");
+    b.readInputFile("fileInput2b.txt");
+    b.writeOutputFile("fileOutput2b.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();

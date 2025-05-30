@@ -1,5 +1,5 @@
 M by N: 15 15
-turns: 400
+turns: 200
 robots: 10
 GenericRobot GR01_C-3PO 2 13
 GenericRobot GR02_R2-D2 9 10
