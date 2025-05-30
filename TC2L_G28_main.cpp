@@ -43,6 +43,7 @@ protected:
 
     bool isDestroyed = false;
 
+    bool isAbleUpgrade = false;
     bool upgradedMoving = 0;
     bool upgradedShooting = 0;
     bool upgradedSeeing = 0;
@@ -101,6 +102,10 @@ public:
     //Getter and Setter for isDestroyed
     bool getIsDestroyed() const {return isDestroyed;}
     void setIsDestroyed( bool destroyed) {isDestroyed = destroyed;}
+
+    //Getter and Setter for isAbleUpgrade
+    bool getIsAbleUpgrade() const {return isAbleUpgrade;}
+    void setIsAbleUpgrade(bool available) {isAbleUpgrade = available;}
 
     //Getter and Setter for upgradedMoving
     bool getUpgradedMoving () const {return upgradedMoving;}
@@ -1090,8 +1095,8 @@ public:
     // Display the battlefield in the screen
     void displayBattleField()
     {
-        cout << "Display Battlefield" << endl;
-        fileOutput << "Display Battlefield" << endl;
+        cout << "Display Battlefield:" << endl;
+        fileOutput << "Display Battlefield:" << endl;
 
         cout << "    ";
         fileOutput << "    ";
@@ -1224,10 +1229,10 @@ public:
                 battlefield[newY][newX] = robot->getId();
                 robot->resetShells();
                 cout << robot->getId() << " is re-enter the battlefield at the position ("
-                     << robot->getPosX() << ", " << robot->getPosY() << ")" << endl;
+                     << robot->getPosX() << ", " << robot->getPosY() << ")" << endl << endl;
 
                 fileOutput << robot->getId() << " is re-enter the battlefield at the position ("
-                     << robot->getPosX() << ", " << robot->getPosY() << ")" << endl;
+                     << robot->getPosX() << ", " << robot->getPosY() << ")" << endl << endl;
 
                 robot->setEntryTurn(-1); // Mark as no longer queued
                 robot->setIsDestroyed(false);
@@ -1300,6 +1305,11 @@ public:
                 fileOutput << *currentRobot;
 
                 currentRobot->actions(this);
+                if (currentRobot->getIsAbleUpgrade())
+                {
+                    decideUpgradeType(currentRobot); // Upgrade to a new robot after get kills
+                    currentRobot->setIsAbleUpgrade(false);
+                }
             }
             cout << endl;
             fileOutput << endl;
@@ -1402,6 +1412,9 @@ public:
 
         newRobot->setName(robot->getName());
         newRobot->setType(upgradeType);
+
+        cout << endl;
+        fileOutput << endl;
 
         cout << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
         fileOutput << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
@@ -1623,7 +1636,7 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+            setIsAbleUpgrade(true); // Set to true if the robot has killed the target
         }
         else {
             *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
