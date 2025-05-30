@@ -255,31 +255,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -321,31 +321,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire(battlefield);
         }
@@ -401,31 +401,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire(battlefield);
         }
@@ -478,31 +478,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire(battlefield);
         }
@@ -540,31 +540,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -603,31 +603,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -664,31 +664,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -727,31 +727,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -797,32 +797,32 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
 
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -864,31 +864,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -930,31 +930,31 @@ public:
 
         if( randomInt % 2 == 0)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
         }
         else if(randomInt % 2 == 1)
         {
-            cout << endl;
+
             if (!isAlive()) return;
             actionThink (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionLook (battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionMove(battlefield);
-            cout << endl;
+
             if (!isAlive()) return;
             actionFire (battlefield);
         }
@@ -1027,6 +1027,7 @@ public:
         fileOutput << "Read " << fileInputName << ":" << endl;
 
         string line;
+
         while (getline(fileInput, line))
         {
 
@@ -1091,6 +1092,7 @@ public:
         }
 
         cout << endl;
+        fileOutput << endl;
 
         // check to avoid same robot exist
         for (int i=0;i<robots.size()-1;i++)
@@ -1450,6 +1452,10 @@ public:
                 " at (" << printDestroyedRobot->getPosX() <<
                 "," << printDestroyedRobot->getPosY() << ")" << endl;
 
+                fileOutput << "destroyedRobots_: Robot " << printDestroyedRobot->getId() <<
+                " at (" << printDestroyedRobot->getPosX() <<
+                "," << printDestroyedRobot->getPosY() << ")" << endl;
+
                 delete printDestroyedRobot; // Avoid memory leak
             }
         }
@@ -1463,6 +1469,10 @@ public:
             {
 
                 cout << "waitingRobots_: Robot " << printWaitingRobot->getId() <<
+                " at (" << printWaitingRobot->getPosX() <<
+                "," << printWaitingRobot->getPosY() << ")" << endl;
+
+                fileOutput << "waitingRobots_: Robot " << printWaitingRobot->getId() <<
                 " at (" << printWaitingRobot->getPosX() <<
                 "," << printWaitingRobot->getPosY() << ")" << endl;
 
@@ -1699,6 +1709,8 @@ void ThinkingRobot::actionThink (Battlefield* battlefield)
     *battlefield << getType() << " actionThink" << endl;
 
     *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
 }
 void SeeingRobot::actionLook (Battlefield* battlefield)
 {
@@ -1727,6 +1739,8 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
         int moveY = getPosY() + dy[directionCheckMoves];
         canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
     }
+
+    *battlefield << endl;
 }
 void ShootingRobot::actionFire(Battlefield* battlefield)
 {
@@ -1796,6 +1810,8 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
     }
+
+    *battlefield << endl;
 }
 void MovingRobot::actionMove(Battlefield* battlefield)
 {
@@ -1836,6 +1852,8 @@ void MovingRobot::actionMove(Battlefield* battlefield)
     else{
         *battlefield << getId() << " decides to stay in place." << endl;
     }
+
+    *battlefield << endl;
 }
 
 void ScoutBot::actionLook (Battlefield* battlefield)
@@ -1868,14 +1886,17 @@ void ScoutBot::actionLook (Battlefield* battlefield)
             }
             scoutLimit--;
             *battlefield << getId() << " has " << scoutLimit << " scouts remaining" << endl;
+            *battlefield << endl;
         }
         else
             SeeingRobot::actionLook(battlefield);
+            *battlefield << endl;
     }
     else
     {
         *battlefield << getId() << " has no scout left!!" << endl;
         SeeingRobot::actionLook(battlefield);
+        *battlefield << endl;
     }
 }
 void TrackBot::actionLook (Battlefield* battlefield)
@@ -1923,6 +1944,8 @@ void TrackBot::actionLook (Battlefield* battlefield)
             *battlefield << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
         }
     }
+
+    *battlefield << endl;
 }
 
 void DroneBot::actionLook (Battlefield* battlefield)
@@ -1972,6 +1995,7 @@ void DroneBot::actionLook (Battlefield* battlefield)
             }
         }
     }
+    *battlefield << endl;
 }
 
 /*
@@ -2051,6 +2075,8 @@ void LongShotBot::actionFire(Battlefield* battlefield)
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
     }
+
+    *battlefield << endl;
 }
 
 /*
@@ -2145,6 +2171,7 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
             battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
         }
     }
+    *battlefield << endl;
 }
 
 /*
@@ -2246,6 +2273,8 @@ void BomberBot::actionFire(Battlefield* battlefield)
             battlefield->destroyRobot(this);
         }
     }
+
+    *battlefield << endl;
 }
 
 /*
@@ -2289,6 +2318,7 @@ void HideBot::actionMove(Battlefield* battlefield)
             hideSkill--;
 
             *battlefield << getId() << " went into hiding." << endl;
+            *battlefield << endl;
             return;
 
         }
@@ -2296,7 +2326,7 @@ void HideBot::actionMove(Battlefield* battlefield)
         {
             *battlefield << getType() << " actionHide" << endl;
 
-            *battlefield << getId() << " failed to hide." << endl;
+            *battlefield << getId() << " failed to hide and moves normally." << endl;
         }
     }
     else
@@ -2306,6 +2336,7 @@ void HideBot::actionMove(Battlefield* battlefield)
 
     //If no more jumpSkill or chances fail or failed to hide, move normally
     MovingRobot::actionMove(battlefield);
+    *battlefield << endl;
 }
 
 /*
@@ -2345,6 +2376,7 @@ void JumpBot::actionMove(Battlefield* battlefield)
             setPosY(newY);
 
             *battlefield << getId() << " jumps to (" << newX << "," << newY << ")" << endl;
+            *battlefield << endl;
             return;
         }
 
@@ -2360,6 +2392,7 @@ void JumpBot::actionMove(Battlefield* battlefield)
 
     //If no more jumpSkill, chances fail, failed to jump move normally
     MovingRobot::actionMove(battlefield);
+    *battlefield << endl;
 }
 
 /*
@@ -2469,13 +2502,13 @@ void PortalBot::actionMove(Battlefield* battlefield)
             target->setPosY(myY);
 
             *battlefield << getId() << " portal and swaps with " << target->getId() << " to position (" << targetX << ", " << targetY << ")" << endl;
+            *battlefield << endl;
             return;
 
         }
         else
         {
             *battlefield << getId() << " failed to portal and moves normally" << endl;
-            return;
         }
 
     }
@@ -2486,6 +2519,7 @@ void PortalBot::actionMove(Battlefield* battlefield)
 
     //If no more portalSkill or chances fail or failed to portal, move normally
     MovingRobot::actionMove(battlefield);
+    *battlefield << endl;
 }
 
 int main()
@@ -2494,8 +2528,8 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.readInputFile("fileInput1.txt");
     b.writeOutputFile("fileOutput1.txt");
+    b.readInputFile("fileInput1.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();
