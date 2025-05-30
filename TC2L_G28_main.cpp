@@ -1202,6 +1202,7 @@ public:
         }
         numOfRobots--;
     }
+
     // respawn / let robots re-enter the bf
     void respawnRobots() {
         while (!waitingRobots.empty()) {
@@ -1238,11 +1239,43 @@ public:
         }
     }
 
+    //Check if there is only one robot remaining
+    bool isLastStand ()
+    {
+        int aliveCount = 0;
+
+        for (Robot* robot : robots)
+        {
+            if (robot->isAlive())
+            {
+                aliveCount++;
+
+                if (aliveCount > 1)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true; // 0 or 1 robot alive
+    }
+
+    // Return the last surviving robot (if any), or nullptr if none
+    Robot* lastStandRobot()
+    {
+        for (Robot* livingRobots : robots) {
+            if (livingRobots->isAlive()) {
+                return livingRobots;
+            }
+        }
+        return nullptr; // No robot alive
+    }
+
     // Control the turn of the Simulation
     void turnBased()
     {
         // Loop through robots in cycles until totalTurns is reached or Last robot standing
-        while (currentTurn < totalTurns && robots.size() > 1) {
+        while (currentTurn < totalTurns && !isLastStand()) {
             currentTurn++;
             cout << "\nTurn " << currentTurn << ":" << endl;
             fileOutput << "\nTurn " << currentTurn << ":" << endl;
@@ -1280,10 +1313,10 @@ public:
         }
 
         // Game over simulation check
-        if (robots.size() == 1 && numOfRobots == 1) // If there is one robot left inside the battlefield
+        if (isLastStand()) // If there is one robot left inside the battlefield
         {
-            cout << robots[0]->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
-            fileOutput << robots[0]->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+            cout << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+            fileOutput << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
         }
 
         else
@@ -2295,8 +2328,8 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.readInputFile("fileInput2a.txt");
-    b.writeOutputFile("fileOutput2a.txt");
+    b.readInputFile("fileInput1.txt");
+    b.writeOutputFile("fileOutput1.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();

@@ -1,4 +1,4 @@
-M by N: 20 20
+M by N: 15 15
 turns: 300
 robots: 10
 GenericRobot GR01_C-3PO 2 13

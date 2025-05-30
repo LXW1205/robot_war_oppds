@@ -1,13 +1,13 @@
-M by N: 20 20
-turns: 200
+M by N: 15 15
+turns: 400
 robots: 10
 GenericRobot GR01_C-3PO 2 13
 GenericRobot GR02_R2-D2 9 10
-GenericRobot GR03_R5-D4 16 5
+GenericRobot GR03_R5-D4 14 5
 GenericRobot GR04_AP-5 2 4
 GenericRobot GR05_BD-1 14 3
-GenericRobot GR06_IG-11 19 4
+GenericRobot GR06_IG-11 12 4
 GenericRobot GR07_BB-8 13 6
 GenericRobot GR08_BT-1 4 11
-GenericRobot GR09_K-2S0 7 11
-GenericRobot GR10_D-0 13 0
+GenericRobot GR09_K-2S0 7 8
+GenericRobot GR10_D-0 3 0
