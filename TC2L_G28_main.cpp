@@ -141,6 +141,9 @@ public:
     // To reset the bullet shells
     virtual void resetShells() {}
 
+    // To update the track targeted info
+    virtual void updateRobotInfo(vector<Robot*>& r, Robot* newRobot) {}
+
     // Overloading the << operator for Robot class
     friend ostream& operator<<(ostream &COUT, const Robot& r)
     {
@@ -376,6 +379,28 @@ public:
 
     // Function override
     void resetShells() override { shellsRemaining = 10; }
+
+    void updateRobotInfo(vector<Robot*>& allRobots, Robot* newRobot) override
+    {
+        for (size_t i = 0; i < trackTargets.size(); ++i)
+        {
+        if (trackTargets[i] == newRobot)
+            return;
+
+        // Replace the old pointer with the upgraded one if match
+        for (Robot* oldRobot : allRobots)
+        {
+            if (trackTargets[i] == oldRobot)
+            {
+                if (oldRobot->getName() == newRobot->getName())
+                {
+                    trackTargets[i] = newRobot;
+                    break;
+                }
+            }
+        }
+        }
+    }
 
     bool checkTrackTargeted(Robot* robot)
     {
@@ -1424,10 +1449,11 @@ public:
         // Game over simulation check
         if (isLastStand()) // If there is one robot left inside the battlefield
         {
-            cout << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
-            fileOutput << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+            cout << "--SIMULATION ENDS--- in turn " << currentTurn << endl
+            << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+            fileOutput << "--SIMULATION ENDS--- in turn " << currentTurn << endl
+            << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
         }
-
         else
         {
             cout << "--GAME OVER-- Maximum turns(" << totalTurns << ") reached!!" << endl
@@ -1435,9 +1461,9 @@ public:
 
             fileOutput << "--GAME OVER-- Maximum turns(" << totalTurns << ") reached!!" << endl
             << "Robots remaining: " << numOfRobots << endl;
-
         }
 
+        cout << endl;
         cout << "queue data structure:" << endl;
 
         while (!destroyedRobots.empty())
@@ -1447,7 +1473,6 @@ public:
 
             if (printDestroyedRobot)
             {
-
                 cout << "destroyedRobots_: Robot " << printDestroyedRobot->getId() <<
                 " at (" << printDestroyedRobot->getPosX() <<
                 "," << printDestroyedRobot->getPosY() << ")" << endl;
@@ -1564,6 +1589,14 @@ public:
         {
             if (robots[i]==robot)
             {
+                for (Robot* r : robots)
+                {
+                    if (r != robot && r != nullptr)
+                    {
+                        r->updateRobotInfo(robots, newRobot);
+                    }
+                }
+
                 int tempNumUpgrades = robots[i]->getNumUpgrade();
                 int tempKills = robots[i]->getKills();
                 int tempLives = robots[i]->getLives();
@@ -1642,7 +1675,6 @@ public:
     void decideUpgradeType (Robot* robot)
     {
         int randomNumber = 0;
-        robot->setNumUpgrade(robot->getNumUpgrade()+1);
 
         // first upgrade
         if (robot->getNumUpgrade() == 1)
@@ -1706,7 +1738,7 @@ public:
 
 void ThinkingRobot::actionThink (Battlefield* battlefield)
 {
-    *battlefield << getType() << " actionThink" << endl;
+    *battlefield << "--" << getType() << " actionThink--" << endl;
 
     *battlefield << getId() << " is thinking..." << endl;
 
@@ -1714,7 +1746,7 @@ void ThinkingRobot::actionThink (Battlefield* battlefield)
 }
 void SeeingRobot::actionLook (Battlefield* battlefield)
 {
-    *battlefield<< getType() << " actionLook" << endl;
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
 
     *battlefield << getType() << " is looking around..." << endl;
 
@@ -1744,7 +1776,7 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
 }
 void ShootingRobot::actionFire(Battlefield* battlefield)
 {
-    *battlefield << getType() << " actionFire" << endl;
+    *battlefield << "--" << getType() << " actionFire--" << endl;
 
     // Generate random direction to shot at (excluding current position)
     int targetX, targetY, shotAtX, shotAtY;
@@ -1781,7 +1813,12 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
         }
         else {
             *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
@@ -1815,7 +1852,7 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
 }
 void MovingRobot::actionMove(Battlefield* battlefield)
 {
-    *battlefield << getType() << " actionMove" << endl;
+    *battlefield << "--" << getType() << " actionMove" << endl;
 
     vector<int> validMoves;
 
@@ -1939,7 +1976,7 @@ void TrackBot::actionLook (Battlefield* battlefield)
 
     for (Robot* target : trackTargets)
     {
-        if (target->isAlive() == true)
+        if (target->isAlive() == true && target != nullptr)
         {
             *battlefield << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
         }
@@ -1948,24 +1985,30 @@ void TrackBot::actionLook (Battlefield* battlefield)
     *battlefield << endl;
 }
 
+/*This robot contains 3 drones initially.
+The drone can be place at any position inside the battlefield.
+Each drone can view from its own position and 8 neighboring positions.
+The drone is placed until the match ends, or the DroneBot has upgraded to another robot type, or DroneBot has been destroyed.*/
 void DroneBot::actionLook (Battlefield* battlefield)
 {
+    // Perform the normal looking action
     SeeingRobot::actionLook(battlefield);
 
     int droneLookX, droneLookY;
+    // Check the number of drone
     if (droneNumber > 0)
     {
         int randomNumber = rand();
-
+        // To place a drone inside the battlefield
         if (randomNumber % 2 == 0)
         {
             *battlefield << getId() << " is finding a position to place a drone..." << endl;
 
             int droneX, droneY;
             do {
-                droneX = rand() % battlefield->getBATTLEFIELD_NUM_OF_COLS();
-                droneY = rand() % battlefield->getBATTLEFIELD_NUM_OF_ROWS();
-              // To ensure the drone will not be place at the same position
+                droneX = rand() % battlefield->getBATTLEFIELD_NUM_OF_COLS(); // Get the column position of the drone
+                droneY = rand() % battlefield->getBATTLEFIELD_NUM_OF_ROWS(); // Get the row position of the drone
+            // To ensure the drone will not be place at the same position
             } while (checkDronePosition(droneX, droneY, placedDronePositions));
             placedDronePositions.push_back({droneX, droneY});
             *battlefield << getId() << " placed the drone at (" << droneX << ", " << droneY << ")" << endl;
@@ -1979,6 +2022,7 @@ void DroneBot::actionLook (Battlefield* battlefield)
         *battlefield << getId() << " has no drone left!!" << endl;
     }
 
+    // Check each drone status
     for (const auto& position : placedDronePositions)
     {
         *battlefield << getId() << "'s drone is scanning at (" << position.first << ", " << position.second << ")..." << endl;
@@ -1987,10 +2031,11 @@ void DroneBot::actionLook (Battlefield* battlefield)
             droneLookX = position.first + dx[directionCheckEnemy];
             droneLookY = position.second + dy[directionCheckEnemy];
 
+            // If the look position is valid and found the robot
             if (battlefield->isPositionValid(droneLookX, droneLookY) && battlefield->getRobotAt(droneLookX, droneLookY) != nullptr)
             {
                 Robot* droneTarget = battlefield->getRobotAt(droneLookX, droneLookY);
-                if (droneTarget != this)
+                if (droneTarget != this) // To ensure the target is not the DroneBot itself
                     *battlefield << "=> " << getId() << " spotted " << droneTarget->getId() << " at (" << droneLookX << ", " << droneLookY << ") by drone" << endl;
             }
         }
@@ -2004,7 +2049,7 @@ It means the robot can fire(x, y) where x + y <= 3
 */
 void LongShotBot::actionFire(Battlefield* battlefield)
 {
-    *battlefield << "LongShotBot actionFire" << endl;
+    *battlefield << "--" << getType() << " actionFire--" << endl;
 
     // Generate random direction to shot at (excluding current position)
     int targetX, targetY, shotAtX, shotAtY;
@@ -2045,7 +2090,12 @@ void LongShotBot::actionFire(Battlefield* battlefield)
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
         }
         else
         {
@@ -2086,7 +2136,7 @@ another robot.
 */
 void SemiAutoBot::actionFire(Battlefield* battlefield)
 {
-    *battlefield << "SemiAutoBot actionFire" << endl;
+    *battlefield << "--" << getType() << " actionFire--" << endl;
 
     // Generate random direction to shot at (excluding current position)
     int targetX, targetY, shotAtX, shotAtY;
@@ -2141,7 +2191,12 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
                 battlefield->destroyRobot(target); // Battlefield handles destruction
             }
 
-            battlefield->decideUpgradeType(this); // Upgrade to a new robot after get kills
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
         }
         else
         {
@@ -2182,7 +2237,7 @@ But it can't throw the bomb around itself, since it get will damaged from it.
 */
 void BomberBot::actionFire(Battlefield* battlefield)
 {
-    *battlefield << "BomberBot actionFire" << endl;
+    *battlefield << "--" << getType() << " actionFire--" << endl;
 
     int centerX, centerY, shotAtX, shotAtY;
     vector<int> bombLocationX, bombLocationY;
@@ -2248,7 +2303,12 @@ void BomberBot::actionFire(Battlefield* battlefield)
                 }
             }
 
-            battlefield->decideUpgradeType(this);
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
         } else {
             for (Robot* target : targets) {
                 *battlefield << getId() << " missed " << target->getId()
@@ -2311,7 +2371,7 @@ void HideBot::actionMove(Battlefield* battlefield)
         //If enemy nearby, 70% to activate skill, else 30% to activate skill
         if ((enemyNearby ? rand() % 100 < 70 : rand() % 100 < 30)) {
 
-            *battlefield << getType() << " actionHide" << endl;
+            *battlefield << "--" << getType() << " actionHide--" << endl;
 
             isHidden = true;
 
@@ -2364,7 +2424,7 @@ void JumpBot::actionMove(Battlefield* battlefield)
 
         //If enemy nearby, 70% to activate skill, else 30% to activate skill
         if ((enemyNearby ? rand() % 100 < 70 : rand() % 100 < 30)) {
-            *battlefield << getType() << " actionJump" << endl;
+            *battlefield << "--" << getType() << " actionJump--" << endl;
 
             int newX, newY;
             do {
@@ -2424,7 +2484,7 @@ void PortalBot::actionMove(Battlefield* battlefield)
         //If enemy nearby, 70% to activate skill, else 30% to activate skill
         if ((enemyNearby ? rand() % 100 < 70 : rand() % 100 < 30))
         {
-            *battlefield << getType() << " actionPortal" << endl;
+            *battlefield << "--" << getType() << " actionPortal--" << endl;
 
             //Target to portal and swap places with
             vector<Robot*> portalTarget;
