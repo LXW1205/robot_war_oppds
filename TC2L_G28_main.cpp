@@ -1971,7 +1971,7 @@ void LongShotBot::actionFire(Battlefield* battlefield)
         targetX = getPosX() + shotAtX;
         targetY = getPosY() + shotAtY;
     // To ensure that the robot will not fire at its own position and outside the battlefield
-    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY)||(abs(shotAtX)+abs(shotAtY)>3));
 
     Robot* target = battlefield->getRobotAt(targetX, targetY);
 
