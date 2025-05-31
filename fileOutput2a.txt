@@ -16592,7 +16592,7 @@ Display Battlefield:
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 
 --SIMULATION ENDS--- in turn 290
-TS09_C-3PO WINS the match!!
+TS09_K-2S0 WINS the match!!
 
 Static members:
 Number of GenericRobot robots: 10

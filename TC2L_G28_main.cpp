@@ -36,8 +36,8 @@ protected:
     int robotPositionX;
     int robotPositionY;
 
-    int numberOfLives = 3; // Initial value
-    int numberOfKills = 0; // Initial value
+    int numberOfLives = 3;
+    int numberOfKills = 0;
     int queueEntryTurn = -1; // All the robots not in the queue at the beginning
 
     bool isDestroyed = false;
@@ -65,7 +65,7 @@ public:
     Robot(string id, int posX, int posY) : robotId(id), robotPositionX(posX), robotPositionY(posY) {}
 
     // Destructor (virtual for polymorphism)
-    virtual ~Robot() {};
+    virtual ~Robot() {}
 
     // Getter and Setter for RobotId
     string getId() const { return robotId; }
@@ -101,7 +101,7 @@ public:
 
     //Getter and Setter for isDestroyed
     bool getIsDestroyed() const {return isDestroyed;}
-    void setIsDestroyed( bool destroyed) {isDestroyed = destroyed;}
+    void setIsDestroyed(bool destroyed) {isDestroyed = destroyed;}
 
     //Getter and Setter for isAbleUpgrade
     bool getIsAbleUpgrade() const {return isAbleUpgrade;}
@@ -126,9 +126,6 @@ public:
     //Getter for shellsRemaining
     int getShells() const { return this->shellsRemaining; }
 
-    //Getter for hidden, which is always false
-    virtual bool getIsHidden() const { return false; }
-
     // Reduce life when getting shoot or selfDestruct
     void reduceLife() {setLives(getLives() - 1);}
 
@@ -141,6 +138,9 @@ public:
     // Check if the robot still have lives
     bool isAlive() const {return numberOfLives > 0;}
 
+    //Getter for hidden, which is always false
+    virtual bool getIsHidden() const { return false; }
+
     // To reset the bullet shells
     virtual void resetShells() { shellsRemaining = 10; }
 
@@ -152,7 +152,7 @@ public:
     {
         COUT << r.robotType << " " << r.robotId << "_" << r.robotName << " turns" << endl
         << r.robotId << "'s lives remaining: " << r.numberOfLives << endl
-        << r.robotId << "'s shells left: " << r.getShells() << endl
+        << r.robotId << "'s shells left: " << r.shellsRemaining << endl
         << r.robotId << "'s kills: " << r.numberOfKills << endl
         << r.robotId << "'s no.of Upgrades: " << r.numUpgrade << endl << endl
         << r.robotId << " at (" << r.robotPositionX << ", " << r.robotPositionY << ") actions:" << endl;
@@ -178,8 +178,6 @@ public:
 
 class ThinkingRobot: virtual public Robot
 {
-protected :
-    // data member
 public:
     virtual ~ThinkingRobot(){}
 
@@ -189,9 +187,6 @@ public:
 
 class SeeingRobot: virtual public Robot
 {
-protected:
-    //data member
-
 public:
     virtual ~SeeingRobot(){}
 
@@ -201,10 +196,6 @@ public:
 
 class ShootingRobot: virtual public Robot
 {
-protected:
-    //data member
-
-
 public:
     virtual ~ShootingRobot(){}
 
@@ -214,17 +205,12 @@ public:
 
 class MovingRobot: virtual public Robot
 {
-protected:
-    //data member
-
 public:
     virtual ~MovingRobot(){}
 
     // Virtual function for moving
     virtual void actionMove(Battlefield* battlefield);
 };
-
-// Pure virtual
 
 class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
@@ -343,7 +329,7 @@ class TrackBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, 
 private:
     int trackerNumber = 3;
 
-    vector<Robot*> trackTargets; // To store the track targeted
+    vector<Robot*> trackTargets; // To store the track targeted enemy
 
 public:
     TrackBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
@@ -434,7 +420,7 @@ class DroneBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, 
 private:
     int droneNumber = 3;
 
-    vector<pair<int, int>> placedDronePositions;
+    vector<pair<int, int>> placedDronePositions; // To store the drones position
 
 public:
     DroneBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
@@ -882,8 +868,8 @@ private:
     int BATTLEFIELD_NUM_OF_COLS = -1;
     int BATTLEFIELD_NUM_OF_ROWS = -1;
 
-    int totalTurns = -1;         // Total number of turns
-    int currentTurn = 0;           // Current turn number
+    int totalTurns = -1; // Total number of turns
+    int currentTurn = 0; // Current turn number
 
     int numOfRobots = -1; // Number of robots
     int currentRobotIndex = 0;
@@ -893,6 +879,7 @@ private:
     queue<Robot*> waitingRobots;
 
     vector<vector<string>> battlefield; // 2D vector representing the battlefield
+
 public:
     ~Battlefield()
     {
@@ -1221,8 +1208,6 @@ public:
     // Permanently destroy robot because of no more lives
     void destroyRobot(Robot* robot)
     {
-        //removeRobot(robot);
-
         for (auto it = robots.begin(); it != robots.end(); ++it) {
             if (*it == robot) {
                 destroyedRobots.push(*it);
@@ -1235,7 +1220,7 @@ public:
         numOfRobots--;
     }
 
-    // respawn / let robots re-enter the bf
+    // respawn or let robots re-enter the battlefield
     void respawnRobots()
     {
         while (!waitingRobots.empty()) {
@@ -1245,7 +1230,7 @@ public:
             {
                 waitingRobots.pop();
 
-                // Find empty position
+                // Find a random empty position
                 int newX, newY;
                 do {
                     newX = rand() % BATTLEFIELD_NUM_OF_COLS;
@@ -1332,6 +1317,7 @@ public:
                 cout << *currentRobot;
                 fileOutput << *currentRobot;
 
+                // Check the robot is able to get an upgrade
                 currentRobot->actions(this);
                 if (currentRobot->getIsAbleUpgrade())
                 {
@@ -1495,6 +1481,7 @@ public:
         cout << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
         fileOutput << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
 
+        // To update the trackTargeted vector in TrackBot class
         for (Robot* r : robots)
         {   // r is not itself
             if (r != robot && r != nullptr)
@@ -1505,8 +1492,6 @@ public:
         {
             if (robots[i]==robot)
             {
-
-
                 int tempNumUpgrades = robots[i]->getNumUpgrade();
                 int tempKills = robots[i]->getKills();
                 int tempLives = robots[i]->getLives();
@@ -1529,7 +1514,6 @@ public:
             }
         }
     }
-
 
     void upgradeMovingRobot (Robot* robot)
     {
@@ -1569,7 +1553,7 @@ public:
     {
         robot->setUpgradedSeeing(1);
         string upgradeType;
-        int randomNumber = rand() % 3; // Switch to % 2 to view the output
+        int randomNumber = rand() % 3;
 
         if (randomNumber == 0)
             upgradeType = "ScoutBot";
@@ -1589,10 +1573,10 @@ public:
         // first upgrade
         if (robot->getNumUpgrade() == 1)
         {
-            randomNumber = rand() % 3; // Switch to % 1 to view the output
+            randomNumber = rand() % 3;
 
             if (randomNumber == 0)
-                upgradeMovingRobot(robot); // Switch with upgradeSeeingRobot(robot) to view the output
+                upgradeMovingRobot(robot);
             else if (randomNumber == 1)
                 upgradeShootingRobot(robot);
             else if (randomNumber == 2)
@@ -1643,7 +1627,6 @@ public:
             fileOutput << "Robot " << robot->getId() << " cannot upgrade anymore!" << endl;
         }
     }
-
 };
 
 void ThinkingRobot::actionThink (Battlefield* battlefield)
@@ -1817,7 +1800,7 @@ void ScoutBot::actionLook (Battlefield* battlefield)
         // Ready to scout the entire battlefield
         if (randomNumber % 2 == 0)
         {
-            *battlefield << getType() << " actionLook" << endl;
+            *battlefield << "--" << getType() << " actionLook--" << endl;
 
             *battlefield << getId() << " is scouting the entire battlefield..." << endl;
 
@@ -2530,12 +2513,12 @@ void PortalBot::actionMove(Battlefield* battlefield)
 
 int main()
 {
-
+    // Fixed Seed Random Integer
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.writeOutputFile("fileOutput2b.txt");
-    b.readInputFile("fileInput2b.txt");
+    b.writeOutputFile("fileOutput1.txt");
+    b.readInputFile("fileInput1.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();
