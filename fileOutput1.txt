@@ -50,16 +50,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (3, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (4,7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (3,5)
 
 
@@ -106,16 +106,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (9, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (8,2)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (9,1)
 
 
@@ -162,16 +162,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (5, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (4,3)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (4,2)
 
 
@@ -218,16 +218,16 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (0, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (1,8)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 fired at empty space (0,9)
 
 
@@ -274,16 +274,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (0, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (0,11)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (0,11)
 
 
@@ -330,16 +330,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (3, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (2,4)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (3,6)
 
 
@@ -386,16 +386,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (8, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (8,1)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (7,1)
 
 
@@ -442,16 +442,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (4, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (4,2)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (5,1)
 
 
@@ -498,16 +498,16 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (1, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 fired at empty space (0,8)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (1,7)
 
 
@@ -554,16 +554,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (0, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (0,12)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (0,13)
 
 
@@ -610,16 +610,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (3, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (4,7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (2,7)
 
 
@@ -666,16 +666,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (7, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (6,0)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,2)
 
 
@@ -722,16 +722,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (4, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (3,3)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (3,1)
 
 
@@ -778,17 +778,17 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (1, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR01 at the position (2, 7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (2,6)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 fired at empty space (3,6)
 
 
@@ -835,16 +835,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (0, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (1,11)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (2,12)
 
 
@@ -891,17 +891,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (2, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found GR04 at the position (2, 6)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (3,6)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (3,7)
 
 
@@ -948,16 +948,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (5,3)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,3)
 
 
@@ -1004,16 +1004,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (3, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (4,1)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (2,0)
 
 
@@ -1060,17 +1060,17 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (2, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR01 at the position (3, 6)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (3,5)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 fired at empty space (3,4)
 
 
@@ -1117,16 +1117,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (1, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (1,12)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (2,11)
 
 
@@ -1173,17 +1173,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (3, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found GR04 at the position (3, 5)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (3,7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (2,5)
 
 
@@ -1230,16 +1230,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (7,4)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (7,5)
 
 
@@ -1286,16 +1286,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (2, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,1)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (2,2)
 
 
@@ -1342,17 +1342,17 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (3, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR01 at the position (2, 5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (3,6)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 missed GR01 at (2,5)
 
 
@@ -1399,16 +1399,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (2, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (3,11)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (1,12)
 
 
@@ -1455,17 +1455,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (2, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found GR04 at the position (3, 6)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (2,4)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (1,6)
 
 
@@ -1512,16 +1512,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (7, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (7,5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,5)
 
 
@@ -1568,16 +1568,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (0,1)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (2,0)
 
 
@@ -1624,16 +1624,16 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (3, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 fired at empty space (2,6)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (2,7)
 
 
@@ -1680,16 +1680,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (1, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (2,11)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (1,11)
 
 
@@ -1736,17 +1736,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (1, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found GR04 at the position (2, 7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (0,7)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (0,6)
 
 
@@ -1793,16 +1793,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (6,6)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (5,6)
 
 
@@ -1849,16 +1849,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (2, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (1,1)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,0)
 
 
@@ -1905,16 +1905,16 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (2, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR04 moves to (1,6)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR04 hit GR01 at (0,7)
 GR01 has 2 lives remaining
 GR01 is enter the queue waiting robot...
@@ -1965,16 +1965,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (2, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (2,10)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (3,11)
 
 
@@ -2023,16 +2023,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (6, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (5,9)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (6,8)
 
 
@@ -2079,16 +2079,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (4,6)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,7)
 
 
@@ -2135,16 +2135,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,1)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (2,1)
 
 
@@ -2191,17 +2191,17 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (1, 6) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (2,7)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (0,7)
 
 
@@ -2248,16 +2248,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (3, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (2,12)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (2,12)
 
 
@@ -2304,17 +2304,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (6, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found GR02 at the position (6, 7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (6,9)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (5,9)
 
 
@@ -2361,16 +2361,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (5,7)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (6,6)
 
 
@@ -2417,16 +2417,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,2)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (2,3)
 
 
@@ -2473,17 +2473,17 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (0, 7) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (1,8)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,8)
 
 
@@ -2530,16 +2530,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (2, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (2,13)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (2,11)
 
 
@@ -2586,16 +2586,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (6, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (7,9)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (6,8)
 
 
@@ -2642,20 +2642,20 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR01 at the position (6, 8)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (6,6)
 GR02 is out of ammo and self-destructs!
 GR02 has 2 lives remaining
 GR02 is enter the queue waiting robot...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,7)
 
 
@@ -2702,16 +2702,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (0,2)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (1,3)
 GR03 is out of ammo and self-destructs!
 GR03 has 2 lives remaining
@@ -2763,17 +2763,17 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (1, 8) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (0,9)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (2,8)
 
 
@@ -2822,19 +2822,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (2, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (2,10)
 GR05 is out of ammo and self-destructs!
 GR05 has 2 lives remaining
 GR05 is enter the queue waiting robot...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (2,10)
 
 
@@ -2881,16 +2881,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (6, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (7,7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (7,7)
 
 
@@ -2939,16 +2939,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (4, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (3,10)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (2,9)
 
 
@@ -2995,16 +2995,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (7, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (8,13)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (9,14)
 
 
@@ -3051,10 +3051,10 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (2, 8) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 is finding the target to plant a tracker...
@@ -3062,10 +3062,10 @@ TB04 has planted a tracker on GR03
 TB04 has 2 trackers remaining
 TB04 tracked GR03 at (8, 13)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (1,8)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,8)
 
 
@@ -3112,16 +3112,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (8, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (7,9)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (8,9)
 
 
@@ -3168,16 +3168,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (7, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (8,6)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (7,5)
 
 
@@ -3224,16 +3224,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (3, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (2,11)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (3,9)
 
 
@@ -3280,16 +3280,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (8, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (8,14)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (7,13)
 
 
@@ -3336,18 +3336,18 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (1, 8) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 tracked GR03 at (7, 13)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (0,9)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (0,9)
 
 
@@ -3394,16 +3394,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (7, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (6,9)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (8,8)
 
 
@@ -3450,16 +3450,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (8, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (9,5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (9,6)
 
 
@@ -3506,16 +3506,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (3, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (3,10)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (4,10)
 
 
@@ -3562,16 +3562,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (7, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (8,14)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (7,14)
 
 
@@ -3618,10 +3618,10 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (0, 9) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 is finding the target to plant a tracker...
@@ -3630,10 +3630,10 @@ TB04 has 1 trackers remaining
 TB04 tracked GR03 at (8, 14)
 TB04 tracked GR01 at (9, 6)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (0,8)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,10)
 
 
@@ -3680,16 +3680,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (8, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (9,7)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (7,9)
 
 
@@ -3736,16 +3736,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (9, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (8,5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (8,5)
 
 
@@ -3792,16 +3792,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (4, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (5,11)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (6,12)
 
 
@@ -3848,16 +3848,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (8, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (7,14)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (8,13)
 
 
@@ -3904,10 +3904,10 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (1, 10) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 is finding the target to plant a tracker...
@@ -3917,10 +3917,10 @@ TB04 tracked GR03 at (7, 14)
 TB04 tracked GR01 at (8, 5)
 TB04 tracked GR02 at (5, 11)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (0,9)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (1,9)
 
 
@@ -3967,16 +3967,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (7, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (6,10)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (8,9)
 
 
@@ -4023,16 +4023,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (8, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (8,4)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (7,6)
 
 
@@ -4079,16 +4079,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (4,10)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (5,12)
 
 
@@ -4135,16 +4135,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (7, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (8,13)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (8,13)
 
 
@@ -4191,10 +4191,10 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (0, 9) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 has no tracker left!!
@@ -4202,10 +4202,10 @@ TB04 tracked GR03 at (8, 13)
 TB04 tracked GR01 at (7, 6)
 TB04 tracked GR02 at (5, 12)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,10)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (1,11)
 
 
@@ -4252,16 +4252,16 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (8, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (8,8)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 fired at empty space (7,8)
 
 
@@ -4308,16 +4308,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (7, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (7,5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (8,7)
 
 
@@ -4364,16 +4364,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (5,13)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (4,13)
 
 
@@ -4420,16 +4420,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (8, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (8,14)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (7,14)
 
 
@@ -4476,10 +4476,10 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (1, 10) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 has no tracker left!!
@@ -4487,10 +4487,10 @@ TB04 tracked GR03 at (8, 14)
 TB04 tracked GR01 at (8, 7)
 TB04 tracked GR02 at (5, 13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (0,11)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (1,11)
 
 
@@ -4537,19 +4537,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (8, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR01 at the position (8, 7)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR05 hit GR01 at (8,7)
 GR01 has 1 lives remaining
 GR01 is enter the queue waiting robot...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR05 moves to (7,7)
 
 
@@ -4598,16 +4598,16 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 fired at empty space (6,12)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,14)
 
 
@@ -4656,16 +4656,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (8, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (7,13)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (7,14)
 
 
@@ -4712,10 +4712,10 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (0, 11) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 has no tracker left!!
@@ -4723,13 +4723,13 @@ TB04 tracked GR03 at (7, 14)
 TB04 tracked GR01 at (6, 4)
 TB04 tracked GR02 at (6, 14)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (1,12)
 TB04 is out of ammo and self-destructs!
 TB04 has 2 lives remaining
 TB04 is enter the queue waiting robot...
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,10)
 
 
@@ -4776,16 +4776,16 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (7, 7) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (6,6)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
 
@@ -4834,16 +4834,16 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (6, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (5,4)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (7,5)
 
 
@@ -4890,17 +4890,17 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR03 at the position (7, 14)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR02 moves to (6,13)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR02 hit GR03 at (7,14)
 GR03 has 1 lives remaining
 GR03 is enter the queue waiting robot...
@@ -4951,21 +4951,21 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (3, 11) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 has no tracker left!!
 TB04 tracked GR03 at (7, 14)
 TB04 tracked GR01 at (7, 5)
-TB04 tracked GR02 at (6, 13)
+TB04 tracked TB02 at (6, 13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (3,12)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (2,11)
 
 
@@ -5014,17 +5014,17 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (6, 6) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 BB05 found GR01 at the position (7, 5)
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (6,5)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
 
@@ -5071,17 +5071,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (7, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found BB05 at the position (6, 5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (6,4)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (5,3)
 
 
@@ -5128,17 +5128,17 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (6, 13) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (6,14)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (6,14)
 
 
@@ -5185,16 +5185,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (0, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,12)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (1,11)
 
 
@@ -5241,21 +5241,21 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (3, 12) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 has no tracker left!!
 TB04 tracked GR03 at (1, 12)
 TB04 tracked GR01 at (6, 4)
-TB04 tracked GR02 at (6, 13)
+TB04 tracked TB02 at (6, 14)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (3,13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (2,11)
 
 
@@ -5302,17 +5302,17 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (6, 5) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 BB05 found GR01 at the position (6, 4)
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (7,5)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
 
@@ -5359,17 +5359,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (6, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found BB05 at the position (7, 5)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (7,4)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 fired at empty space (6,4)
 
 
@@ -5416,10 +5416,10 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (6, 14) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 is finding the target to plant a tracker...
@@ -5427,10 +5427,10 @@ TB02 has planted a tracker on TB04
 TB02 has 2 trackers remaining
 TB02 tracked TB04 at (2, 11)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (5,13)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (4,13)
 
 
@@ -5477,17 +5477,17 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR03 found TB04 at the position (2, 11)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (0,11)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (0,11)
 
 
@@ -5534,21 +5534,21 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (2, 11) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB04 has no tracker left!!
 TB04 tracked GR03 at (0, 11)
 TB04 tracked GR01 at (7, 4)
-TB04 tracked GR02 at (6, 13)
+TB04 tracked TB02 at (5, 13)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (3,11)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,10)
 
 
@@ -5595,17 +5595,17 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (7, 5) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 BB05 found GR01 at the position (7, 4)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (6,4)
 
 
@@ -5652,17 +5652,17 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (7, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR01 found BB05 at the position (6, 4)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR01 moves to (6,5)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR01 hit BB05 at (6,4)
 BB05 has 1 lives remaining
 BB05 is enter the queue waiting robot...
@@ -5713,10 +5713,10 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (5, 13) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 is finding the target to plant a tracker...
@@ -5725,10 +5725,10 @@ TB02 has 1 trackers remaining
 TB02 tracked TB04 at (1, 10)
 TB02 tracked GR03 at (0, 11)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (5,14)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (6,13)
 
 
@@ -5777,17 +5777,17 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (0, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR03 found TB04 at the position (1, 10)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (1,11)
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,11)
 
 
@@ -5834,22 +5834,22 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (1, 10) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 TB04 found GR03 at the position (1, 11)
 
 TB04 has no tracker left!!
 TB04 tracked GR03 at (1, 11)
-TB04 tracked GR01 at (6, 5)
-TB04 tracked GR02 at (6, 13)
+TB04 tracked JB01 at (6, 5)
+TB04 tracked TB02 at (5, 14)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (2,9)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 fired at empty space (3,10)
 
 
@@ -5896,16 +5896,16 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (2, 2) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (2,1)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
 
@@ -5952,16 +5952,16 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (6, 5) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (6,6)
 
-JumpBot actionJump
+--JumpBot actionJump--
 JB01 jumps to (8,7)
 
 
@@ -6008,19 +6008,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (5, 14) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 tracked TB04 at (2, 9)
 TB02 tracked GR03 at (1, 11)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (6,14)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,13)
 
 
@@ -6067,16 +6067,16 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
 
-GenericRobot actionLook
+--GenericRobot actionLook--
 GenericRobot is looking around...
 
-GenericRobot actionMove
+--GenericRobot actionMove--
 GR03 moves to (1,10)
 
-GenericRobot actionFire
+--GenericRobot actionFire--
 GR03 fired at empty space (2,10)
 
 
@@ -6123,25 +6123,25 @@ TB04's kills: 1
 TB04's no.of Upgrades: 1
 
 TB04 at (2, 9) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB04 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 TB04 found GR03 at the position (1, 10)
 
 TB04 has no tracker left!!
 TB04 tracked GR03 at (1, 10)
-TB04 tracked GR01 at (6, 5)
-TB04 tracked GR02 at (6, 13)
+TB04 tracked JB01 at (8, 7)
+TB04 tracked TB02 at (6, 14)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB04 hit GR03 at (1,10)
 GR03 has 0 lives remaining
 GR03 was destroyed!
 GR03 is enter the queue destroyed robot...
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB04 moves to (1,8)
 
 
@@ -6190,16 +6190,16 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (2, 1) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (3,2)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
 
@@ -6246,16 +6246,16 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 7) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (7,8)
 
-JumpBot actionJump
+--JumpBot actionJump--
 JB01 jumps to (2,12)
 
 
@@ -6302,22 +6302,22 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (6, 14) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 is finding the target to plant a tracker...
 TB02 has planted a tracker on JB01
 TB02 has 0 trackers remaining
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (1, 8)
 TB02 tracked JB01 at (2, 12)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,14)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (5,13)
 
 
@@ -6364,18 +6364,18 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (1, 8) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (1,7)
 
 HideBot actionHide
 HB04 failed to hide and moves normally.
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (2,9)
 
 
@@ -6423,16 +6423,16 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (3, 2) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (4,1)
 
 
@@ -6479,17 +6479,17 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (2, 12) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (1,13)
 
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (1,11)
 
 
@@ -6537,20 +6537,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (5, 13) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (2, 9)
 TB02 tracked JB01 at (1, 11)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (4,13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (6,13)
 
 
@@ -6597,16 +6597,16 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (2, 9) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (1,8)
 
-HideBot actionHide
+--HideBot actionHide--
 HB04 went into hiding.
 
 
@@ -6653,16 +6653,16 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (4, 1) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (3,1)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 
 
@@ -6709,16 +6709,16 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (1, 11) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (2,12)
 
-JumpBot actionJump
+--JumpBot actionJump--
 JB01 jumps to (7,9)
 
 
@@ -6765,20 +6765,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (6, 13) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (2, 9)
 TB02 tracked JB01 at (7, 9)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (5,13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (7,12)
 
 
@@ -6825,17 +6825,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (2, 9) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (2,10)
 
 HB04 is now visible again.
-HideBot actionHide
+--HideBot actionHide--
 HB04 went into hiding.
 
 
@@ -6882,16 +6882,16 @@ BB05's kills: 1
 BB05's no.of Upgrades: 1
 
 BB05 at (3, 1) actions:
-BomberBot actionThink
+--BomberBot actionThink--
 BB05 is thinking...
 
-BomberBot actionLook
+--BomberBot actionLook--
 BomberBot is looking around...
 
-BomberBot actionMove
+--BomberBot actionMove--
 BB05 moves to (2,1)
 
-BomberBot actionFire
+--BomberBot actionFire--
 BB05 fired at empty space 
 BB05 is out of ammo and self-destructs!
 BB05 has 0 lives remaining
@@ -6942,16 +6942,16 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 9) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (7,10)
 
-JumpBot actionJump
+--JumpBot actionJump--
 JB01 jumps to (3,12)
 
 
@@ -6998,20 +6998,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (7, 12) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (2, 9)
 TB02 tracked JB01 at (3, 12)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (6,12)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (5,11)
 
 
@@ -7058,17 +7058,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (2, 9) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (2,8)
 
 HB04 is now visible again.
-HideBot actionHide
+--HideBot actionHide--
 HB04 went into hiding.
 
 
@@ -7115,17 +7115,17 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (3, 12) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (2,12)
 
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (3,13)
 
 
@@ -7173,20 +7173,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (6, 12) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (2, 9)
 TB02 tracked JB01 at (3, 13)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (6,13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (5,11)
 
 
@@ -7233,18 +7233,18 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (2, 9) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (2,10)
 
 HB04 is now visible again.
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (3,8)
 
 
@@ -7292,17 +7292,17 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (3, 13) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (4,14)
 
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (2,12)
 
 
@@ -7350,20 +7350,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (5, 11) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (3, 8)
 TB02 tracked JB01 at (2, 12)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (6,11)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,12)
 TB02 is out of ammo and self-destructs!
 TB02 has 1 lives remaining
@@ -7413,17 +7413,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (3, 8) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (3,7)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (3,7)
 
 
@@ -7473,17 +7473,17 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (2, 12) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (3,13)
 
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (2,13)
 
 
@@ -7531,20 +7531,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (9, 0) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (3, 7)
 TB02 tracked JB01 at (2, 13)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (8,1)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,0)
 
 
@@ -7591,17 +7591,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (3, 7) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (4,6)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (4,8)
 
 
@@ -7649,16 +7649,16 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (2, 13) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (3,12)
 
-JumpBot actionJump
+--JumpBot actionJump--
 JB01 jumps to (6,2)
 
 
@@ -7705,20 +7705,20 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (8, 1) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (4, 8)
 TB02 tracked JB01 at (6, 2)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (9,1)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (9,2)
 
 
@@ -7765,17 +7765,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (4, 8) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (5,9)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (5,9)
 
 
@@ -7823,13 +7823,13 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (6, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
 
-JumpBot actionLook
+--JumpBot actionLook--
 JumpBot is looking around...
 
-JumpBot actionFire
+--JumpBot actionFire--
 JB01 fired at empty space (5,3)
 JB01 is out of ammo and self-destructs!
 JB01 has 0 lives remaining
@@ -7880,19 +7880,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (9, 1) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (5, 9)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (8,1)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,1)
 
 
@@ -7939,17 +7939,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (5, 9) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (5,10)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (4,10)
 
 
@@ -7997,19 +7997,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (8, 1) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (4, 10)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (9,1)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (8,2)
 
 
@@ -8056,20 +8056,20 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (4, 10) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (4,11)
 HB04 is out of ammo and self-destructs!
 HB04 has 1 lives remaining
 HB04 is enter the queue waiting robot...
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (4,9)
 
 
@@ -8117,19 +8117,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (9, 1) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (4, 9)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (8,0)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (9,1)
 
 
@@ -8178,17 +8178,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (4, 12) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (3,11)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (3,11)
 
 
@@ -8236,19 +8236,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (8, 0) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (3, 11)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (7,1)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (6,0)
 
 
@@ -8295,17 +8295,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (3, 11) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (2,10)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (4,12)
 
 
@@ -8353,19 +8353,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (7, 1) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (4, 12)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (6,2)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,2)
 
 
@@ -8412,17 +8412,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (4, 12) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (5,11)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (5,11)
 
 
@@ -8470,19 +8470,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (6, 2) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (5, 11)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (7,1)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (5,3)
 
 
@@ -8529,17 +8529,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (5, 11) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (4,10)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (6,10)
 
 
@@ -8587,19 +8587,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (5, 3) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (6, 10)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (6,2)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (4,4)
 
 
@@ -8646,17 +8646,17 @@ HB04's kills: 2
 HB04's no.of Upgrades: 2
 
 HB04 at (6, 10) actions:
-HideBot actionThink
+--HideBot actionThink--
 HB04 is thinking...
 
-HideBot actionLook
+--HideBot actionLook--
 HideBot is looking around...
 
-HideBot actionFire
+--HideBot actionFire--
 HB04 fired at empty space (5,11)
 
 HB04 has no hides left!!
-HideBot actionMove
+--HideBot actionMove--
 HB04 moves to (5,9)
 
 
@@ -8704,19 +8704,19 @@ TB02's kills: 1
 TB02's no.of Upgrades: 1
 
 TB02 at (4, 4) actions:
-TrackBot actionThink
+--TrackBot actionThink--
 TB02 is thinking...
 
-TrackBot actionLook
+--TrackBot actionLook--
 TrackBot is looking around...
 
 TB02 has no tracker left!!
-TB02 tracked TB04 at (1, 8)
+TB02 tracked HB04 at (5, 9)
 
-TrackBot actionMove
+--TrackBot actionMove--
 TB02 moves to (3,3)
 
-TrackBot actionFire
+--TrackBot actionFire--
 TB02 fired at empty space (2,4)
 TB02 is out of ammo and self-destructs!
 TB02 has 0 lives remaining
@@ -8758,7 +8758,12 @@ Display Battlefield:
   14|    |    |    |    |    |    |    |    |    |    |
     +----+----+----+----+----+----+----+----+----+----+
 
-HB04, Kidd WINS the match!!
+--SIMULATION ENDS--- in turn 151
+HB04_Kidd WINS the match!!
+
+Static members:
+Number of GenericRobot robots: 5
+
 destroyedRobots_: Robot GR03 at (1,10)
 destroyedRobots_: Robot BB05 at (2,1)
 destroyedRobots_: Robot JB01 at (6,2)

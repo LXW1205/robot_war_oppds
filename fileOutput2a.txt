@@ -1,3 +1,18 @@
+Read fileInput2a.txt:
+M by N: 15 15
+turns: 400
+robots: 10
+GenericRobot GR01_C-3PO 2 13
+GenericRobot GR02_R2-D2 9 10
+GenericRobot GR03_R5-D4 14 5
+GenericRobot GR04_AP-5 2 4
+GenericRobot GR05_BD-1 14 3
+GenericRobot GR06_IG-11 12 4
+GenericRobot GR07_BB-8 13 6
+GenericRobot GR08_BT-1 4 11
+GenericRobot GR09_K-2S0 7 8
+GenericRobot GR10_D-0 3 0
+
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -40,14 +55,18 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (2, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR01 fired at empty space (1,13)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR01 moves to (2,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -92,14 +111,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (9, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (8,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (9,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -144,15 +167,19 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (14, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR03 found GR07 at the position (13, 6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (14,6)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -197,14 +224,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (2, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (1,5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (0,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -249,14 +280,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (14, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (13,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (14,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -301,14 +336,18 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (12, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (11,5)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (12,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -353,15 +392,19 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (13, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR07 found GR03 at the position (14, 6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,6)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (11,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -406,14 +449,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (4, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (3,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (2,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -458,14 +505,18 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (7, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (8,7)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (9,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -510,14 +561,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (3, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (2,0)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (2,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -562,14 +617,18 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (2, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR01 moves to (1,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR01 fired at empty space (0,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -614,14 +673,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (8, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (9,12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (9,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -666,14 +729,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (14, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (13,5)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -718,14 +785,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (1, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (0,6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (0,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -770,14 +841,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (14, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (13,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (14,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -822,15 +897,19 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (12, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR06 found GR05 at the position (13, 4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (11,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (12,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -875,15 +954,19 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (12, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR07 found GR03 at the position (13, 7)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (12,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -928,14 +1011,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (3, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (2,11)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (3,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -980,14 +1067,18 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (8, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (9,7)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (7,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1032,14 +1123,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (2, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (2,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (1,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1084,16 +1179,20 @@ GR01's kills: 0
 GR01's no.of Upgrades: 0
 
 GR01 at (1, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR01 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR01 moves to (2,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR01 hit GR08 at (3,11)
 GR08 has 2 lives remaining
 GR08 is enter the queue waiting robot...
+
 
 C-3PO upgrade from GenericRobot GR01 to JumpBot JB01
 
@@ -1140,14 +1239,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (9, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (10,12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (8,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1194,14 +1297,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (14,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1246,14 +1353,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (0, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (1,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (1,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1298,15 +1409,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (13, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR07 at the position (12, 5)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (12,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (12,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1351,15 +1466,19 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (11, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR06 found GR05 at the position (12, 3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (12,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (10,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1404,14 +1523,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (12, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (12,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (13,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1456,14 +1579,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (13, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (14,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (14,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1508,14 +1635,18 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (7, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (8,5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (7,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1560,14 +1691,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (2, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (2,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (1,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1612,14 +1747,18 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (2, 11) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (1,11)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (8,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1664,14 +1803,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (8, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (8,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (7,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1716,14 +1859,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (14, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,7)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1768,14 +1915,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (1, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (0,5)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (2,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1820,15 +1971,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (12, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR07 at the position (13, 4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (12,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (12,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1873,14 +2028,18 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (10, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (11,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (9,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1925,14 +2084,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (13, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (12,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (13,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -1977,14 +2140,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (14, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (13,0)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2029,15 +2196,19 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (8, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR09 found JB01 at the position (8, 6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (7,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (8,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2082,14 +2253,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (2, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (3,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (2,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2134,15 +2309,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 6) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (9,7)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (9,6)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2187,14 +2367,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (8, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (7,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (7,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2239,14 +2423,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (12,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2291,15 +2479,19 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (2, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR10 at the position (2, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (1,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (3,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2344,16 +2536,20 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (12, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR08 at the position (13, 1)
 GR05 found GR07 at the position (13, 3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (11,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (11,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2398,14 +2594,18 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (9, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (8,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (10,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2450,14 +2650,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (13, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (13,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (14,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2502,15 +2706,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (13, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR07 at the position (13, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (13,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2555,14 +2763,18 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (7, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (8,5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (7,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2607,14 +2819,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (2, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (3,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (4,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2659,16 +2875,21 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (9, 6) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found GR09 at the position (8, 5)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (8,6)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (8,7)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2713,14 +2934,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (7, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (7,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (8,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2765,14 +2990,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2817,15 +3046,19 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (3, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR10 at the position (3, 3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (4,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (5,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2870,15 +3103,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (11, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR06 at the position (10, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (10,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (11,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2923,15 +3160,19 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (10, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR06 found GR05 at the position (10, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (11,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (9,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -2976,14 +3217,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (13, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (12,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3028,14 +3273,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (13, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (12,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3080,14 +3329,18 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (8, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (9,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (8,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3132,15 +3385,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (3, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR04 at the position (4, 4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (2,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (3,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3185,14 +3442,18 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 7) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (9,7)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (6,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3237,14 +3498,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (7, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (7,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (8,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3289,14 +3554,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,8)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3341,14 +3610,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (4, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (3,5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (2,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3393,15 +3666,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (10, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR06 at the position (9, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (10,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (10,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3446,15 +3723,19 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (9, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR06 found GR05 at the position (10, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (10,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (9,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3499,15 +3780,19 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (12, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR07 found GR08 at the position (12, 1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 missed GR08 at (12,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (11,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3552,15 +3837,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (12, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR07 at the position (11, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (12,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (13,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3605,15 +3894,19 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (9, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR09 found GR06 at the position (10, 3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 fired at empty space (9,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (10,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3658,14 +3951,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (3, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (2,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (2,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3710,15 +4007,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (6, 8) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (5,7)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (7,8)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3763,14 +4065,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (7, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (6,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (7,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3815,14 +4121,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3867,14 +4177,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (3, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (2,6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (4,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3919,15 +4233,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (10, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR07 at the position (11, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (10,0)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (11,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -3972,15 +4290,19 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (10, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR06 found GR07 at the position (11, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (9,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (11,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4025,14 +4347,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (11, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (11,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4077,15 +4403,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (12, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR05 at the position (11, 0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (12,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4130,17 +4460,21 @@ GR09's kills: 0
 GR09's no.of Upgrades: 0
 
 GR09 at (10, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR09 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR09 found GR06 at the position (11, 4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR09 hit GR06 at (11,4)
 GR06 has 2 lives remaining
 GR06 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR09 moves to (9,4)
+
 
 K-2S0 upgrade from GenericRobot GR09 to ThirthyShotBot TS09
 
@@ -4187,14 +4521,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (2, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (3,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (2,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4241,16 +4579,21 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 8) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found GR06 at the position (8, 7)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (6,8)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (6,9)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4295,14 +4638,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (5,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4347,14 +4694,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (13,8)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (13,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4399,15 +4750,19 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (4, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR10 at the position (3, 4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (4,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (3,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4452,15 +4807,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (11, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR08 at the position (12, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (11,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (12,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4505,14 +4864,18 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (8, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (8,8)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (8,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4557,16 +4920,20 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (12, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR07 found GR08 at the position (12, 1)
 GR07 found GR05 at the position (11, 1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (13,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (13,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4611,16 +4978,20 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (12, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR07 at the position (13, 2)
 GR08 found GR05 at the position (11, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (11,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (12,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4665,14 +5036,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 4) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,3)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4717,15 +5092,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (3, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR04 at the position (3, 5)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (3,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (2,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4770,15 +5149,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (6, 9) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (6,8)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (7,10)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4823,17 +5207,21 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (6,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (7,12)
 GR02 is out of ammo and self-destructs!
 GR02 has 2 lives remaining
 GR02 is enter the queue waiting robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4878,17 +5266,21 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (13, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (14,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (14,8)
 GR03 is out of ammo and self-destructs!
 GR03 has 2 lives remaining
 GR03 is enter the queue waiting robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4935,17 +5327,21 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (3, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (3,6)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (3,5)
 GR04 is out of ammo and self-destructs!
 GR04 has 2 lives remaining
 GR04 is enter the queue waiting robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4992,18 +5388,22 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (11, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR08 at the position (11, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (10,0)
 GR05 is out of ammo and self-destructs!
 GR05 has 2 lives remaining
 GR05 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (11,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5050,14 +5450,18 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (8, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (8,7)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 fired at empty space (7,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5104,17 +5508,21 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (13, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (13,3)
 GR07 is out of ammo and self-destructs!
 GR07 has 2 lives remaining
 GR07 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5159,14 +5567,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (11, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (12,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5213,14 +5625,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 3) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,3)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5265,17 +5681,21 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (3, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (2,2)
 GR10 is out of ammo and self-destructs!
 GR10 has 2 lives remaining
 GR10 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (4,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5320,15 +5740,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 10) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (8,10)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (8,9)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5375,14 +5800,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (0, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (1,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (0,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5427,14 +5856,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (10, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (9,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (10,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5479,15 +5912,19 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR04 found GR05 at the position (13, 6)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (12,6)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (11,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5532,14 +5969,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (13, 6) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (12,5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (12,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5584,16 +6025,20 @@ GR06's kills: 0
 GR06's no.of Upgrades: 0
 
 GR06 at (8, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR06 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR06 moves to (8,8)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR06 hit JB01 at (8,9)
 JB01 has 2 lives remaining
 JB01 is enter the queue waiting robot...
+
 
 IG-11 upgrade from GenericRobot GR06 to JumpBot JB06
 
@@ -5640,14 +6085,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (7, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (7,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (8,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5694,15 +6143,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (12, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR10 at the position (13, 3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (13,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (14,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5747,14 +6200,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 4) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (8,4)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5799,15 +6256,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (13, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR08 at the position (13, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (12,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (13,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5852,15 +6313,19 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (6, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found GR07 at the position (7, 1)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (6,1)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (8,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5905,14 +6370,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (1, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (2,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (1,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -5957,14 +6426,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (9, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (8,13)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (9,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6009,14 +6482,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (11, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (10,8)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (10,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6061,15 +6538,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (12, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR10 at the position (12, 4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (13,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (13,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6114,14 +6595,18 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (8, 8) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (7,9)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB06 jumps to (0,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6166,14 +6651,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (7, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (8,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (8,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6218,17 +6707,21 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (13, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (14,1)
 GR08 is out of ammo and self-destructs!
 GR08 has 1 lives remaining
 GR08 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (14,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6273,15 +6766,19 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 5) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
 TS09 found JB01 at the position (8, 5)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (10,5)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6328,15 +6825,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (12, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR05 at the position (13, 5)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (13,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (12,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6381,15 +6882,19 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 5) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found TS09 at the position (8, 4)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (9,5)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (4,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6434,14 +6939,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (2, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (1,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (2,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6486,14 +6995,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (9, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (8,13)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (10,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6538,14 +7051,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (10, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (9,9)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (9,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6590,14 +7107,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (13, 5) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (14,5)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (13,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6642,15 +7163,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (0, 4) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (1,5)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (1,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6695,14 +7221,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (8, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (9,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (8,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6747,14 +7277,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (3, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (4,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (4,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6799,15 +7333,19 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
 TS09 found GR07 at the position (9, 3)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (8,3)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (7,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6852,15 +7390,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (12, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR05 at the position (13, 4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (11,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (10,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6905,14 +7447,18 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (4, 10) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (3,11)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (8,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -6957,14 +7503,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (1, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (2,10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (2,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7009,14 +7559,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (10, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (9,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (8,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7061,14 +7615,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (9, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (10,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (10,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7113,14 +7671,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (13, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (12,4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (12,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7165,15 +7727,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (1, 3) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (1,4)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (0,2)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7218,14 +7785,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (9, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (10,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (11,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7270,14 +7841,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (4, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (4,11)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (5,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7322,14 +7897,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (7, 5) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (6,6)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (6,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7374,15 +7953,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (11, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR07 at the position (10, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (11,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (10,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7427,15 +8010,19 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 13) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found GR03 at the position (9, 13)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (9,12)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (4,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7480,14 +8067,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (2, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (3,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (3,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7532,14 +8123,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (9, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (10,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (9,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7584,14 +8179,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (10, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (9,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (10,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7636,14 +8235,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (12, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (11,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (12,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7688,15 +8291,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (0, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (1,3)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (1,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7741,16 +8349,20 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (10, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR07 found GR10 at the position (10, 1)
 GR07 found GR05 at the position (11, 3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (11,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 missed GR10 at (10,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7795,14 +8407,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (5, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (4,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (5,14)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7847,14 +8463,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (6, 6) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (7,6)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (6,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7899,15 +8519,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (10, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR07 at the position (11, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (9,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (8,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -7952,15 +8576,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (4, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (5,2)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (5,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8005,14 +8634,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (3, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (4,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (5,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8057,14 +8690,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (10, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (9,12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (10,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8109,14 +8746,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (9, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (10,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (9,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8161,15 +8802,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (11, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR07 at the position (11, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (10,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (9,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8214,15 +8859,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (1, 3) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (0,4)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (0,2)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8267,15 +8917,19 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (11, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR07 found GR05 at the position (10, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (11,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (11,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8320,15 +8974,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (4, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR02 at the position (4, 12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (5,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (6,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8373,14 +9031,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (7, 6) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (7,7)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8425,15 +9087,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (9, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR05 at the position (10, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (8,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (9,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8478,15 +9144,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (5, 3) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (5,2)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (5,4)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8531,15 +9202,19 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (4, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR08 at the position (5, 12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (3,11)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (3,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8584,14 +9259,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (10, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (10,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (11,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8636,14 +9315,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (10, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (10,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (9,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8688,15 +9371,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (10, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR07 at the position (11, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (9,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (8,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8741,15 +9428,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (0, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (0,1)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (1,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8794,14 +9486,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (11, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8846,14 +9542,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (5, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (6,13)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (4,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8898,14 +9598,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 7) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,8)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (8,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -8950,15 +9654,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (8, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR05 at the position (9, 3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (7,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (7,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9003,15 +9711,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (5, 4) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (4,3)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (4,4)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9056,15 +9769,19 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (3, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR08 at the position (4, 11)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (3,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (3,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9109,15 +9826,19 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (10, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR03 found GR04 at the position (10, 10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (11,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (10,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9162,14 +9883,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (10, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (9,9)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (11,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9214,14 +9939,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (9, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (8,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (7,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9266,15 +9995,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (1, 3) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (0,3)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (0,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9319,14 +10053,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (12, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (12,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9371,15 +10109,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (4, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR08 found GR02 at the position (3, 11)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (4,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 missed GR02 at (3,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9424,14 +10166,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 8) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,7)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (10,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9476,15 +10222,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (7, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR05 at the position (8, 3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (8,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (8,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9529,15 +10279,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (4, 4) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (5,5)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (3,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9582,15 +10337,19 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (3, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR08 at the position (4, 10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (2,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (1,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9635,14 +10394,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (11, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (12,12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (11,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9687,14 +10450,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (11, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (12,8)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9739,15 +10506,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (8, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR10 at the position (8, 2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (7,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (7,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9792,15 +10563,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (0, 3) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (0,2)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (1,2)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9845,14 +10621,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (13, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (12,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9897,14 +10677,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (4, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (5,10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (3,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -9949,14 +10733,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 7) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (8,7)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (10,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10001,15 +10789,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (8, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found GR05 at the position (7, 2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (7,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (7,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10054,15 +10846,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (3, 3) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (2,4)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (2,4)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10107,18 +10904,22 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (2, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR08 at the position (3, 10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (2,11)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (2,12)
 GR02 is out of ammo and self-destructs!
 GR02 has 1 lives remaining
 GR02 is enter the queue waiting robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10163,17 +10964,21 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (11, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (10,14)
 GR03 is out of ammo and self-destructs!
 GR03 has 1 lives remaining
 GR03 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (10,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10220,17 +11025,21 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (13,7)
 GR04 is out of ammo and self-destructs!
 GR04 has 1 lives remaining
 GR04 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10277,18 +11086,22 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (7, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found GR10 at the position (7, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (8,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (9,2)
 GR05 is out of ammo and self-destructs!
 GR05 has 1 lives remaining
 GR05 is enter the queue waiting robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10335,14 +11148,18 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (1, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (2,2)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB06 jumps to (13,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10389,17 +11206,21 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (12, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (11,1)
 GR07 is out of ammo and self-destructs!
 GR07 has 1 lives remaining
 GR07 is enter the queue waiting robot...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (11,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10444,14 +11265,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (3, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (2,9)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (4,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10498,14 +11323,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (10, 7) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (11,6)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10550,17 +11379,21 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (7, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (6,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (7,1)
 GR10 is out of ammo and self-destructs!
 GR10 has 1 lives remaining
 GR10 is enter the queue waiting robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10605,19 +11438,24 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (2, 4) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found GR03 at the position (3, 4)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (1,3)
 JB01 is out of ammo and self-destructs!
 JB01 has 1 lives remaining
 JB01 is enter the queue waiting robot...
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (2,3)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10664,15 +11502,19 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (4, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR02 found GR03 at the position (3, 4)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (3,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (5,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10719,14 +11561,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (3, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (3,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (2,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10771,14 +11617,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (11, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,8)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (11,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10823,14 +11673,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (5, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (4,13)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (6,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10875,17 +11729,21 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (13, 12) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (14,12)
 JB06 is out of ammo and self-destructs!
 JB06 has 1 lives remaining
 JB06 is enter the queue waiting robot...
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB06 jumps to (1,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10930,14 +11788,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (1, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (2,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (2,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -10984,14 +11846,18 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (4, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR08 moves to (3,10)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (4,9)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11036,14 +11902,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 7) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,8)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11088,14 +11958,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (14, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (13,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11140,15 +12014,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 8) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (6,7)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (8,7)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11193,14 +12072,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (6,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11245,14 +12128,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (3, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (3,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (2,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11297,14 +12184,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (11,7)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (11,7)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11349,14 +12240,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (6, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (7,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (7,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11401,15 +12296,20 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (3, 14) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 fired at empty space (2,13)
+
 JB06 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB06 moves to (2,14)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11454,14 +12354,18 @@ GR07's kills: 0
 GR07's no.of Upgrades: 0
 
 GR07 at (2, 12) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR07 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR07 fired at empty space (1,11)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR07 moves to (3,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11506,16 +12410,19 @@ GR08's kills: 0
 GR08's no.of Upgrades: 0
 
 GR08 at (3, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR08 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR08 fired at empty space (4,9)
 GR08 is out of ammo and self-destructs!
 GR08 has 0 lives remaining
 GR08 was destroyed!
 GR08 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11560,15 +12467,19 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 6) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
 TS09 found JB01 at the position (8, 7)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,5)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (8,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11613,14 +12524,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (13, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (12,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11665,15 +12580,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 7) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (9,6)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (8,8)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11718,14 +12638,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (7,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11770,14 +12694,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (2, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (3,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (3,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11822,14 +12750,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (11, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (10,8)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (11,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11874,14 +12806,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (7, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (6,14)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (7,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -11926,18 +12862,22 @@ JB06's kills: 1
 JB06's no.of Upgrades: 1
 
 JB06 at (2, 14) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB06 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB06 found GR07 at the position (3, 13)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB06 hit GR07 at (3,13)
 GR07 has 0 lives remaining
 GR07 was destroyed!
 GR07 is enter the queue destroyed robot...
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB06 jumps to (13,0)
+
 
 IG-11 upgrade from JumpBot JB06 to DroneBot DB06
 
@@ -11984,14 +12924,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 5) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,4)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12036,15 +12980,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (12, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found DB06 at the position (13, 0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (11,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (12,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12089,15 +13037,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 8) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (7,7)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (7,9)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12142,14 +13095,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (7, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (6,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12194,14 +13151,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (3, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (4,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (2,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12246,14 +13207,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (11, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,7)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (13,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12298,14 +13263,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (6, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (6,13)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (7,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12350,19 +13319,24 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (13, 0) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
 DB06 found GR10 at the position (12, 0)
+
 DB06 is finding a position to place a drone...
 DB06 placed the drone at (6, 0)
 DB06 has 2 drones remaining
 DB06's drone is scanning at (6, 0)...
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (14,0)
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12407,14 +13381,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,3)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12459,14 +13437,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (12, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (11,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (12,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12511,15 +13493,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 9) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (6,10)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (7,10)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12564,14 +13551,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (6,2)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12616,14 +13607,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (2, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (3,4)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (2,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12668,14 +13663,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 7) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (13,7)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12720,14 +13719,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (7, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (6,12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (6,14)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12772,15 +13775,20 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (14, 0) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
+
 DB06's drone is scanning at (6, 0)...
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (14,1)
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (13,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12825,14 +13833,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 3) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,2)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12877,14 +13889,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (11, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (10,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (10,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12929,15 +13945,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 10) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (7,11)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (6,11)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -12982,14 +14003,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (6, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (5,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (5,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13034,14 +14059,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (2, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (3,3)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (1,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13086,14 +14115,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (13,7)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (13,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13138,14 +14171,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (6, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (6,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (5,12)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13190,20 +14227,25 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (13, 1) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
+
 DB06 is finding a position to place a drone...
 DB06 placed the drone at (7, 1)
 DB06 has 1 drones remaining
 DB06's drone is scanning at (6, 0)...
 => DB06 spotted GR02 at (5, 1) by drone
 DB06's drone is scanning at (7, 1)...
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (12,0)
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (11,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13248,14 +14290,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,5)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (7,6)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13300,14 +14346,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (10, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (11,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (10,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13352,15 +14402,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (6, 11) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (5,10)
+
 JB01 failed to jump and moves normally
-JumpBot actionMove
+--JumpBot actionMove--
 JB01 moves to (7,12)
+
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13405,14 +14460,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (4,1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (5,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13457,14 +14516,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 4) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (1,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (0,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13509,14 +14572,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (13, 8) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,9)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (12,8)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13561,15 +14628,19 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (6, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR05 found JB01 at the position (7, 12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (6,12)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (5,14)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13614,17 +14685,22 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (12, 0) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
 DB06 found GR10 at the position (11, 0)
+
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (13,1)
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13669,14 +14745,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 5) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,4)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,5)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13721,15 +14801,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (11, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found DB06 at the position (12, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (12,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 missed DB06 at (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13774,14 +14858,18 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (7, 12) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (7,13)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (8,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13826,14 +14914,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (5,1)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13878,14 +14970,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (2,2)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (2,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13930,14 +15026,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 9) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (11,9)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (12,10)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -13982,14 +15082,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (5, 14) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (4,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (3,14)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14034,11 +15138,13 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (12, 1) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
 DB06 found GR10 at the position (12, 0)
+
 DB06 is finding a position to place a drone...
 DB06 placed the drone at (6, 5)
 DB06 has 0 drones remaining
@@ -14046,10 +15152,13 @@ DB06's drone is scanning at (6, 0)...
 => DB06 spotted GR02 at (5, 1) by drone
 DB06's drone is scanning at (7, 1)...
 DB06's drone is scanning at (6, 5)...
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (13,2)
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (11,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14094,14 +15203,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,3)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (7,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14146,15 +15259,19 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (12, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found DB06 at the position (11, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (11,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (12,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14199,14 +15316,18 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (8, 11) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (7,12)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (10,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14251,14 +15372,18 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR02 moves to (5,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (6,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14303,14 +15428,18 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (2, 2) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR03 moves to (1,3)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (2,4)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14355,14 +15484,18 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (12, 10) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (11,10)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (11,11)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14407,14 +15540,18 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (4, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (5,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (4,13)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14459,20 +15596,25 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (11, 1) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
 DB06 found GR10 at the position (11, 0)
+
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 => DB06 spotted GR02 at (5, 0) by drone
 DB06's drone is scanning at (7, 1)...
 DB06's drone is scanning at (6, 5)...
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (12,0)
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (12,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14517,14 +15659,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 3) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (8,2)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (7,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14569,14 +15715,18 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (11, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (12,0)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14621,15 +15771,19 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (10, 11) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found GR04 at the position (11, 11)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (10,12)
-JumpBot actionJump
+
+--JumpBot actionJump--
 JB01 jumps to (9,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14674,16 +15828,19 @@ GR02's kills: 0
 GR02's no.of Upgrades: 0
 
 GR02 at (5, 0) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR02 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR02 fired at empty space (4,1)
 GR02 is out of ammo and self-destructs!
 GR02 has 0 lives remaining
 GR02 was destroyed!
 GR02 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14728,16 +15885,19 @@ GR03's kills: 0
 GR03's no.of Upgrades: 0
 
 GR03 at (1, 3) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR03 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR03 fired at empty space (1,2)
 GR03 is out of ammo and self-destructs!
 GR03 has 0 lives remaining
 GR03 was destroyed!
 GR03 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14782,18 +15942,22 @@ GR04's kills: 0
 GR04's no.of Upgrades: 0
 
 GR04 at (11, 11) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR04 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR04 moves to (11,12)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR04 fired at empty space (12,13)
 GR04 is out of ammo and self-destructs!
 GR04 has 0 lives remaining
 GR04 was destroyed!
 GR04 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14838,18 +16002,22 @@ GR05's kills: 0
 GR05's no.of Upgrades: 0
 
 GR05 at (5, 13) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR05 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR05 moves to (6,13)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR05 fired at empty space (7,12)
 GR05 is out of ammo and self-destructs!
 GR05 has 0 lives remaining
 GR05 was destroyed!
 GR05 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14894,20 +16062,25 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (12, 2) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
 DB06 found GR10 at the position (12, 1)
+
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
 => DB06 spotted TS09 at (8, 2) by drone
 DB06's drone is scanning at (6, 5)...
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (13,1)
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (14,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -14952,15 +16125,19 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 2) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
 TS09 found JB01 at the position (9, 2)
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,1)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (9,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15005,19 +16182,23 @@ GR10's kills: 0
 GR10's no.of Upgrades: 0
 
 GR10 at (12, 1) actions:
-GenericRobot actionThink
+--GenericRobot actionThink--
 GR10 is thinking...
-GenericRobot actionLook
+
+--GenericRobot actionLook--
 GenericRobot is looking around...
 GR10 found DB06 at the position (13, 1)
-GenericRobot actionMove
+
+--GenericRobot actionMove--
 GR10 moves to (11,0)
-GenericRobot actionFire
+
+--GenericRobot actionFire--
 GR10 fired at empty space (10,1)
 GR10 is out of ammo and self-destructs!
 GR10 has 0 lives remaining
 GR10 was destroyed!
 GR10 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15062,17 +16243,20 @@ JB01's kills: 1
 JB01's no.of Upgrades: 1
 
 JB01 at (9, 2) actions:
-JumpBot actionThink
+--JumpBot actionThink--
 JB01 is thinking...
-JumpBot actionLook
+
+--JumpBot actionLook--
 JumpBot is looking around...
 JB01 found TS09 at the position (9, 1)
-JumpBot actionFire
+
+--JumpBot actionFire--
 JB01 fired at empty space (8,3)
 JB01 is out of ammo and self-destructs!
 JB01 has 0 lives remaining
 JB01 was destroyed!
 JB01 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15117,18 +16301,23 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (13, 1) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
+
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
 DB06's drone is scanning at (6, 5)...
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (14,0)
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (12,1)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15173,14 +16362,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 1) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (9,2)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (10,2)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15225,18 +16418,23 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (12, 1) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
+
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
 DB06's drone is scanning at (6, 5)...
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (12,2)
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (12,0)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15281,14 +16479,18 @@ TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (10, 2) actions:
-ThirthyShotBot actionThink
+--ThirthyShotBot actionThink--
 TS09 is thinking...
-ThirthyShotBot actionLook
+
+--ThirthyShotBot actionLook--
 ThirthyShotBot is looking around...
-ThirthyShotBot actionFire
+
+--ThirthyShotBot actionFire--
 TS09 fired at empty space (10,3)
-ThirthyShotBot actionMove
+
+--ThirthyShotBot actionMove--
 TS09 moves to (11,3)
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15333,22 +16535,27 @@ DB06's kills: 2
 DB06's no.of Upgrades: 2
 
 DB06 at (12, 0) actions:
-DroneBot actionThink
+--DroneBot actionThink--
 DB06 is thinking...
-DroneBot actionLook
+
+--DroneBot actionLook--
 DroneBot is looking around...
+
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
 DB06's drone is scanning at (6, 5)...
-DroneBot actionMove
+
+--DroneBot actionMove--
 DB06 moves to (11,0)
-DroneBot actionFire
+
+--DroneBot actionFire--
 DB06 fired at empty space (10,1)
 DB06 is out of ammo and self-destructs!
 DB06 has 0 lives remaining
 DB06 was destroyed!
 DB06 is enter the queue destroyed robot...
+
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -15384,4 +16591,18 @@ Display Battlefield:
   14|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 
-TS09, C-3PO WINS the match!!
+--SIMULATION ENDS--- in turn 290
+TS09_C-3PO WINS the match!!
+
+Static members:
+Number of GenericRobot robots: 10
+
+destroyedRobots_: Robot GR08 at (3,10)
+destroyedRobots_: Robot GR07 at (3,13)
+destroyedRobots_: Robot GR02 at (5,0)
+destroyedRobots_: Robot GR03 at (1,3)
+destroyedRobots_: Robot GR04 at (11,12)
+destroyedRobots_: Robot GR05 at (6,13)
+destroyedRobots_: Robot GR10 at (11,0)
+destroyedRobots_: Robot JB01 at (9,2)
+destroyedRobots_: Robot DB06 at (11,0)

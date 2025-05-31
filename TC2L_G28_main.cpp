@@ -229,7 +229,11 @@ public:
         robotId = id;
         robotPositionX = x;
         robotPositionY = y;
+
+        robotAutoIncrementInt_++;
     }
+
+    static int robotAutoIncrementInt() { return robotAutoIncrementInt_; }
 
     virtual ~GenericRobot() {}
 
@@ -353,7 +357,7 @@ class TrackBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, 
 private:
     int trackerNumber = 3;
 
-    vector<Robot*> trackTargets;
+    vector<Robot*> trackTargets; // To store the track targeted
 
 public:
     TrackBot(string id = "", int x = -1, int y = -1): Robot(id, x, y)
@@ -376,22 +380,22 @@ public:
     void updateRobotInfo(vector<Robot*>& allRobots, Robot* newRobot) override
     {
         for (size_t i = 0; i < trackTargets.size(); ++i)
-        {
-        if (trackTargets[i] == newRobot)
-            return;
+        {   // The robot is already upgraded
+            if (trackTargets[i] == newRobot)
+                return;
 
-        // Replace the old pointer with the upgraded one if match
-        for (Robot* oldRobot : allRobots)
-        {
-            if (trackTargets[i] == oldRobot)
+            // Replace the old pointer with the upgraded one if match
+            for (Robot* oldRobot : allRobots)
             {
-                if (oldRobot->getName() == newRobot->getName())
+                if (trackTargets[i] == oldRobot)
                 {
-                    trackTargets[i] = newRobot;
-                    break;
+                    if (oldRobot->getName() == newRobot->getName())
+                    {
+                        trackTargets[i] = newRobot;
+                        break;
+                    }
                 }
             }
-        }
         }
     }
 
@@ -1437,9 +1441,9 @@ public:
         if (isLastStand()) // If there is one robot left inside the battlefield
         {
             cout << "--SIMULATION ENDS--- in turn " << currentTurn << endl
-            << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+            << lastStandRobot()->getId() << "_" << robots[0]->getName() << " WINS the match!!" << endl;
             fileOutput << "--SIMULATION ENDS--- in turn " << currentTurn << endl
-            << lastStandRobot()->getId() << ", " << robots[0]->getName() << " WINS the match!!" << endl;
+            << lastStandRobot()->getId() << "_" << robots[0]->getName() << " WINS the match!!" << endl;
         }
         else
         {
@@ -1451,6 +1455,13 @@ public:
         }
 
         cout << endl;
+        fileOutput << endl;
+
+        cout << "Static members:" << endl <<
+        "Number of GenericRobot robots: " << GenericRobot::robotAutoIncrementInt() << endl << endl;
+        fileOutput << "Static members:" << endl <<
+        "Number of GenericRobot robots: " << GenericRobot::robotAutoIncrementInt() << endl << endl;
+
         cout << "queue data structure:" << endl;
 
         while (!destroyedRobots.empty())
@@ -1572,17 +1583,17 @@ public:
         cout << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
         fileOutput << robot->getName() << " upgrade from " << robot->getType() << " " << robot->getId() << " to " << upgradeType << " " << id <<endl;
 
+        for (Robot* r : robots)
+        {   // r is not itself
+            if (r != robot && r != nullptr)
+                r->updateRobotInfo(robots, newRobot); // Check whether this upgraded robot is a track targeted or not
+        }
+
         for (int i = 0; i < robots.size(); ++i)
         {
             if (robots[i]==robot)
             {
-                for (Robot* r : robots)
-                {
-                    if (r != robot && r != nullptr)
-                    {
-                        r->updateRobotInfo(robots, newRobot);
-                    }
-                }
+
 
                 int tempNumUpgrades = robots[i]->getNumUpgrade();
                 int tempKills = robots[i]->getKills();
@@ -1880,12 +1891,17 @@ void MovingRobot::actionMove(Battlefield* battlefield)
     *battlefield << endl;
 }
 
+/*
+Instead of neighbor look(x,y) The robot can look the entire battlefield for one turn.
+The ability can be used three times in a match.*/
 void ScoutBot::actionLook (Battlefield* battlefield)
 {
+    // Check the number of scout
     if (scoutLimit > 0)
     {
         int randomNumber = rand();
 
+        // Ready to scout the entire battlefield
         if (randomNumber % 2 == 0)
         {
             *battlefield << getType() << " actionLook" << endl;
@@ -1902,35 +1918,45 @@ void ScoutBot::actionLook (Battlefield* battlefield)
                     }
                     else
                     {
-                        Robot* enemy = battlefield->getRobotAt(j, i);
+                        Robot* enemy = battlefield->getRobotAt(j, i); // Get the enemy position
                         *battlefield << "=> " << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
 
                     }
                 }
             }
-            scoutLimit--;
+            scoutLimit--; // scoutLimit - 1
             *battlefield << getId() << " has " << scoutLimit << " scouts remaining" << endl;
             *battlefield << endl;
         }
         else
-            SeeingRobot::actionLook(battlefield);
+        {
+            SeeingRobot::actionLook(battlefield); // Perform the normal look action
             *battlefield << endl;
+        }
     }
     else
     {
         *battlefield << getId() << " has no scout left!!" << endl;
-        SeeingRobot::actionLook(battlefield);
+        SeeingRobot::actionLook(battlefield); // Perform the normal look action
         *battlefield << endl;
     }
 }
+
+/*
+The robot can plant a tracker on another enemy robot so that it can look.
+The location of the targeted enemy robot will be known to the robot until the end of a match.
+The robot has maximum of three trackers to look on maximum of three enemy robots.*/
 void TrackBot::actionLook (Battlefield* battlefield)
 {
+    // Perform the normal look action
     SeeingRobot::actionLook(battlefield);
 
+    // Check the number of trackers
     if (trackerNumber > 0)
     {
         int randomNumber = rand();
 
+        // To plant a tracker on another enemy robot
         if (randomNumber % 2 == 0)
         {
             *battlefield << getId() << " is finding the target to plant a tracker..." << endl;
@@ -1950,10 +1976,10 @@ void TrackBot::actionLook (Battlefield* battlefield)
                 int index = rand() % validTargets.size(); // Target the random valid robot
                 target = validTargets[index];
 
-                trackTargets.push_back(target);
+                trackTargets.push_back(target); // Update the track targeted enemy
                 *battlefield << getId() << " has planted a tracker on " << target->getId() << endl;
 
-                trackerNumber--;
+                trackerNumber--; // trackerNumber - 1
                 *battlefield << getId() << " has " << trackerNumber << " trackers remaining" << endl;
             }
         }
@@ -1961,9 +1987,10 @@ void TrackBot::actionLook (Battlefield* battlefield)
     else
         *battlefield << getId() << " has no tracker left!!" << endl;
 
+    // Check each tracker status
     for (Robot* target : trackTargets)
     {
-        if (target->isAlive() == true && target != nullptr)
+        if (target->isAlive() == true && target != nullptr) // Check the targeted is alive and not been destrroyed
         {
             *battlefield << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
         }
@@ -1973,7 +2000,7 @@ void TrackBot::actionLook (Battlefield* battlefield)
 }
 
 /*This robot contains 3 drones initially.
-The drone can be place at any position inside the battlefield.
+The drone can be place at any position inside the battlefield. (The drone cannot be place at the same position)
 Each drone can view from its own position and 8 neighboring positions.
 The drone is placed until the match ends, or the DroneBot has upgraded to another robot type, or DroneBot has been destroyed.*/
 void DroneBot::actionLook (Battlefield* battlefield)
@@ -2000,7 +2027,7 @@ void DroneBot::actionLook (Battlefield* battlefield)
             placedDronePositions.push_back({droneX, droneY});
             *battlefield << getId() << " placed the drone at (" << droneX << ", " << droneY << ")" << endl;
 
-            droneNumber--;
+            droneNumber--; // droneNumber - 1
             *battlefield << getId() << " has " << droneNumber << " drones remaining" << endl;
         }
     }
@@ -2011,7 +2038,7 @@ void DroneBot::actionLook (Battlefield* battlefield)
 
     // Check each drone status
     for (const auto& position : placedDronePositions)
-    {
+    {   // Get the each drone position
         *battlefield << getId() << "'s drone is scanning at (" << position.first << ", " << position.second << ")..." << endl;
         for (int directionCheckEnemy = 0; directionCheckEnemy < 9; directionCheckEnemy++)
         {
@@ -2575,8 +2602,8 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.writeOutputFile("fileOutput1.txt");
-    b.readInputFile("fileInput1.txt");
+    b.writeOutputFile("fileOutput2b.txt");
+    b.readInputFile("fileInput2b.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();
