@@ -584,10 +584,10 @@ public:
     }
 };
 
-class ThirthyShotBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
+class ThirtyShotBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 public:
-    ThirthyShotBot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
+    ThirtyShotBot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
     {
         robotId = id;
         robotPositionX = x;
@@ -595,7 +595,7 @@ public:
         shellsRemaining = 30;
     }
 
-    virtual ~ThirthyShotBot() {}
+    virtual ~ThirtyShotBot() {}
 
     // Function override
     void resetShells() override { shellsRemaining = 30; }
@@ -1444,10 +1444,10 @@ public:
             id = "SA" + id;
             newRobot = new SemiAutoBot(id, x ,y);
         }
-        else if (upgradeType == "ThirthyShotBot")
+        else if (upgradeType == "ThirtyShotBot")
         {
             id = "TS" + id;
-            newRobot = new ThirthyShotBot(id, x ,y);
+            newRobot = new ThirtyShotBot(id, x ,y);
         }
         else if (upgradeType == "BomberBot")
         {
@@ -1542,7 +1542,7 @@ public:
         else if (randomNumber == 1)
             upgradeType = "SemiAutoBot";
         else if (randomNumber == 2)
-            upgradeType = "ThirthyShotBot";
+            upgradeType = "ThirtyShotBot";
         else if (randomNumber == 3)
             upgradeType = "BomberBot";
 
@@ -1815,7 +1815,8 @@ void ScoutBot::actionLook (Battlefield* battlefield)
                     else
                     {
                         Robot* enemy = battlefield->getRobotAt(j, i); // Get the enemy position
-                        *battlefield << "=> " << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
+                        if (!enemy->getIsHidden())
+                            *battlefield << "=> " << getId() << " found " << enemy->getId() << " at (" << j << ", "  << i << ")" << endl;
 
                     }
                 }
@@ -1861,8 +1862,8 @@ void TrackBot::actionLook (Battlefield* battlefield)
             vector <Robot*>& robots = battlefield->getRobots();
             for (Robot* robot : robots)
             {
-                // To ensure the trackBot will not track on its own or the robot has been destroyed or at the same targeted robot
-                if (robot != this && !robot->getIsDestroyed() && !checkTrackTargeted(robot))
+                // To ensure the trackBot will not track on its own or the robot has been destroyed or at the same targeted robot or hidden robot
+                if (robot != this && !robot->getIsDestroyed() && !checkTrackTargeted(robot) && !robot->getIsHidden())
                     validTargets.push_back(robot);
             }
 
@@ -1886,7 +1887,7 @@ void TrackBot::actionLook (Battlefield* battlefield)
     // Check each tracker status
     for (Robot* target : trackTargets)
     {
-        if (target->isAlive() == true && target != nullptr) // Check the targeted is alive and not been destrroyed
+        if (target->isAlive() == true && target != nullptr) // Check the targeted is alive and not been destroyed
         {
             *battlefield << getId() << " tracked " << target->getId() << " at (" << target->getPosX() << ", " << target->getPosY() << ")" << endl;
         }
@@ -1945,7 +1946,7 @@ void DroneBot::actionLook (Battlefield* battlefield)
             if (battlefield->isPositionValid(droneLookX, droneLookY) && battlefield->getRobotAt(droneLookX, droneLookY) != nullptr)
             {
                 Robot* droneTarget = battlefield->getRobotAt(droneLookX, droneLookY);
-                if (droneTarget != this) // To ensure the target is not the DroneBot itself
+                if (droneTarget != this && !droneTarget->getIsHidden()) // To ensure the target is not the DroneBot itself and the hidden robot
                     *battlefield << "=> " << getId() << " spotted " << droneTarget->getId() << " at (" << droneLookX << ", " << droneLookY << ") by drone" << endl;
             }
         }
@@ -1975,7 +1976,7 @@ void LongShotBot::actionFire(Battlefield* battlefield)
 
     Robot* target = battlefield->getRobotAt(targetX, targetY);
 
-    if (target != nullptr && target != this)
+    if (target != nullptr && target != this && !target->getIsHidden())
     {
 
         // 70% chance to hit
@@ -2062,7 +2063,7 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
 
     Robot* target = battlefield->getRobotAt(targetX, targetY);
 
-    if (target != nullptr && target != this)
+    if (target != nullptr && target != this && !target->getIsHidden())
     {
 
         int randomNum=0;
@@ -2189,7 +2190,7 @@ void BomberBot::actionFire(Battlefield* battlefield)
     for (int i = 0; i < bombLocationX.size(); i++)
     {
         Robot* target = battlefield->getRobotAt(bombLocationX[i], bombLocationY[i]);
-        if (target != nullptr) {
+        if (target != nullptr && !target->getIsHidden()) {
             targets.push_back(target);
         }
     }

@@ -7442,7 +7442,6 @@ SB05 is thinking...
 SB05 is scouting the entire battlefield...
 => SB05 found GR03 at (2, 1)
 => SB05 found GR02 at (7, 2)
-=> SB05 found HB04 at (3, 8)
 SB05 has 1 scouts remaining
 
 --ScoutBot actionFire--
