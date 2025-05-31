@@ -173,7 +173,7 @@ class ThinkingRobot: virtual public Robot
 protected :
     // data member
 public:
-    virtual ~ThinkingRobot(){}
+    ~ThinkingRobot(){}
 
     // Virtual function for thinking
     virtual void actionThink (Battlefield* battlefield);
@@ -221,7 +221,7 @@ public:
 class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 private:
-    static int robotAutoIncrementInt_; // Static member for auto-incrementing ID
+    // data member
 
 public:
     GenericRobot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
@@ -229,13 +229,6 @@ public:
         robotId = id;
         robotPositionX = x;
         robotPositionY = y;
-
-        robotAutoIncrementInt_++;
-    }
-
-    static int robotAutoIncrementInt()
-    {
-        return robotAutoIncrementInt_;
     }
 
     virtual ~GenericRobot() {}
@@ -288,7 +281,6 @@ public:
         }
     }
 };
-int GenericRobot::robotAutoIncrementInt_ = 0;
 
 class ScoutBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
@@ -1126,12 +1118,6 @@ public:
             {
                 cout << robots[i]->getId() << " and " << robots[i+1]->getId() << " are the same!" << endl;
             }
-            /*
-            else if (!(robots[i]==robots[i+1]))
-            {
-                cout << robots[i]->getId() << " and " << robots[i+1]->getId() << " are not the same!" << endl;
-            }
-            */
         }
 
         fileInput.close();
@@ -1852,7 +1838,7 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
 }
 void MovingRobot::actionMove(Battlefield* battlefield)
 {
-    *battlefield << "--" << getType() << " actionMove" << endl;
+    *battlefield << "--" << getType() << " actionMove--" << endl;
 
     vector<int> validMoves;
 
