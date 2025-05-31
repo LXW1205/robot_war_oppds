@@ -9,10 +9,9 @@
 // Member 3: 242UC244S3 | Teng Ming Hein | TENG.MING.HEIN@student.mmu.edu.my | 016-7831558
 // *********************************************************
 // Task Distribution
-// Member_1:
-// Member_2:
-// Member_3:
-// Member_4:
+// Member_1: Upgrade function, Robot upgrades for shooting
+// Member_2: Robot actions, Robot upgrades for Moving, Output file (log)
+// Member_3: Read file input function, Robot upgrades for seeing, Turns and queue
 // *********************************************************
 
 #include <iostream>
@@ -173,7 +172,7 @@ class ThinkingRobot: virtual public Robot
 protected :
     // data member
 public:
-    ~ThinkingRobot(){}
+    virtual ~ThinkingRobot(){}
 
     // Virtual function for thinking
     virtual void actionThink (Battlefield* battlefield);
@@ -185,7 +184,7 @@ protected:
     //data member
 
 public:
-    ~SeeingRobot(){}
+    virtual ~SeeingRobot(){}
 
     // Virtual function for looking
     virtual void actionLook(Battlefield* battlefield);
@@ -198,7 +197,7 @@ protected:
     int shellsRemaining = 10;
 
 public:
-    ~ShootingRobot(){}
+    virtual ~ShootingRobot(){}
 
     // Virtual function for shooting
     virtual void actionFire(Battlefield* battlefield);
@@ -210,7 +209,7 @@ protected:
     //data member
 
 public:
-    ~MovingRobot(){}
+    virtual ~MovingRobot(){}
 
     // Virtual function for moving
     virtual void actionMove(Battlefield* battlefield);
@@ -1001,6 +1000,26 @@ private:
 
     vector<vector<string>> battlefield; // 2D vector representing the battlefield
 public:
+    ~Battlefield()
+    {
+
+        while (!destroyedRobots.empty())
+        {
+            delete destroyedRobots.front();
+            destroyedRobots.pop();
+        }
+        while (!waitingRobots.empty())
+        {
+            delete waitingRobots.front();
+            waitingRobots.pop();
+        }
+        while (!robots.empty())
+        {
+            delete robots[0];
+            robots.erase(robots.begin());
+        }
+    }
+
     // Getter functions
     int getBATTLEFIELD_NUM_OF_COLS() const
     {
@@ -1479,7 +1498,7 @@ public:
                 " at (" << printDestroyedRobot->getPosX() <<
                 "," << printDestroyedRobot->getPosY() << ")" << endl;
 
-                delete printDestroyedRobot; // Avoid memory leak
+                //delete printDestroyedRobot; // Avoid memory leak
             }
         }
 
@@ -1499,7 +1518,7 @@ public:
                 " at (" << printWaitingRobot->getPosX() <<
                 "," << printWaitingRobot->getPosY() << ")" << endl;
 
-                delete printWaitingRobot; // Avoid memory leak
+                //delete printWaitingRobot; // Avoid memory leak
             }
         }
     }
@@ -1517,7 +1536,6 @@ public:
         // Get the current position of the robot
         int x = robot->getPosX();
         int y = robot->getPosY();
-
         // Moving Robot
         if (upgradeType == "HideBot")
         {
@@ -1879,6 +1897,7 @@ void MovingRobot::actionMove(Battlefield* battlefield)
             // Move to new position
             setPosX(newX);
             setPosY(newY);
+            battlefield->placeRobots();
             *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
 
 
@@ -2268,7 +2287,7 @@ void BomberBot::actionFire(Battlefield* battlefield)
         centerY = getPosY() + shotAtY;
 
         // Avoid firing at or near self
-        if ((abs(shotAtX) <= 1 && abs(shotAtY) <= 1)||(!battlefield->isPositionValid(centerX, centerY)))
+        if ((abs(shotAtX) <= 1 && abs(shotAtY) <= 1)||(!battlefield->isPositionValid(centerX, centerY))||(abs(shotAtX) + abs(shotAtY) >2))
         {
             posNotValid = true;
         }
@@ -2298,8 +2317,21 @@ void BomberBot::actionFire(Battlefield* battlefield)
         }
     }
 
+    string fireSpace;
+    for (int i = 0; i < bombLocationX.size(); i++)
+    {
+        fireSpace += "(" + to_string(bombLocationX[i])+ "," + to_string(bombLocationY[i]) + ")";
+        if (i != bombLocationX.size()-1)
+            fireSpace += ",";
+    }
+
     if (!targets.empty()) {
-        if (rand() % 100 < 70) { // 70% hit chance
+        *battlefield << getId() << " throw a bomb centered at ("<< centerX <<"," << centerY << ")" << endl;
+        *battlefield << getId() << " fired at " << fireSpace << endl;
+
+        if (rand() % 100 < 70) // 70% hit chance
+        {
+
             for (int i = 0; i < targets.size(); i++) {
                 Robot* target = targets[i];
                 *battlefield << getId() << " hit " << target->getId()
@@ -2323,14 +2355,19 @@ void BomberBot::actionFire(Battlefield* battlefield)
                 setNumUpgrade(getNumUpgrade()+1);
                 setIsAbleUpgrade(true); // Set to true if the robot has killed the target
             }
-        } else {
+        }
+        else
+        {
             for (Robot* target : targets) {
                 *battlefield << getId() << " missed " << target->getId()
-                     << " at (" << centerX << "," << centerY << ")" << endl;
+                     << " at (" << target->getPosX()<< "," << target->getPosY() << ")" << endl;
             }
         }
     } else {
-        *battlefield << getId() << " fired at empty space " << endl;
+
+        *battlefield << getId() << " throw a bomb at empty space centered at ("<< centerX <<"," << centerY << ")" << endl;
+        *battlefield << getId() << " fired at" << fireSpace << endl;
+
     }
 
     // Ammo handling
@@ -2448,6 +2485,7 @@ void JumpBot::actionMove(Battlefield* battlefield)
 
             setPosX(newX);
             setPosY(newY);
+            battlefield->placeRobots();
 
             *battlefield << getId() << " jumps to (" << newX << "," << newY << ")" << endl;
             *battlefield << endl;
