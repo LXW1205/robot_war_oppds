@@ -58,6 +58,7 @@ protected:
     const int dy[9] = {-1,-1, 0, 1, 1, 1, 0,-1, 0};
 
     int numUpgrade = 0;
+    int shellsRemaining = 10;
 
 public:
     // Parameterized Constructor(PC)
@@ -122,6 +123,9 @@ public:
     int getNumUpgrade() const {return numUpgrade;}
     void setNumUpgrade (int numUp) {numUpgrade=numUp;}
 
+    //Getter for shellsRemaining
+    int getShells() const { return this->shellsRemaining; }
+
     //Getter for hidden, which is always false
     virtual bool getIsHidden() const { return false; }
 
@@ -138,7 +142,7 @@ public:
     bool isAlive() const {return numberOfLives > 0;}
 
     // To reset the bullet shells
-    virtual void resetShells() {}
+    virtual void resetShells() { shellsRemaining = 10; }
 
     // To update the track targeted info
     virtual void updateRobotInfo(vector<Robot*>& r, Robot* newRobot) {}
@@ -161,9 +165,14 @@ public:
         return this->robotId == other.robotId;
     }
 
+    // Set Robot Location x y
+    virtual void setRobotLocation(int x, int y)
+    {
+        robotPositionX = x;
+        robotPositionY = y;
+    }
+
     // Pure Virtual Functions
-    virtual int getShells() const = 0;
-    virtual void setRobotLocation(int posX, int posY) = 0;
     virtual void actions(Battlefield* battlefield) = 0;
 };
 
@@ -194,7 +203,7 @@ class ShootingRobot: virtual public Robot
 {
 protected:
     //data member
-    int shellsRemaining = 10;
+
 
 public:
     virtual ~ShootingRobot(){}
@@ -236,19 +245,8 @@ public:
 
     virtual ~GenericRobot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
     // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
-
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -301,20 +299,9 @@ public:
 
     virtual ~ScoutBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionLook(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -371,11 +358,6 @@ public:
             trackTargets.clear();
     }
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
     void updateRobotInfo(vector<Robot*>& allRobots, Robot* newRobot) override
     {
         for (size_t i = 0; i < trackTargets.size(); ++i)
@@ -408,15 +390,9 @@ public:
         return false;
     }
 
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionLook(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -470,11 +446,6 @@ public:
 
     virtual ~DroneBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
     bool checkDronePosition(int x, int y, const vector<pair<int, int>>& placedDronePositions)
     {
         for (const auto& position : placedDronePositions)
@@ -485,15 +456,9 @@ public:
         return false;
     }
 
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionLook(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -542,20 +507,9 @@ public:
 
     virtual ~LongShotBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionFire(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -605,20 +559,9 @@ public:
 
     virtual ~SemiAutoBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionFire(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -668,18 +611,10 @@ public:
 
     virtual ~ThirthyShotBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
     // Function override
     void resetShells() override { shellsRemaining = 30; }
 
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -729,20 +664,12 @@ public:
 
     virtual ~BomberBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
     // Function override
     void resetShells() override { shellsRemaining = 5; }
 
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionFire(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -797,22 +724,11 @@ public:
 
     virtual ~HideBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
     bool getIsHidden() const override { return isHidden; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
 
     virtual void actionMove (Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = 0;
 
@@ -866,20 +782,9 @@ public:
 
     virtual ~JumpBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionMove (Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = 0;
 
@@ -932,20 +837,9 @@ public:
 
     virtual ~PortalBot() {}
 
-    int getShells() const override { return this->shellsRemaining; }
-
-    // Function override
-    void resetShells() override { shellsRemaining = 10; }
-
-    virtual void setRobotLocation(int x, int y)
-    {
-        robotPositionX = x;
-        robotPositionY = y;
-    }
-
     virtual void actionMove (Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield)
+    virtual void actions (Battlefield* battlefield) override
     {
         int randomInt = 0;
 
