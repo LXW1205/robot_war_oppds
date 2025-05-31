@@ -1354,9 +1354,9 @@ public:
         if (isLastStand()) // If there is one robot left inside the battlefield
         {
             cout << "--SIMULATION ENDS--- in turn " << currentTurn << endl
-            << lastStandRobot()->getId() << "_" << robots[0]->getName() << " WINS the match!!" << endl;
+            << lastStandRobot()->getId() << "_" << lastStandRobot()->getName() << " WINS the match!!" << endl;
             fileOutput << "--SIMULATION ENDS--- in turn " << currentTurn << endl
-            << lastStandRobot()->getId() << "_" << robots[0]->getName() << " WINS the match!!" << endl;
+            << lastStandRobot()->getId() << "_" << lastStandRobot()->getName() << " WINS the match!!" << endl;
         }
         else
         {
