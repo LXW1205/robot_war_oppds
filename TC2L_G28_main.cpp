@@ -221,7 +221,7 @@ public:
 class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 private:
-    // data member
+    static int robotAutoIncrementInt_; // Static member for auto-incrementing ID
 
 public:
     GenericRobot (string id = "", int x = -1, int y = -1): Robot(id, x, y)
@@ -281,6 +281,7 @@ public:
         }
     }
 };
+int GenericRobot::robotAutoIncrementInt_ = 0;
 
 class ScoutBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
