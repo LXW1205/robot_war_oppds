@@ -1641,7 +1641,7 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
 {
     *battlefield<< "--" << getType() << " actionLook--" << endl;
 
-    *battlefield << getType() << " is looking around..." << endl;
+    *battlefield << getId() << " is looking around..." << endl;
 
     // Check all 8 direction for enemies
     for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
