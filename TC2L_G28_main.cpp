@@ -181,8 +181,8 @@ class ThinkingRobot: virtual public Robot
 public:
     virtual ~ThinkingRobot(){}
 
-    // Virtual function for thinking
-    virtual void actionThink (Battlefield* battlefield);
+    // Pure virtual function for thinking
+    virtual void actionThink (Battlefield* battlefield) = 0;
 };
 
 class SeeingRobot: virtual public Robot
@@ -190,8 +190,8 @@ class SeeingRobot: virtual public Robot
 public:
     virtual ~SeeingRobot(){}
 
-    // Virtual function for looking
-    virtual void actionLook(Battlefield* battlefield);
+    // Pure virtual function for looking
+    virtual void actionLook(Battlefield* battlefield) = 0;
 };
 
 class ShootingRobot: virtual public Robot
@@ -199,8 +199,8 @@ class ShootingRobot: virtual public Robot
 public:
     virtual ~ShootingRobot(){}
 
-    // Virtual function for shooting
-    virtual void actionFire(Battlefield* battlefield);
+    // Pure virtual function for shooting
+    virtual void actionFire(Battlefield* battlefield) = 0;
 };
 
 class MovingRobot: virtual public Robot
@@ -208,8 +208,8 @@ class MovingRobot: virtual public Robot
 public:
     virtual ~MovingRobot(){}
 
-    // Virtual function for moving
-    virtual void actionMove(Battlefield* battlefield);
+    // Pure virtual function for moving
+    virtual void actionMove(Battlefield* battlefield) = 0;
 };
 
 class GenericRobot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
@@ -230,6 +230,11 @@ public:
     static int robotAutoIncrementInt() { return robotAutoIncrementInt_; }
 
     virtual ~GenericRobot() {}
+
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     // Function override
     virtual void actions (Battlefield* battlefield) override
@@ -285,7 +290,10 @@ public:
 
     virtual ~ScoutBot() {}
 
+    void actionThink(Battlefield* battlefield) override;
     void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -376,7 +384,10 @@ public:
         return false;
     }
 
+    void actionThink(Battlefield* battlefield) override;
     void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -415,6 +426,7 @@ public:
     }
 };
 
+// New Seeing Robot Type
 class DroneBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 private:
@@ -442,7 +454,10 @@ public:
         return false;
     }
 
+    void actionThink(Battlefield* battlefield) override;
     void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -493,7 +508,10 @@ public:
 
     virtual ~LongShotBot() {}
 
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
     void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -545,7 +563,10 @@ public:
 
     virtual ~SemiAutoBot() {}
 
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
     void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -600,6 +621,11 @@ public:
     // Function override
     void resetShells() override { shellsRemaining = 30; }
 
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
+
     void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
@@ -637,6 +663,7 @@ public:
     }
 };
 
+// New Shooting Robot Type
 class BomberBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 public:
@@ -653,7 +680,10 @@ public:
     // Function override
     void resetShells() override { shellsRemaining = 5; }
 
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
     void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -712,7 +742,10 @@ public:
 
     bool getIsHidden() const override { return isHidden; }
 
-    void actionMove (Battlefield* battlefield) override;
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -768,7 +801,10 @@ public:
 
     virtual ~JumpBot() {}
 
-    void actionMove (Battlefield* battlefield) override;
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -807,6 +843,7 @@ public:
     }
 };
 
+// New Moving Robot Type
 class PortalBot: public ThinkingRobot, public SeeingRobot, public ShootingRobot, public MovingRobot
 {
 private:
@@ -823,7 +860,10 @@ public:
 
     virtual ~PortalBot() {}
 
-    void actionMove (Battlefield* battlefield) override;
+    void actionThink(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
+    void actionMove(Battlefield* battlefield) override;
 
     void actions (Battlefield* battlefield) override
     {
@@ -1319,7 +1359,7 @@ public:
 
                 // Check the robot is able to get an upgrade
                 currentRobot->actions(this);
-                if (currentRobot->getIsAbleUpgrade())
+                if (currentRobot->getIsAbleUpgrade() && currentRobot->getLives() > 0)
                 {
                     decideUpgradeType(currentRobot); // Upgrade to a new robot after get kills
                     currentRobot->setIsAbleUpgrade(false);
@@ -1629,7 +1669,7 @@ public:
     }
 };
 
-void ThinkingRobot::actionThink (Battlefield* battlefield)
+void GenericRobot::actionThink (Battlefield* battlefield)
 {
     *battlefield << "--" << getType() << " actionThink--" << endl;
 
@@ -1637,7 +1677,7 @@ void ThinkingRobot::actionThink (Battlefield* battlefield)
 
     *battlefield << endl;
 }
-void SeeingRobot::actionLook (Battlefield* battlefield)
+void GenericRobot::actionLook (Battlefield* battlefield)
 {
     *battlefield<< "--" << getType() << " actionLook--" << endl;
 
@@ -1667,7 +1707,7 @@ void SeeingRobot::actionLook (Battlefield* battlefield)
 
     *battlefield << endl;
 }
-void ShootingRobot::actionFire(Battlefield* battlefield)
+void GenericRobot::actionFire(Battlefield* battlefield)
 {
     *battlefield << "--" << getType() << " actionFire--" << endl;
 
@@ -1743,7 +1783,7 @@ void ShootingRobot::actionFire(Battlefield* battlefield)
 
     *battlefield << endl;
 }
-void MovingRobot::actionMove(Battlefield* battlefield)
+void GenericRobot::actionMove(Battlefield* battlefield)
 {
     *battlefield << "--" << getType() << " actionMove--" << endl;
 
@@ -1777,7 +1817,6 @@ void MovingRobot::actionMove(Battlefield* battlefield)
             battlefield->placeRobots();
             *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
 
-
         }
     }
     else{
@@ -1789,9 +1828,20 @@ void MovingRobot::actionMove(Battlefield* battlefield)
 
 /*
 Instead of neighbor look(x,y) The robot can look the entire battlefield for one turn.
-The ability can be used three times in a match.*/
+The ability can be used three times in a match.
+*/
+void ScoutBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
 void ScoutBot::actionLook (Battlefield* battlefield)
 {
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
     // Check the number of scout
     if (scoutLimit > 0)
     {
@@ -1800,8 +1850,6 @@ void ScoutBot::actionLook (Battlefield* battlefield)
         // Ready to scout the entire battlefield
         if (randomNumber % 2 == 0)
         {
-            *battlefield << "--" << getType() << " actionLook--" << endl;
-
             *battlefield << getId() << " is scouting the entire battlefield..." << endl;
 
             for (int i = 0; i < battlefield->getBATTLEFIELD_NUM_OF_ROWS(); i++)
@@ -1827,26 +1875,223 @@ void ScoutBot::actionLook (Battlefield* battlefield)
         }
         else
         {
-            SeeingRobot::actionLook(battlefield); // Perform the normal look action
+            // Perform the normal look action
+            *battlefield << getId() << " is looking around..." << endl;
+
+            // Check all 8 direction for enemies
+            for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+                int lookX = getPosX() + dx[directionCheckEnemy];
+                int lookY = getPosY() + dy[directionCheckEnemy];
+                hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+                Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+                hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+                if (hasEnemy[directionCheckEnemy] == true)
+                {
+                    *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+                }
+            }
+
+            // Check all 9 movement options
+            for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+                int moveX = getPosX() + dx[directionCheckMoves];
+                int moveY = getPosY() + dy[directionCheckMoves];
+                canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+            }
             *battlefield << endl;
         }
     }
     else
     {
         *battlefield << getId() << " has no scout left!!" << endl;
-        SeeingRobot::actionLook(battlefield); // Perform the normal look action
+        // Perform the normal look action
+        *battlefield << getId() << " is looking around..." << endl;
+
+        // Check all 8 direction for enemies
+        for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+            int lookX = getPosX() + dx[directionCheckEnemy];
+            int lookY = getPosY() + dy[directionCheckEnemy];
+            hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+            Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+            hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+            if (hasEnemy[directionCheckEnemy] == true)
+            {
+                *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+            }
+        }
+
+        // Check all 9 movement options
+        for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+            int moveX = getPosX() + dx[directionCheckMoves];
+            int moveY = getPosY() + dy[directionCheckMoves];
+            canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+        }
         *battlefield << endl;
     }
+}
+void ScoutBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
+void ScoutBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
 }
 
 /*
 The robot can plant a tracker on another enemy robot so that it can look.
 The location of the targeted enemy robot will be known to the robot until the end of a match.
-The robot has maximum of three trackers to look on maximum of three enemy robots.*/
+The robot has maximum of three trackers to look on maximum of three enemy robots.
+*/
+void TrackBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
 void TrackBot::actionLook (Battlefield* battlefield)
 {
     // Perform the normal look action
-    SeeingRobot::actionLook(battlefield);
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
 
     // Check the number of trackers
     if (trackerNumber > 0)
@@ -1895,15 +2140,166 @@ void TrackBot::actionLook (Battlefield* battlefield)
 
     *battlefield << endl;
 }
+void TrackBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
+void TrackBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
+}
 
 /*This robot contains 3 drones initially.
 The drone can be place at any position inside the battlefield. (The drone cannot be place at the same position)
 Each drone can view from its own position and 8 neighboring positions.
-The drone is placed until the match ends, or the DroneBot has upgraded to another robot type, or DroneBot has been destroyed.*/
+The drone is placed until the match ends, or the DroneBot has upgraded to another robot type, or DroneBot has been destroyed.
+*/
+void DroneBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
 void DroneBot::actionLook (Battlefield* battlefield)
 {
     // Perform the normal looking action
-    SeeingRobot::actionLook(battlefield);
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
 
     int droneLookX, droneLookY;
     // Check the number of drone
@@ -1953,11 +2349,167 @@ void DroneBot::actionLook (Battlefield* battlefield)
     }
     *battlefield << endl;
 }
+void DroneBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
+void DroneBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
+}
 
 /*
 The robot can fire up to three unit distance away from its location.
 It means the robot can fire(x, y) where x + y <= 3
 */
+void LongShotBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void LongShotBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
 void LongShotBot::actionFire(Battlefield* battlefield)
 {
     *battlefield << "--" << getType() << " actionFire--" << endl;
@@ -2039,12 +2591,92 @@ void LongShotBot::actionFire(Battlefield* battlefield)
 
     *battlefield << endl;
 }
+void LongShotBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
+}
 
 /*
 Each shell the robot fires is now considered as three consecutive
 shots into one location and each shot has a 70% probability to hit and destroy
 another robot.
 */
+void SemiAutoBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void SemiAutoBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
 void SemiAutoBot::actionFire(Battlefield* battlefield)
 {
     *battlefield << "--" << getType() << " actionFire--" << endl;
@@ -2139,6 +2771,208 @@ void SemiAutoBot::actionFire(Battlefield* battlefield)
     }
     *battlefield << endl;
 }
+void SemiAutoBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
+}
+
+/*
+Instead of 10 shells, the robot has 30 shells
+*/
+void ThirtyShotBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void ThirtyShotBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
+void ThirtyShotBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
+void ThirtyShotBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
+}
 
 /*
 Instead of shooting, the robot will throw a bomb and hit all targets in 3x3 area.
@@ -2146,6 +2980,44 @@ It has 5 bombs only and it can fire up to 2 distance, it means that the bomb wil
 where x+y<=2.
 But it can't throw the bomb around itself, since it get will damaged from it.
 */
+void BomberBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void BomberBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
 void BomberBot::actionFire(Battlefield* battlefield)
 {
     *battlefield << "--" << getType() << " actionFire--" << endl;
@@ -2265,6 +3137,48 @@ void BomberBot::actionFire(Battlefield* battlefield)
 
     *battlefield << endl;
 }
+void BomberBot::actionMove(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
+    *battlefield << endl;
+}
 
 /*
 The robot has a skill to hide when actionMove.
@@ -2274,6 +3188,120 @@ If it fails to hide because it ran out of skills or chances fail, the robot will
 The robot will hide until it is it's turn again, and it can hide continuously.
 Once in hiding, the robot cannot be shot at or seen by enemies, also note that enemies cannot move to that space.
 */
+void HideBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void HideBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
+void HideBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
 void HideBot::actionMove(Battlefield* battlefield)
 {
     //If HideBot is in hiding, unhide it
@@ -2324,7 +3352,44 @@ void HideBot::actionMove(Battlefield* battlefield)
     }
 
     //If no more jumpSkill or chances fail or failed to hide, move normally
-    MovingRobot::actionMove(battlefield);
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
     *battlefield << endl;
 }
 
@@ -2334,6 +3399,120 @@ The jump skill is based on chances and nearby enemies.
 If there are enemies nearby, the chances will be 70% to jump, otherwise it will be 30% to jump.
 The robot can jump continuously and to a random location on the battlefield, and cannot jump on occupied spaces.
 */
+void JumpBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void JumpBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
+void JumpBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
 void JumpBot::actionMove(Battlefield* battlefield)
 {
 
@@ -2381,7 +3560,44 @@ void JumpBot::actionMove(Battlefield* battlefield)
     }
 
     //If no more jumpSkill, chances fail, failed to jump move normally
-    MovingRobot::actionMove(battlefield);
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
     *battlefield << endl;
 }
 
@@ -2393,6 +3609,120 @@ The portal the robot creates allows that robot to swap places with a random robo
 If there are enemies nearby, the robot will prioritise other robots that are not nearby to portal to,
 if the nearby enemies are the only robots in the battlefield, then it will choose to portal to them.
 */
+void PortalBot::actionThink (Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionThink--" << endl;
+
+    *battlefield << getId() << " is thinking..." << endl;
+
+    *battlefield << endl;
+}
+void PortalBot::actionLook (Battlefield* battlefield)
+{
+    *battlefield<< "--" << getType() << " actionLook--" << endl;
+
+    *battlefield << getId() << " is looking around..." << endl;
+
+    // Check all 8 direction for enemies
+    for (int directionCheckEnemy = 0; directionCheckEnemy < 8; directionCheckEnemy++) {
+        int lookX = getPosX() + dx[directionCheckEnemy];
+        int lookY = getPosY() + dy[directionCheckEnemy];
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && battlefield->getRobotAt(lookX, lookY) != nullptr;
+
+        Robot* enemy = battlefield->getRobotAt(lookX, lookY);
+
+        hasEnemy[directionCheckEnemy] = battlefield->isPositionValid(lookX, lookY) && enemy != nullptr &&!enemy->getIsHidden();  // <- skip hidden robots
+        if (hasEnemy[directionCheckEnemy] == true)
+        {
+            *battlefield << getId() << " found " << enemy->getId() << " at the position (" << lookX << ", " << lookY << ")" << endl;
+        }
+    }
+
+    // Check all 9 movement options
+    for (int directionCheckMoves = 0; directionCheckMoves < 9; directionCheckMoves++) {
+        int moveX = getPosX() + dx[directionCheckMoves];
+        int moveY = getPosY() + dy[directionCheckMoves];
+        canMove[directionCheckMoves] = (directionCheckMoves == 8) ? true : (battlefield->isPositionValid(moveX, moveY)) && (battlefield->isPositionEmpty(moveX, moveY));
+    }
+
+    *battlefield << endl;
+}
+void PortalBot::actionFire(Battlefield* battlefield)
+{
+    *battlefield << "--" << getType() << " actionFire--" << endl;
+
+    // Generate random direction to shot at (excluding current position)
+    int targetX, targetY, shotAtX, shotAtY;
+
+    do {
+        shotAtX = (rand() % 3) - 1; // -1, 0, or 1
+        shotAtY = (rand() % 3) - 1;
+
+        targetX = getPosX() + shotAtX;
+        targetY = getPosY() + shotAtY;
+    // To ensure that the robot will not fire at its own position and outside the battlefield
+    } while ((shotAtX == 0 && shotAtY == 0) || !battlefield->isPositionValid(targetX, targetY));
+
+    Robot* target = battlefield->getRobotAt(targetX, targetY);
+
+    if (target != nullptr && target != this && !target->getIsHidden()) {
+
+        // 70% chance to hit
+        if (rand() % 100 < 70) {
+            // If hit the robot target
+            *battlefield << getId() << " hit " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+            incrementKills(); // Number of kills + 1
+
+            // Reduce target's lives
+            target->reduceLife();
+            battlefield->removeRobot(target);
+
+            // Check if target was destroyed
+            if (target->getLives() >= 1) {
+                battlefield->queueForRespawn(target); // The target enter waiting robot queue
+            }
+            else {
+                *battlefield << target->getId() << " was destroyed!" << endl;
+                battlefield->destroyRobot(target); // Battlefield handles destruction
+            }
+
+            // Check the robot whether is able to get an upgrade or not
+            if (getNumUpgrade() < 3)
+            {
+                setNumUpgrade(getNumUpgrade()+1);
+                setIsAbleUpgrade(true); // Set to true if the robot has killed the target
+            }
+        }
+        else {
+            *battlefield << getId() << " missed " << target->getId() << " at (" << targetX << "," << targetY << ")" << endl;
+
+            }
+        }
+
+        else {
+            *battlefield << getId() << " fired at empty space (" << targetX << "," << targetY << ")" << endl;
+        }
+
+    // Handle ammo and self-destruction
+    shellsRemaining--;
+
+    if (shellsRemaining <= 0) {
+        *battlefield << getId() << " is out of ammo and self-destructs!" << endl;
+        selfDestruct();
+        battlefield->removeRobot(this);
+
+        if (this->getLives() >= 1) {
+
+            battlefield->queueForRespawn(this);
+        }
+        else {
+            *battlefield << getId() << " was destroyed!" << endl;
+            battlefield->destroyRobot(this); // Use the robot's own selfDestruct method
+        }
+    }
+
+    *battlefield << endl;
+}
 void PortalBot::actionMove(Battlefield* battlefield)
 {
 
@@ -2508,7 +3838,44 @@ void PortalBot::actionMove(Battlefield* battlefield)
     }
 
     //If no more portalSkill or chances fail or failed to portal, move normally
-    MovingRobot::actionMove(battlefield);
+    *battlefield << "--" << getType() << " actionMove--" << endl;
+
+    vector<int> validMoves;
+
+    // Collect all valid movement directions (including standing still)
+    for (int dir = 0; dir < 9; ++dir) {
+        if (canMove[dir]) validMoves.push_back(dir);
+    }
+
+    if (!validMoves.empty()) {
+        // Randomly select one of the valid directions
+        int dir, newX, newY;
+        do {
+            dir = validMoves[rand() % validMoves.size()];
+
+            newX = getPosX() + dx[dir];
+            newY = getPosY() + dy[dir];
+        // To ensure that the robot is not going to move to other robot's position
+        } while (!battlefield->isPositionEmpty(newX, newY));
+
+        if (dir == 8) {
+            // Standing still
+            *battlefield << getId() << " decides to stay in place." << endl;
+
+        }
+        else{
+            // Move to new position
+            setPosX(newX);
+            setPosY(newY);
+            battlefield->placeRobots();
+            *battlefield << getId() << " moves to (" << newX << "," << newY << ")" << endl;
+
+        }
+    }
+    else{
+        *battlefield << getId() << " decides to stay in place." << endl;
+    }
+
     *battlefield << endl;
 }
 
@@ -2518,8 +3885,8 @@ int main()
     srand(242213244718 / 100); //Leader ID = 242UC244GR, U=21,C=3,G=7,R=18
 
     Battlefield b;
-    b.writeOutputFile("fileOutput1.txt");
-    b.readInputFile("fileInput1.txt");
+    b.writeOutputFile("fileOutput2b.txt");
+    b.readInputFile("fileInput2b.txt");
     b.placeRobots();
     b.displayBattleField();
     b.turnBased();

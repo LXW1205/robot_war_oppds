@@ -2323,7 +2323,6 @@ JB01 failed to jump and moves normally
 JB01 moves to (9,6)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -2888,7 +2887,6 @@ JB01 fired at empty space (8,6)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (8,7)
-
 
 
 Display Battlefield:
@@ -4021,7 +4019,6 @@ JB01 failed to jump and moves normally
 JB01 moves to (7,8)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -4476,7 +4473,7 @@ GR06 is enter the queue waiting robot...
 GR09 moves to (9,4)
 
 
-K-2S0 upgrade from GenericRobot GR09 to ThirthyShotBot TS09
+K-2S0 upgrade from GenericRobot GR09 to ThirtyShotBot TS09
 
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
@@ -4592,7 +4589,6 @@ JB01 fired at empty space (6,8)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (6,9)
-
 
 
 Display Battlefield:
@@ -5029,23 +5025,23 @@ Display Battlefield:
 
 
 Turn 89:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 30
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 4) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,3)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,3)
 
 
@@ -5161,7 +5157,6 @@ JB01 fired at empty space (6,8)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (7,10)
-
 
 
 Display Battlefield:
@@ -5618,23 +5613,23 @@ Display Battlefield:
 Turn 99:
 GR07 is re-enter the battlefield at the position (7, 0)
 
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 29
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 3) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,3)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,4)
 
 
@@ -5752,7 +5747,6 @@ JB01 fired at empty space (8,10)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (8,9)
-
 
 
 Display Battlefield:
@@ -6193,23 +6187,23 @@ Display Battlefield:
 
 
 Turn 109:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 28
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 4) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (8,4)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,5)
 
 
@@ -6759,24 +6753,24 @@ Display Battlefield:
 
 
 Turn 119:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 27
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 5) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 TS09 found JB01 at the position (8, 5)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (10,5)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,4)
 
 
@@ -7177,7 +7171,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (1,3)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -7326,24 +7319,24 @@ Display Battlefield:
 
 
 Turn 129:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 26
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 TS09 found GR07 at the position (9, 3)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (8,3)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (7,5)
 
 
@@ -7741,7 +7734,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (0,2)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -7890,23 +7882,23 @@ Display Battlefield:
 
 
 Turn 139:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 25
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (7, 5) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (6,6)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (6,5)
 
 
@@ -8305,7 +8297,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (1,3)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -8456,23 +8447,23 @@ Display Battlefield:
 
 
 Turn 149:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 24
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (6, 6) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (7,6)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (6,7)
 
 
@@ -8588,7 +8579,6 @@ JB01 fired at empty space (5,2)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (5,3)
-
 
 
 Display Battlefield:
@@ -8873,7 +8863,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (0,2)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -9024,23 +9013,23 @@ Display Battlefield:
 
 
 Turn 159:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 23
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (7, 6) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (7,7)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,7)
 
 
@@ -9156,7 +9145,6 @@ JB01 fired at empty space (5,2)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (5,4)
-
 
 
 Display Battlefield:
@@ -9442,7 +9430,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (1,3)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -9591,23 +9578,23 @@ Display Battlefield:
 
 
 Turn 169:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 22
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 7) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,8)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (8,7)
 
 
@@ -9723,7 +9710,6 @@ JB01 fired at empty space (4,3)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (4,4)
-
 
 
 Display Battlefield:
@@ -10009,7 +9995,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (0,3)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -10159,23 +10144,23 @@ Display Battlefield:
 
 
 Turn 179:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 21
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 8) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,7)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (10,8)
 
 
@@ -10291,7 +10276,6 @@ JB01 fired at empty space (5,5)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (3,3)
-
 
 
 Display Battlefield:
@@ -10577,7 +10561,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (1,2)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -10726,23 +10709,23 @@ Display Battlefield:
 
 
 Turn 189:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 20
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 7) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (8,7)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (10,7)
 
 
@@ -10858,7 +10841,6 @@ JB01 fired at empty space (2,4)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (2,4)
-
 
 
 Display Battlefield:
@@ -11316,23 +11298,23 @@ Display Battlefield:
 Turn 199:
 GR07 is re-enter the battlefield at the position (1, 13)
 
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 19
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (10, 7) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (11,6)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,7)
 
 
@@ -11454,7 +11436,6 @@ JB01 is enter the queue waiting robot...
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (2,3)
-
 
 
 Display Battlefield:
@@ -11895,23 +11876,23 @@ Display Battlefield:
 
 
 Turn 209:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 18
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 7) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,8)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,6)
 
 
@@ -12026,7 +12007,6 @@ JB01 fired at empty space (6,7)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (8,7)
-
 
 
 Display Battlefield:
@@ -12310,7 +12290,6 @@ JB06 failed to jump and moves normally
 JB06 moves to (2,14)
 
 
-
 Display Battlefield:
       00   01   02   03   04   05   06   07   08   09   10   11   12   13   14 
     +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -12460,24 +12439,24 @@ Display Battlefield:
 
 
 Turn 219:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 17
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 6) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 TS09 found JB01 at the position (8, 7)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,5)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (8,4)
 
 
@@ -12592,7 +12571,6 @@ JB01 fired at empty space (9,6)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (8,8)
-
 
 
 Display Battlefield:
@@ -12917,23 +12895,23 @@ Display Battlefield:
 
 
 Turn 227:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 16
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 5) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,4)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,5)
 
 
@@ -13049,7 +13027,6 @@ JB01 fired at empty space (7,7)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (7,9)
-
 
 
 Display Battlefield:
@@ -13325,7 +13302,6 @@ DB06 is thinking...
 --DroneBot actionLook--
 DB06 is looking around...
 DB06 found GR10 at the position (12, 0)
-
 DB06 is finding a position to place a drone...
 DB06 placed the drone at (6, 0)
 DB06 has 2 drones remaining
@@ -13374,23 +13350,23 @@ Display Battlefield:
 
 
 Turn 235:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 15
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,3)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,2)
 
 
@@ -13505,7 +13481,6 @@ JB01 fired at empty space (6,10)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (7,10)
-
 
 
 Display Battlefield:
@@ -13780,7 +13755,6 @@ DB06 is thinking...
 
 --DroneBot actionLook--
 DB06 is looking around...
-
 DB06's drone is scanning at (6, 0)...
 
 --DroneBot actionFire--
@@ -13826,23 +13800,23 @@ Display Battlefield:
 
 
 Turn 243:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 14
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 3) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,2)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,4)
 
 
@@ -13957,7 +13931,6 @@ JB01 fired at empty space (7,11)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (6,11)
-
 
 
 Display Battlefield:
@@ -14232,7 +14205,6 @@ DB06 is thinking...
 
 --DroneBot actionLook--
 DB06 is looking around...
-
 DB06 is finding a position to place a drone...
 DB06 placed the drone at (7, 1)
 DB06 has 1 drones remaining
@@ -14283,23 +14255,23 @@ Display Battlefield:
 
 
 Turn 251:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 13
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,5)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (7,6)
 
 
@@ -14414,7 +14386,6 @@ JB01 fired at empty space (5,10)
 JB01 failed to jump and moves normally
 --JumpBot actionMove--
 JB01 moves to (7,12)
-
 
 
 Display Battlefield:
@@ -14691,7 +14662,6 @@ DB06 is thinking...
 --DroneBot actionLook--
 DB06 is looking around...
 DB06 found GR10 at the position (11, 0)
-
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
 
@@ -14738,23 +14708,23 @@ Display Battlefield:
 
 
 Turn 259:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 12
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 5) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,4)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,5)
 
 
@@ -15144,7 +15114,6 @@ DB06 is thinking...
 --DroneBot actionLook--
 DB06 is looking around...
 DB06 found GR10 at the position (12, 0)
-
 DB06 is finding a position to place a drone...
 DB06 placed the drone at (6, 5)
 DB06 has 0 drones remaining
@@ -15196,23 +15165,23 @@ Display Battlefield:
 
 
 Turn 267:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 11
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 4) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,3)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (7,2)
 
 
@@ -15602,7 +15571,6 @@ DB06 is thinking...
 --DroneBot actionLook--
 DB06 is looking around...
 DB06 found GR10 at the position (11, 0)
-
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 => DB06 spotted GR02 at (5, 0) by drone
@@ -15652,23 +15620,23 @@ Display Battlefield:
 
 
 Turn 275:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 10
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 3) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (8,2)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (7,1)
 
 
@@ -16068,7 +16036,6 @@ DB06 is thinking...
 --DroneBot actionLook--
 DB06 is looking around...
 DB06 found GR10 at the position (12, 1)
-
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
@@ -16118,24 +16085,24 @@ Display Battlefield:
 
 
 Turn 283:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 9
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (8, 2) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 TS09 found JB01 at the position (9, 2)
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,1)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (9,1)
 
 
@@ -16306,7 +16273,6 @@ DB06 is thinking...
 
 --DroneBot actionLook--
 DB06 is looking around...
-
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
@@ -16355,23 +16321,23 @@ Display Battlefield:
 
 
 Turn 287:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 8
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (9, 1) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (9,2)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (10,2)
 
 
@@ -16423,7 +16389,6 @@ DB06 is thinking...
 
 --DroneBot actionLook--
 DB06 is looking around...
-
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
@@ -16472,23 +16437,23 @@ Display Battlefield:
 
 
 Turn 289:
-ThirthyShotBot TS09_K-2S0 turns
+ThirtyShotBot TS09_K-2S0 turns
 TS09's lives remaining: 3
 TS09's shells left: 7
 TS09's kills: 1
 TS09's no.of Upgrades: 1
 
 TS09 at (10, 2) actions:
---ThirthyShotBot actionThink--
+--ThirtyShotBot actionThink--
 TS09 is thinking...
 
---ThirthyShotBot actionLook--
+--ThirtyShotBot actionLook--
 TS09 is looking around...
 
---ThirthyShotBot actionFire--
+--ThirtyShotBot actionFire--
 TS09 fired at empty space (10,3)
 
---ThirthyShotBot actionMove--
+--ThirtyShotBot actionMove--
 TS09 moves to (11,3)
 
 
@@ -16540,7 +16505,6 @@ DB06 is thinking...
 
 --DroneBot actionLook--
 DB06 is looking around...
-
 DB06 has no drone left!!
 DB06's drone is scanning at (6, 0)...
 DB06's drone is scanning at (7, 1)...
