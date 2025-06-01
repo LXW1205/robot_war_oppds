@@ -285,7 +285,7 @@ public:
 
     virtual ~ScoutBot() {}
 
-    virtual void actionLook(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -376,7 +376,7 @@ public:
         return false;
     }
 
-    virtual void actionLook(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -442,7 +442,7 @@ public:
         return false;
     }
 
-    virtual void actionLook(Battlefield* battlefield) override;
+    void actionLook(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -493,7 +493,7 @@ public:
 
     virtual ~LongShotBot() {}
 
-    virtual void actionFire(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -545,7 +545,7 @@ public:
 
     virtual ~SemiAutoBot() {}
 
-    virtual void actionFire(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -653,7 +653,7 @@ public:
     // Function override
     void resetShells() override { shellsRemaining = 5; }
 
-    virtual void actionFire(Battlefield* battlefield) override;
+    void actionFire(Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -712,7 +712,7 @@ public:
 
     bool getIsHidden() const override { return isHidden; }
 
-    virtual void actionMove (Battlefield* battlefield) override;
+    void actionMove (Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -768,7 +768,7 @@ public:
 
     virtual ~JumpBot() {}
 
-    virtual void actionMove (Battlefield* battlefield) override;
+    void actionMove (Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
@@ -823,7 +823,7 @@ public:
 
     virtual ~PortalBot() {}
 
-    virtual void actionMove (Battlefield* battlefield) override;
+    void actionMove (Battlefield* battlefield) override;
 
     virtual void actions (Battlefield* battlefield) override
     {
