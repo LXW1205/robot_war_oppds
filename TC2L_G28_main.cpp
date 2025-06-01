@@ -287,7 +287,7 @@ public:
 
     void actionLook(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -378,7 +378,7 @@ public:
 
     void actionLook(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -444,7 +444,7 @@ public:
 
     void actionLook(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -495,7 +495,7 @@ public:
 
     void actionFire(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -547,7 +547,7 @@ public:
 
     void actionFire(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -600,7 +600,7 @@ public:
     // Function override
     void resetShells() override { shellsRemaining = 30; }
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -655,7 +655,7 @@ public:
 
     void actionFire(Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = rand();
 
@@ -714,7 +714,7 @@ public:
 
     void actionMove (Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = 0;
 
@@ -770,7 +770,7 @@ public:
 
     void actionMove (Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = 0;
 
@@ -825,7 +825,7 @@ public:
 
     void actionMove (Battlefield* battlefield) override;
 
-    virtual void actions (Battlefield* battlefield) override
+    void actions (Battlefield* battlefield) override
     {
         int randomInt = 0;
 
