@@ -105,6 +105,8 @@ robot_war_oppds/
 ## 🤝 Contributions
 
 - Lee Xiu Wei
+- Teng Ming Hein
+- Lai Seng Kung
 
-Primary development by **Lee Xiu Wei**.
+The development of this project is distributed even between these 3 people mentioned.
 
